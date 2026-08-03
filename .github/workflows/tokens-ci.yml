@@ -1,0 +1,80 @@
+name: 🎨 Tokens CI & Preview Deploy
+
+on:
+  push:
+    # Uruchom na push do gałęzi feature (np. z Tokens Studio)
+    branches: ['feature/**']
+    paths:
+      - 'tokens/**/*.json' # Tylko jeśli zmieniony jest JSON tokenów
+      - 'assets/**'
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - 'tokens/**/*.json' # Uruchom dla PR
+      - 'assets/**'        # Uruchom też jeśli zmienione są assety
+      - 'storybook/**'     # Uruchom też jeśli zmieniony jest kod Storybooka
+      - 'dist/**'          # Uruchom też jeśli zmienione są wygenerowane tokeny
+      - 'storybook-static/**' # Uruchom też jeśli zmieniony jest zbudowany Storybook
+      - '.github/workflows/tokens-ci.yml' # Uruchom przy zmianie samego workflowa
+
+permissions:
+  contents: write # Nadaj uprawnienia do zapisu (pushowania)
+  pull-requests: write # Nadaj uprawnienia do tworzenia/modyfikowania Pull Requestów
+
+jobs:
+  build-tokens-and-storybook:
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⬇️ Checkout code
+        uses: actions/checkout@v4
+        with:
+          # Potrzebne do pushowania zmian przez akcję PR
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: ⚙️ Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: 🔧 Install dependencies
+        run: npm install
+
+      # Krok A: Generowanie Tokenów
+      - name: 🎨 Build Design Tokens (Style Dictionary)
+        run: npm run build
+
+      # Krok C: Budowanie Storybooka
+      - name: 📚 Build Storybook
+        run: npm run build-storybook
+        # Upewnij się, że Storybook buduje się do domyślnego folderu 'storybook-static'
+
+      # Krok D: Wdrożenie Podglądu (Preview Deployment)
+      - name: ▲ Install Vercel CLI
+        if: github.event_name == 'pull_request'
+        run: npm install --global vercel@latest
+
+      - name: ▲ Pull Vercel Environment Information
+        if: github.event_name == 'pull_request'
+        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
+        env:
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
+      - name: 📦 Prepare Vercel Prebuilt Output
+        if: github.event_name == 'pull_request'
+        run: |
+          rm -rf .vercel/output
+          mkdir -p .vercel/output/static
+          cp -R storybook-static/. .vercel/output/static/
+          cat <<'EOF' > .vercel/output/config.json
+          {
+            "version": 3
+          }
+          EOF
+
+      - name: 🚀 Deploy Storybook Preview (Vercel)
+        if: github.event_name == 'pull_request'
+        run: vercel deploy --prebuilt --yes --token=${{ secrets.VERCEL_TOKEN }}
+        env:
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
