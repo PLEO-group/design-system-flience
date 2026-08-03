@@ -281,7 +281,7 @@ function getSemanticConfig({ name, include, source, selector, cssDestination, sc
 }
 
 function cleanOutput() {
-  ['css', 'scss', 'js', 'fonts'].forEach((directory) => {
+  ['css', 'scss', 'js', 'fonts', 'react'].forEach((directory) => {
     fs.rmSync(path.join(DIST_DIR, directory), { recursive: true, force: true });
   });
 }
@@ -292,6 +292,101 @@ function readDistCss(fileName) {
 
 function writeDistCss(fileName, content) {
   fs.writeFileSync(path.join(DIST_DIR, 'css', fileName), `${content.trim()}\n`);
+}
+
+function indentLines(lines, spaces) {
+  const padding = ' '.repeat(spaces);
+  return lines.map((line) => `${padding}${line}`).join('\n');
+}
+
+function readCssDeclarationLines(fileName) {
+  const css = readDistCss(fileName);
+  const start = css.indexOf('{');
+  const end = css.lastIndexOf('}');
+
+  if (start === -1 || end === -1 || end <= start) {
+    throw new Error(`Cannot read CSS declarations from ${fileName}`);
+  }
+
+  return css
+    .slice(start + 1, end)
+    .trim()
+    .split('\n')
+    .map((line) => line.trim())
+    .filter(Boolean);
+}
+
+function typographyVariantNames() {
+  return Object.keys(readJson(TOKEN_SOURCES.typeDesktop).typo || {}).map(toKebab);
+}
+
+function writeTypographyTailwindCss() {
+  const mobile = readCssDeclarationLines('tokens.typography.mobile.css');
+  const tablet = readCssDeclarationLines('tokens.typography.tablet.css');
+  const desktop = readCssDeclarationLines('tokens.typography.desktop.css');
+
+  writeDistCss(
+    'typography.tailwind.css',
+    [
+      `:root {
+${indentLines(mobile, 2)}
+
+  @variant tablet {
+${indentLines(tablet, 4)}
+  }
+
+  @variant desktop {
+${indentLines(desktop, 4)}
+  }
+}`,
+      outputBlock(mobile, ':root[data-type-scale="mobile"]'),
+      outputBlock(tablet, ':root[data-type-scale="tablet"]'),
+      outputBlock(desktop, ':root[data-type-scale="desktop"]'),
+    ].join('\n\n')
+  );
+}
+
+function writeTypographyUtilitiesCss() {
+  const variants = typographyVariantNames();
+  const variantBlocks = variants.map((variant) => {
+    return `.ds-text--${variant} {
+  font-size: var(--typo-${variant}-size);
+  font-weight: var(--typo-${variant}-weight);
+  line-height: var(--typo-${variant}-line-height, normal);
+  letter-spacing: var(--typo-${variant}-letter-spacing, 0);
+}`;
+  });
+
+  writeDistCss(
+    'typography.utilities.css',
+    [
+      `.ds-text {
+  margin: 0;
+  font-family: var(--ds-text-font-family, var(--font-family-museo, "Museo Sans")), Arial, sans-serif;
+}`,
+      `.ds-text--family-museo {
+  --ds-text-font-family: var(--font-family-museo, "Museo Sans");
+}`,
+      `.ds-text--family-accent {
+  --ds-text-font-family: var(--font-family-accent, "Love Ya Like A Sister");
+}`,
+      ...variantBlocks,
+    ].join('\n\n')
+  );
+}
+
+function writeTypographyBundleCss() {
+  const variantDrivenCss = `${readDistCss('typography.tailwind.css')}\n\n${readDistCss('typography.utilities.css')}`;
+
+  writeDistCss(
+    'typography.css',
+    variantDrivenCss
+  );
+
+  writeDistCss(
+    'typography.tailwind.css',
+    variantDrivenCss
+  );
 }
 
 function bundleSemanticColorCss() {
@@ -380,6 +475,10 @@ function run() {
         cssDestination: 'tokens.typography.mobile.css',
       })
     );
+
+    writeTypographyTailwindCss();
+    writeTypographyUtilitiesCss();
+    writeTypographyBundleCss();
 
     build({
       include: [normalized.colorBase, normalized.typeBase],
