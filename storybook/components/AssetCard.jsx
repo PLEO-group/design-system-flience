@@ -8,7 +8,7 @@ const cardStyle = {
   minWidth: 160,
   minHeight: 120,
   padding: 16,
-  border: '1px solid #e4e7ec',
+  border: '1px solid #e4e6ec',
   borderRadius: 8,
   color: '#1d2b4a',
   boxShadow: '0 1px 3px rgba(16, 24, 40, 0.08)',
