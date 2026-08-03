@@ -1,0 +1,87 @@
+@font-face {
+  font-family: 'Museo Sans';
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url('../../assets/fonts/museo-sans/MuseoSans-100.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Museo Sans';
+  font-style: italic;
+  font-weight: 100;
+  font-display: swap;
+  src: url('../../assets/fonts/museo-sans/MuseoSans-100Italic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Museo Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('../../assets/fonts/museo-sans/MuseoSans-300.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Museo Sans';
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url('../../assets/fonts/museo-sans/MuseoSans-300Italic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Museo Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('../../assets/fonts/museo-sans/MuseoSans_500.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Museo Sans';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url('../../assets/fonts/museo-sans/MuseoSans_500_Italic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Museo Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../../assets/fonts/museo-sans/MuseoSans_700.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Museo Sans';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../../assets/fonts/museo-sans/MuseoSans-700Italic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Museo Sans';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url('../../assets/fonts/museo-sans/MuseoSans_900.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Museo Sans';
+  font-style: italic;
+  font-weight: 900;
+  font-display: swap;
+  src: url('../../assets/fonts/museo-sans/MuseoSans-900Italic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Love Ya Like A Sister';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../../assets/fonts/love-ya-like-a-sister/LoveYaLikeASister-Regular.ttf') format('truetype');
+}
