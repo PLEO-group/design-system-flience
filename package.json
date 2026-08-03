@@ -7,10 +7,8 @@
     ".": "./dist/css/tokens.css",
     "./css/tokens.css": "./dist/css/tokens.css",
     "./css/typography.css": "./dist/css/typography.css",
-    "./css/typography.responsive.css": "./dist/css/typography.responsive.css",
     "./css/typography.tailwind.css": "./dist/css/typography.tailwind.css",
     "./css/typography.utilities.css": "./dist/css/typography.utilities.css",
-    "./css/tailwind-variants.css": "./dist/css/tailwind-variants.css",
     "./dist/*": "./dist/*",
     "./package.json": "./package.json"
   },

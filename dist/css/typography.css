@@ -42,11 +42,8 @@
   --typo-price-weight: var(--font-weight-300);
   --typo-price-size: var(--font-size-15);
   --typo-price-letter-spacing: var(--letter-spacing-0);
-}
 
-@media (width >= 36rem) and (orientation: portrait) and (pointer: coarse),
-  (width >= 36rem) and (orientation: portrait) and (pointer: fine) {
-  :root {
+  @variant tablet {
     --typo-display-weight: var(--font-weight-900);
     --typo-display-size: var(--font-size-65);
     --typo-display-letter-spacing: var(--letter-spacing-0);
@@ -91,10 +88,8 @@
     --typo-price-size: var(--font-size-15);
     --typo-price-letter-spacing: var(--letter-spacing-0);
   }
-}
 
-@media (width >= 64rem) and (orientation: landscape) {
-  :root {
+  @variant desktop {
     --typo-display-weight: var(--font-weight-900);
     --typo-display-size: var(--font-size-96);
     --typo-display-letter-spacing: var(--letter-spacing-0);

@@ -16,10 +16,6 @@ const TOKEN_SOURCES = {
   typeMobile: 'tokens/Type/Semantic-www/Mobile 402.json',
 };
 
-const TABLET_MEDIA_QUERY = `(width >= 36rem) and (orientation: portrait) and (pointer: coarse),
-  (width >= 36rem) and (orientation: portrait) and (pointer: fine)`;
-const DESKTOP_MEDIA_QUERY = '(width >= 64rem) and (orientation: landscape)';
-
 function readJson(relativePath) {
   return JSON.parse(fs.readFileSync(path.join(ROOT, relativePath), 'utf8'));
 }
@@ -320,37 +316,8 @@ function readCssDeclarationLines(fileName) {
     .filter(Boolean);
 }
 
-function mediaBlock(mediaQuery, selector, lines) {
-  const block = outputBlock(lines, selector)
-    .split('\n')
-    .map((line) => `  ${line}`)
-    .join('\n');
-
-  return `@media ${mediaQuery} {
-${block}
-}`;
-}
-
 function typographyVariantNames() {
   return Object.keys(readJson(TOKEN_SOURCES.typeDesktop).typo || {}).map(toKebab);
-}
-
-function writeTypographyResponsiveCss() {
-  const mobile = readCssDeclarationLines('tokens.typography.mobile.css');
-  const tablet = readCssDeclarationLines('tokens.typography.tablet.css');
-  const desktop = readCssDeclarationLines('tokens.typography.desktop.css');
-
-  writeDistCss(
-    'typography.responsive.css',
-    [
-      outputBlock(mobile, ':root'),
-      mediaBlock(TABLET_MEDIA_QUERY, ':root', tablet),
-      mediaBlock(DESKTOP_MEDIA_QUERY, ':root', desktop),
-      outputBlock(mobile, ':root[data-type-scale="mobile"]'),
-      outputBlock(tablet, ':root[data-type-scale="tablet"]'),
-      outputBlock(desktop, ':root[data-type-scale="desktop"]'),
-    ].join('\n\n')
-  );
 }
 
 function writeTypographyTailwindCss() {
@@ -408,32 +375,17 @@ function writeTypographyUtilitiesCss() {
   );
 }
 
-function writeTailwindVariantsCss() {
-  writeDistCss(
-    'tailwind-variants.css',
-    `@custom-variant tablet {
-  @media ${TABLET_MEDIA_QUERY} {
-    @slot;
-  }
-}
-
-@custom-variant desktop {
-  @media ${DESKTOP_MEDIA_QUERY} {
-    @slot;
-  }
-}`
-  );
-}
-
 function writeTypographyBundleCss() {
+  const variantDrivenCss = `${readDistCss('typography.tailwind.css')}\n\n${readDistCss('typography.utilities.css')}`;
+
   writeDistCss(
     'typography.css',
-    `${readDistCss('typography.responsive.css')}\n\n${readDistCss('typography.utilities.css')}`
+    variantDrivenCss
   );
 
   writeDistCss(
     'typography.tailwind.css',
-    `${readDistCss('typography.tailwind.css')}\n\n${readDistCss('typography.utilities.css')}`
+    variantDrivenCss
   );
 }
 
@@ -524,10 +476,8 @@ function run() {
       })
     );
 
-    writeTypographyResponsiveCss();
     writeTypographyTailwindCss();
     writeTypographyUtilitiesCss();
-    writeTailwindVariantsCss();
     writeTypographyBundleCss();
 
     build({

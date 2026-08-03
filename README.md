@@ -22,25 +22,35 @@ Storybook loads local preview fonts from `assets/fonts` through `storybook/style
 
 ## Next.js + Tailwind Usage
 
-Import tokens, responsive typography variables and text utilities in the app stylesheet:
+Define the app-specific Tailwind variants in the consuming application, then import the design system tokens and typography CSS.
+
+Example app-level `tailwind-variants.css`:
 
 ```css
-@import "tailwindcss";
+@custom-variant tablet {
+  @media (width >= 36rem) and (orientation: portrait) and (pointer: coarse),
+         (width >= 36rem) and (orientation: portrait) and (pointer: fine) {
+    @slot;
+  }
+}
 
-@import "@pleodigital/design-system-flience/css/tokens.css";
-@import "@pleodigital/design-system-flience/css/typography.css";
+@custom-variant desktop {
+  @media (width >= 64rem) {
+    @slot;
+  }
+}
 ```
 
-Use `typography.tailwind.css` instead of `typography.responsive.css` when the consuming app defines its own Tailwind `tablet` and `desktop` custom variants:
+Then import it before the design system typography CSS:
 
 ```css
 @import "tailwindcss";
 @import "./tailwind-variants.css";
 @import "@pleodigital/design-system-flience/css/tokens.css";
-@import "@pleodigital/design-system-flience/css/typography.tailwind.css";
+@import "@pleodigital/design-system-flience/css/typography.css";
 ```
 
-The app-level `tailwind-variants.css` can define `tablet` and `desktop` itself, or you can import the package default from `@pleodigital/design-system-flience/css/tailwind-variants.css`.
+The design system CSS does not define `tablet` or `desktop` conditions. It only uses those custom variant names to switch typography token values.
 
 Then create the app-side text component by mapping the `variant` prop to package CSS classes:
 
@@ -102,8 +112,9 @@ export function Text<TElement extends ElementType = 'p'>({
 - `dist/css/tokens.light.css` - light semantic color tokens.
 - `dist/css/tokens.dark.css` - dark semantic color tokens for `[data-theme="dark"]`.
 - `dist/css/tokens.tailwind.css` - CSS `@theme` variables for Tailwind CSS.
-- `dist/css/typography.css` - responsive typography variables plus `.ds-text` utilities.
-- `dist/css/typography.responsive.css` - mobile-first typography variables with built-in tablet and desktop media queries.
-- `dist/css/typography.tailwind.css` - typography variables switched through Tailwind `tablet` and `desktop` custom variants, plus `.ds-text` utilities.
+- `dist/css/tokens.typography.mobile.css` - mobile typography token variables for `[data-type-scale="mobile"]`.
+- `dist/css/tokens.typography.tablet.css` - tablet typography token variables for `[data-type-scale="tablet"]`.
+- `dist/css/tokens.typography.desktop.css` - desktop typography token variables for `:root` and `[data-type-scale="desktop"]`.
+- `dist/css/typography.css` - typography variables switched through app-defined Tailwind `tablet` and `desktop` custom variants, plus `.ds-text` utilities.
+- `dist/css/typography.tailwind.css` - same as `typography.css`, kept as an explicit Tailwind-oriented import path.
 - `dist/css/typography.utilities.css` - `.ds-text` and `.ds-text--{variant}` classes for an app-side text component.
-- `dist/css/tailwind-variants.css` - optional default `tablet` and `desktop` Tailwind custom variants.
