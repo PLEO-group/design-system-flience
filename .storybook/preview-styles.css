@@ -1,0 +1,23 @@
+html,
+body,
+#storybook-root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  color: #101828;
+  background: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.storybook-shell {
+  min-height: 100%;
+}
+
+.asset-card svg,
+.asset-card g,
+.asset-card path,
+.asset-card line {
+  fill: currentColor;
+}
