@@ -1,0 +1,24 @@
+:root[data-theme="dark"] {
+  --color-bg-page: var(--color-kosmos-900);
+  --color-bg-surface: var(--color-kosmos-800);
+  --color-bg-surface-mieta: var(--color-kosmos-800);
+  --color-bg-elevated: var(--color-kosmos-700);
+  --color-bg-nav: var(--color-kosmos-800);
+  --color-bg-inverse: var(--color-kosmos-800);
+  --color-bg-surface-mieta-strong: var(--color-kosmos-700);
+  --color-bg-page-mieta: var(--color-kosmos-900);
+  --color-text-primary: var(--color-kosmos-gwiazda);
+  --color-text-secondary: var(--color-kosmos-tekst-2);
+  --color-text-inverse: var(--color-kosmos-900);
+  --color-text-on-accent: var(--color-kosmos-900);
+  --color-text-on-inverse: var(--color-kosmos-gwiazda);
+  --color-text-on-inverse-mieta: var(--color-mieta-100);
+  --color-text-on-inverse-secondary: var(--color-mieta-200);
+  --color-accent-primary: var(--color-mieta-300);
+  --color-accent-cta: var(--color-pomarancz-300);
+  --color-accent-cta-hover: var(--color-pomarancz-400);
+  --color-accent-link: var(--color-blekit-300);
+  --color-border-subtle: var(--color-kosmos-700);
+  --color-border-strong: var(--color-kosmos-orbita);
+  --color-icon-primary: var(--color-kosmos-gwiazda);
+}

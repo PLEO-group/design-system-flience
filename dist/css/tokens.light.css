@@ -1,0 +1,24 @@
+:root, :root[data-theme="light"] {
+  --color-bg-page: var(--color-neutral-bialy);
+  --color-bg-surface: var(--color-neutral-szary-100);
+  --color-bg-surface-mieta: var(--color-mieta-100);
+  --color-bg-elevated: var(--color-neutral-bialy);
+  --color-bg-nav: var(--color-niebo-200);
+  --color-bg-inverse: var(--color-neutral-grafit);
+  --color-bg-surface-mieta-strong: var(--color-mieta-200);
+  --color-bg-page-mieta: var(--color-mieta-200);
+  --color-text-primary: var(--color-neutral-grafit);
+  --color-text-secondary: var(--color-neutral-szary-600);
+  --color-text-inverse: var(--color-neutral-bialy);
+  --color-text-on-accent: var(--color-neutral-bialy);
+  --color-text-on-inverse: var(--color-neutral-bialy);
+  --color-text-on-inverse-mieta: var(--color-mieta-100);
+  --color-text-on-inverse-secondary: var(--color-mieta-250);
+  --color-accent-primary: var(--color-mieta-400);
+  --color-accent-cta: var(--color-pomarancz-500);
+  --color-accent-cta-hover: var(--color-pomarancz-600);
+  --color-accent-link: var(--color-blekit-400);
+  --color-border-subtle: var(--color-neutral-szary-100);
+  --color-border-strong: var(--color-neutral-szary-400);
+  --color-icon-primary: var(--color-neutral-grafit);
+}
