@@ -4,10 +4,7 @@ import tabletTokens from '../../tokens/Type/Semantic-www/Tablet 768.json';
 import mobileTokens from '../../tokens/Type/Semantic-www/Mobile 402.json';
 import '../styles/font-faces.css';
 import '../../dist/css/tokens.css';
-import '../../dist/css/tokens.typography.desktop.css';
-import '../../dist/css/tokens.typography.tablet.css';
-import '../../dist/css/tokens.typography.mobile.css';
-import { cssVarName } from '../utils';
+import '../../dist/css/typography.css';
 
 const TOKEN_SETS = {
   desktop: desktopTokens,
@@ -15,38 +12,22 @@ const TOKEN_SETS = {
   mobile: mobileTokens,
 };
 
-const FONT_FAMILIES = {
-  museo: 'var(--font-family-museo), Arial, sans-serif',
-  accent: 'var(--font-family-accent), cursive',
-};
-
-function tokenCssVar(path) {
-  return `var(${cssVarName(path)})`;
-}
-
-function getTextStyle(name, data, fontFamily) {
-  return {
-    margin: 0,
-    fontFamily: FONT_FAMILIES[fontFamily] || FONT_FAMILIES.museo,
-    fontSize: tokenCssVar(['typo', name, 'size']),
-    fontWeight: tokenCssVar(['typo', name, 'weight']),
-    lineHeight: data['line-height'] ? tokenCssVar(['typo', name, 'line-height']) : 1.2,
-    letterSpacing: data['letter-spacing'] ? tokenCssVar(['typo', name, 'letter-spacing']) : 0,
-  };
-}
-
 export const Typography = ({ scale = 'desktop', fontFamily = 'museo' }) => {
   const tokens = TOKEN_SETS[scale].typo;
 
   useEffect(() => {
     document.documentElement.setAttribute('data-type-scale', scale);
+
+    return () => {
+      document.documentElement.removeAttribute('data-type-scale');
+    };
   }, [scale]);
 
   return (
     <main style={{ minHeight: '100vh', padding: 24, color: '#101828', background: '#ffffff' }}>
       <h1 style={{ margin: '0 0 32px', fontSize: 32, lineHeight: '40px' }}>Typography tokens</h1>
       <div style={{ display: 'grid', gap: 18 }}>
-        {Object.entries(tokens).map(([name, data]) => (
+        {Object.keys(tokens).map((name) => (
           <section
             key={name}
             style={{
@@ -64,7 +45,9 @@ export const Typography = ({ scale = 'desktop', fontFamily = 'museo' }) => {
                 --typo-{name}-size / weight
               </p>
             </div>
-            <p style={getTextStyle(name, data, fontFamily)}>Flience design tokens preview</p>
+            <p className={`ds-text ds-text--${name} ds-text--family-${fontFamily}`}>
+              Flience design tokens preview
+            </p>
           </section>
         ))}
       </div>
