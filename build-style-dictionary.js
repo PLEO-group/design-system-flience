@@ -281,7 +281,7 @@ function getSemanticConfig({ name, include, source, selector, cssDestination, sc
 }
 
 function cleanOutput() {
-  ['css', 'scss', 'js'].forEach((directory) => {
+  ['css', 'scss', 'js', 'fonts'].forEach((directory) => {
     fs.rmSync(path.join(DIST_DIR, directory), { recursive: true, force: true });
   });
 }

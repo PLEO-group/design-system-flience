@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import desktopTokens from '../../tokens/Type/Semantic-www/Desktop 1728.json';
 import tabletTokens from '../../tokens/Type/Semantic-www/Tablet 768.json';
 import mobileTokens from '../../tokens/Type/Semantic-www/Mobile 402.json';
+import '../styles/font-faces.css';
 import '../../dist/css/tokens.css';
 import '../../dist/css/tokens.typography.desktop.css';
 import '../../dist/css/tokens.typography.tablet.css';
@@ -14,14 +15,19 @@ const TOKEN_SETS = {
   mobile: mobileTokens,
 };
 
+const FONT_FAMILIES = {
+  museo: 'var(--font-family-museo), Arial, sans-serif',
+  accent: 'var(--font-family-accent), cursive',
+};
+
 function tokenCssVar(path) {
   return `var(${cssVarName(path)})`;
 }
 
-function getTextStyle(name, data) {
+function getTextStyle(name, data, fontFamily) {
   return {
     margin: 0,
-    fontFamily: 'var(--font-family-museo), Arial, sans-serif',
+    fontFamily: FONT_FAMILIES[fontFamily] || FONT_FAMILIES.museo,
     fontSize: tokenCssVar(['typo', name, 'size']),
     fontWeight: tokenCssVar(['typo', name, 'weight']),
     lineHeight: data['line-height'] ? tokenCssVar(['typo', name, 'line-height']) : 1.2,
@@ -29,7 +35,7 @@ function getTextStyle(name, data) {
   };
 }
 
-export const Typography = ({ scale = 'desktop' }) => {
+export const Typography = ({ scale = 'desktop', fontFamily = 'museo' }) => {
   const tokens = TOKEN_SETS[scale].typo;
 
   useEffect(() => {
@@ -58,7 +64,7 @@ export const Typography = ({ scale = 'desktop' }) => {
                 --typo-{name}-size / weight
               </p>
             </div>
-            <p style={getTextStyle(name, data)}>Flience design tokens preview</p>
+            <p style={getTextStyle(name, data, fontFamily)}>Flience design tokens preview</p>
           </section>
         ))}
       </div>
@@ -77,8 +83,19 @@ export default {
       options: ['desktop', 'tablet', 'mobile'],
       control: { type: 'inline-radio' },
     },
+    fontFamily: {
+      options: ['museo', 'accent'],
+      control: {
+        type: 'inline-radio',
+        labels: {
+          museo: 'Museo Sans',
+          accent: 'Love Ya Like A Sister',
+        },
+      },
+    },
   },
   args: {
     scale: 'desktop',
+    fontFamily: 'museo',
   },
 };
