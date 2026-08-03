@@ -1,3 +1,11 @@
 {
-  "tokenSetOrder": []
+  "tokenSetOrder": [
+    "Color/Core/Value",
+    "Color/Semantic/Light",
+    "Color/Semantic/Dark",
+    "Type/Core-www/Value",
+    "Type/Semantic-www/Desktop 1728",
+    "Type/Semantic-www/Tablet 768",
+    "Type/Semantic-www/Mobile 402"
+  ]
 }
