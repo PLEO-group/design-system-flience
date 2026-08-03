@@ -2,7 +2,6 @@
   "name": "@pleodigital/design-system-flience",
   "version": "1.0.0",
   "description": "Centralny system tokenow projektowych Flience generowany przez Style Dictionary.",
-  "main": "dist/js/tailwind-preset.js",
   "style": "dist/css/tokens.css",
   "publishConfig": {
     "access": "public",

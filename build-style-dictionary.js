@@ -214,81 +214,6 @@ function buildScssVariables({ dictionary, options }) {
   }).join('\n');
 }
 
-function setNested(target, parts, value) {
-  let current = target;
-
-  parts.forEach((part, index) => {
-    if (index === parts.length - 1) {
-      current[part] = value;
-      return;
-    }
-
-    current[part] = current[part] || {};
-    current = current[part];
-  });
-}
-
-function buildTailwindPreset({ dictionary }) {
-  const preset = {
-    theme: {
-      extend: {
-        colors: {},
-        fontFamily: {},
-        fontSize: {},
-        fontWeight: {},
-        lineHeight: {},
-        letterSpacing: {},
-      },
-    },
-    tokens: {
-      typography: {},
-    },
-  };
-
-  dictionary.allProperties.forEach((token) => {
-    const value = `var(${cssVariableName(token)})`;
-    const parts = tokenPath(token);
-
-    if (isColorToken(token)) {
-      setNested(preset.theme.extend.colors, parts, value);
-      return;
-    }
-
-    const [category, ...rest] = parts;
-
-    if (category === 'font-family') {
-      preset.theme.extend.fontFamily[rest.join('-')] = value;
-      return;
-    }
-
-    if (category === 'font-size') {
-      preset.theme.extend.fontSize[rest.join('-')] = value;
-      return;
-    }
-
-    if (category === 'font-weight') {
-      preset.theme.extend.fontWeight[rest.join('-')] = value;
-      return;
-    }
-
-    if (category === 'line-height') {
-      preset.theme.extend.lineHeight[rest.join('-')] = value;
-      return;
-    }
-
-    if (category === 'letter-spacing') {
-      preset.theme.extend.letterSpacing[rest.join('-')] = value;
-      return;
-    }
-
-    if (category === 'typo') {
-      setNested(preset.tokens.typography, rest, value);
-    }
-  });
-
-  return `module.exports = ${JSON.stringify(preset, null, 2)};\n`;
-}
-
 function registerFormats() {
   StyleDictionary.registerFormat({
     name: 'flience/css-core-variables',
@@ -308,11 +233,6 @@ function registerFormats() {
   StyleDictionary.registerFormat({
     name: 'flience/scss-variables',
     formatter: buildScssVariables,
-  });
-
-  StyleDictionary.registerFormat({
-    name: 'flience/javascript-tailwind-preset',
-    formatter: buildTailwindPreset,
   });
 }
 
@@ -366,6 +286,24 @@ function cleanOutput() {
   });
 }
 
+function readDistCss(fileName) {
+  return fs.readFileSync(path.join(DIST_DIR, 'css', fileName), 'utf8').trim();
+}
+
+function writeDistCss(fileName, content) {
+  fs.writeFileSync(path.join(DIST_DIR, 'css', fileName), `${content.trim()}\n`);
+}
+
+function bundleSemanticColorCss() {
+  const coreCss = readDistCss('tokens.css');
+  const lightCss = readDistCss('tokens.light.css');
+  const darkCss = readDistCss('tokens.dark.css');
+  const semanticCss = `${lightCss}\n\n${darkCss}`;
+
+  writeDistCss('tokens.semantic.css', semanticCss);
+  writeDistCss('tokens.css', `${coreCss}\n\n${semanticCss}`);
+}
+
 function run() {
   fs.rmSync(TEMP_DIR, { recursive: true, force: true });
   fs.mkdirSync(TEMP_DIR, { recursive: true });
@@ -396,7 +334,7 @@ function run() {
         name: 'light',
         include: [normalized.colorBase, normalized.typeBase],
         source: [normalized.colorLight],
-        selector: ':root',
+        selector: ':root, :root[data-theme="light"]',
         cssDestination: 'tokens.light.css',
       })
     );
@@ -410,6 +348,8 @@ function run() {
         cssDestination: 'tokens.dark.css',
       })
     );
+
+    bundleSemanticColorCss();
 
     build(
       getSemanticConfig({
@@ -452,16 +392,6 @@ function run() {
             cssFile('tokens.tailwind.css', 'flience/css-tailwind-theme', {
               selector: '@theme',
             }),
-          ],
-        },
-        js: {
-          transformGroup: 'js',
-          buildPath: 'dist/js/',
-          files: [
-            {
-              destination: 'tailwind-preset.js',
-              format: 'flience/javascript-tailwind-preset',
-            },
           ],
         },
       },

@@ -2,8 +2,6 @@ import React, { useEffect } from 'react';
 import lightTokens from '../../tokens/Color/Semantic/Light.json';
 import darkTokens from '../../tokens/Color/Semantic/Dark.json';
 import '../../dist/css/tokens.css';
-import '../../dist/css/tokens.light.css';
-import '../../dist/css/tokens.dark.css';
 import { Section } from '../components/theme/Section';
 import { flattenTokens, groupByFirstSegment, sortTokens } from '../utils';
 
