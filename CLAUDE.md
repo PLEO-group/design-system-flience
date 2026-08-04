@@ -1,4 +1,4 @@
-# WERSJA 1.0.0
+# WERSJA 1.0.1
 
 # Instrukcje CLAUDE.md dla design-system-flience
 <INSTRUCTIONS>
@@ -6,6 +6,7 @@
 Skill to lokalny zestaw instrukcji zapisany w pliku `SKILL.md`.
 
 ### Dostępne skille
+- design-system-project-bootstrap: Bootstrapuje nowe repo paczki design systemu w stacku podobnym do design-system-flience: Style Dictionary 3, tokeny DTCG z Figma/Tokens Studio, eksport CSS/Tailwind/SCSS, transformacje SVG przez SVGR, Storybook 8 React/Vite, npm package exports oraz CI/publish workflow. Używaj przy jawnej prośbie o inicjalizację, scaffold albo naprawę bazowej struktury repo design systemu, a nie przy bootstrapie aplikacji produktowej. (file: skills/design-system-project-bootstrap/SKILL.md)
 - pleo-library-project-instruction-sync: Operacyjnie synchronizuje lokalne pliki `AGENTS.md`, `CLAUDE.md` i `GEMINI.md` z centralną biblioteką po `projectSlug`. Używaj przy jawnej prośbie o check, pull albo publish instrukcji projektowych oraz przed merytoryczną edycją tych plików, żeby najpierw sprawdzić aktualność lokalnej bazy. (file: skills/pleo-library-project-instruction-sync/SKILL.md)
 - pleo-library-project-skill-bootstrap: Operacyjnie bootstrapuje repo pod pracę ze skillami bibliotecznymi. Używaj wyłącznie przy onboardingu repo, naprawie struktury `skills`, `.agent-library.yaml` albo sekcji skilli w `AGENTS.md`/`CLAUDE.md`/`GEMINI.md`; nie używaj jako pre-response. (file: skills/pleo-library-project-skill-bootstrap/SKILL.md)
 - pleo-library-prompt-model-triage: Pierwszy router promptu po target-only version preflight. Szybko klasyfikuj bieżący prompt pod najlepszy poziom modelu, reasoning, koszt i dobór skilli wykonawczych. Nie raportuj tego skilla w telemetryce, bo jego nazwa zaczyna się od `pleo-library-`. (file: skills/pleo-library-prompt-model-triage/SKILL.md)
