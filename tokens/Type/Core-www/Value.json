@@ -61,6 +61,16 @@
       },
       "$type": "text",
       "$value": "900"
+    },
+    "700-italic": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "FONT_STYLE"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "text",
+      "$value": "700 Italic"
     }
   },
   "font-size": {
@@ -144,6 +154,26 @@
       "$type": "number",
       "$value": 19
     },
+    "20": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "FONT_SIZE"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "number",
+      "$value": 20
+    },
+    "24": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "FONT_SIZE"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "number",
+      "$value": 24
+    },
     "25": {
       "$extensions": {
         "com.figma.scopes": [
@@ -153,6 +183,26 @@
       },
       "$type": "number",
       "$value": 25
+    },
+    "26": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "FONT_SIZE"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "number",
+      "$value": 26
+    },
+    "27": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "FONT_SIZE"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "number",
+      "$value": 27
     },
     "30": {
       "$extensions": {
@@ -173,6 +223,26 @@
       },
       "$type": "number",
       "$value": 33
+    },
+    "35": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "FONT_SIZE"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "number",
+      "$value": 35
+    },
+    "36": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "FONT_SIZE"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "number",
+      "$value": 36
     },
     "40": {
       "$extensions": {
@@ -203,6 +273,16 @@
       },
       "$type": "number",
       "$value": 43
+    },
+    "45": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "FONT_SIZE"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "number",
+      "$value": 45
     },
     "50": {
       "$extensions": {
