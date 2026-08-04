@@ -316,8 +316,123 @@ function readCssDeclarationLines(fileName) {
     .filter(Boolean);
 }
 
-function typographyVariantNames() {
-  return Object.keys(readJson(TOKEN_SOURCES.typeDesktop).typo || {}).map(toKebab);
+function readCssSelector(fileName) {
+  const css = readDistCss(fileName);
+  const start = css.indexOf('{');
+
+  if (start === -1) {
+    throw new Error(`Cannot read CSS selector from ${fileName}`);
+  }
+
+  return css.slice(0, start).trim();
+}
+
+function declarationName(line) {
+  return line.match(/^\s*(--[^:]+):/)?.[1];
+}
+
+function appendUniqueDeclarationLines(lines, extraLines) {
+  const seen = new Set(lines.map(declarationName).filter(Boolean));
+  const merged = [...lines];
+
+  extraLines.forEach((line) => {
+    const name = declarationName(line);
+
+    if (!name || seen.has(name)) {
+      return;
+    }
+
+    seen.add(name);
+    merged.push(line);
+  });
+
+  return merged;
+}
+
+function resolveDtcgPathValue(root, parts) {
+  const node = parts.reduce((current, part) => current?.[part], root);
+
+  if (!node || typeof node !== 'object') {
+    return node;
+  }
+
+  if (Object.prototype.hasOwnProperty.call(node, '$value')) {
+    return node.$value;
+  }
+
+  if (Object.prototype.hasOwnProperty.call(node, 'value')) {
+    return node.value;
+  }
+
+  return undefined;
+}
+
+function resolveDtcgValue(value, tokenRoot) {
+  if (typeof value === 'string' && value.startsWith('{') && value.endsWith('}')) {
+    return resolveDtcgPathValue(tokenRoot, value.slice(1, -1).split('.'));
+  }
+
+  return value;
+}
+
+function toCssNumber(value) {
+  if (typeof value === 'number') {
+    return String(value);
+  }
+
+  if (typeof value !== 'string') {
+    return null;
+  }
+
+  const normalized = value.trim().replace(/px$/, '');
+  return /^-?\d+(\.\d+)?$/.test(normalized) ? normalized : null;
+}
+
+function typographyNumericLines(sourcePath) {
+  const typeBase = readJson(TOKEN_SOURCES.typeBase);
+  const typography = readJson(sourcePath).typo || {};
+  const numericProperties = ['size', 'line-height'];
+  const lines = [];
+
+  Object.entries(typography).forEach(([variant, properties]) => {
+    numericProperties.forEach((property) => {
+      const token = properties?.[property];
+
+      if (!token || typeof token !== 'object') {
+        return;
+      }
+
+      const rawValue = Object.prototype.hasOwnProperty.call(token, '$value') ? token.$value : token.value;
+      const numberValue = toCssNumber(resolveDtcgValue(rawValue, typeBase));
+
+      if (numberValue) {
+        lines.push(`--typo-${toKebab(variant)}-${property}-n: ${numberValue};`);
+      }
+    });
+  });
+
+  return lines;
+}
+
+function addTypographyNumericVariables(fileName, sourcePath) {
+  const selector = readCssSelector(fileName);
+  const lines = appendUniqueDeclarationLines(readCssDeclarationLines(fileName), typographyNumericLines(sourcePath));
+
+  writeDistCss(fileName, outputBlock(lines, selector));
+}
+
+function typographyVariants() {
+  const tokenSets = [
+    readJson(TOKEN_SOURCES.typeMobile).typo || {},
+    readJson(TOKEN_SOURCES.typeTablet).typo || {},
+    readJson(TOKEN_SOURCES.typeDesktop).typo || {},
+  ];
+  const desktop = tokenSets[2];
+
+  return Object.keys(desktop).map((variant) => ({
+    name: toKebab(variant),
+    hasLineHeight: tokenSets.every((tokens) => Boolean(tokens[variant]?.['line-height'])),
+  }));
 }
 
 function writeTypographyTailwindCss() {
@@ -347,13 +462,24 @@ ${indentLines(desktop, 4)}
 }
 
 function writeTypographyUtilitiesCss() {
-  const variants = typographyVariantNames();
-  const variantBlocks = variants.map((variant) => {
-    return `.ds-text--${variant} {
-  font-size: var(--typo-${variant}-size);
-  font-weight: var(--typo-${variant}-weight);
-  line-height: var(--typo-${variant}-line-height, normal);
-  letter-spacing: var(--typo-${variant}-letter-spacing, 0);
+  const variantBlocks = typographyVariants().map(({ name, hasLineHeight }) => {
+    const lineHeightLines = hasLineHeight
+      ? `  --ds-text-line-height-n: var(--typo-${name}-line-height-n);
+  --ds-text-line-height-vw: calc(var(--ds-text-line-height-n) * var(--ds-text-rvw));
+  --ds-text-line-height-px: calc(var(--ds-text-line-height-n) * var(--ds-text-rpx));
+  line-height: var(--typo-${name}-line-height, normal);
+  line-height: min(var(--ds-text-line-height-vw), var(--ds-text-line-height-px));`
+      : `  line-height: var(--typo-${name}-line-height, normal);`;
+
+    return `.ds-text--${name} {
+  --ds-text-size-n: var(--typo-${name}-size-n);
+  --ds-text-size-vw: calc(var(--ds-text-size-n) * var(--ds-text-rvw));
+  --ds-text-size-px: calc(var(--ds-text-size-n) * var(--ds-text-rpx));
+  font-size: var(--typo-${name}-size);
+  font-size: min(var(--ds-text-size-vw), var(--ds-text-size-px));
+  font-weight: var(--typo-${name}-weight);
+${lineHeightLines}
+  letter-spacing: var(--typo-${name}-letter-spacing, 0);
 }`;
   });
 
@@ -361,6 +487,8 @@ function writeTypographyUtilitiesCss() {
     'typography.utilities.css',
     [
       `.ds-text {
+  --ds-text-rpx: var(--rpx, 1px);
+  --ds-text-rvw: var(--rvw, var(--ds-text-rpx));
   margin: 0;
   font-family: var(--ds-text-font-family, var(--font-family-museo, "Museo Sans")), Arial, sans-serif;
 }`,
@@ -475,6 +603,10 @@ function run() {
         cssDestination: 'tokens.typography.mobile.css',
       })
     );
+
+    addTypographyNumericVariables('tokens.typography.mobile.css', TOKEN_SOURCES.typeMobile);
+    addTypographyNumericVariables('tokens.typography.tablet.css', TOKEN_SOURCES.typeTablet);
+    addTypographyNumericVariables('tokens.typography.desktop.css', TOKEN_SOURCES.typeDesktop);
 
     writeTypographyTailwindCss();
     writeTypographyUtilitiesCss();

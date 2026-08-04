@@ -4,6 +4,19 @@ body,
   min-height: 100%;
 }
 
+:root {
+  --rpx: 1px;
+  --rvw: calc(100vw / 402);
+}
+
+:root[data-type-scale="tablet"] {
+  --rvw: calc(100vw / 768);
+}
+
+:root[data-type-scale="desktop"] {
+  --rvw: calc(100vw / 1728);
+}
+
 body {
   margin: 0;
   color: #101828;
