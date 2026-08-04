@@ -124,6 +124,16 @@
     }
   },
   "niebo": {
+    "100": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "#d0defb"
+    },
     "200": {
       "$extensions": {
         "com.figma.scopes": [
@@ -133,6 +143,16 @@
       },
       "$type": "color",
       "$value": "#becfe6"
+    },
+    "500": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "#768fb0"
     }
   },
   "blekit": {
@@ -210,6 +230,16 @@
     }
   },
   "koral": {
+    "100": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "#ffdbdc"
+    },
     "300": {
       "$extensions": {
         "com.figma.scopes": [
@@ -469,6 +499,18 @@
       },
       "$type": "color",
       "$value": "#8ba4c3"
+    }
+  },
+  "lila": {
+    "100": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "#e9d9ff"
     }
   }
 }
