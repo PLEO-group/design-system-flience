@@ -41,16 +41,35 @@ Example app-level `tailwind-variants.css`:
 }
 ```
 
-Then import it before the design system typography CSS:
+Define the responsive value variables used by typography scaling. If the app already has the same `--rvw` and `--rpx` setup for utilities like `rv-fs-*`, reuse it.
+
+```css
+:root {
+  --rpx: 1px;
+  --rvw: calc(100vw / 402);
+
+  @variant tablet {
+    --rvw: calc(100vw / 768);
+  }
+
+  @variant desktop {
+    --rvw: calc(100vw / 1728);
+  }
+}
+```
+
+Then import the app setup before the design system typography CSS:
 
 ```css
 @import "tailwindcss";
 @import "./tailwind-variants.css";
+@import "./responsive-values.css";
 @import "@pleodigital/design-system-flience/css/tokens.css";
 @import "@pleodigital/design-system-flience/css/typography.css";
 ```
 
 The design system CSS does not define `tablet` or `desktop` conditions. It only uses those custom variant names to switch typography token values.
+Typography classes use dynamic font-size and line-height values through `--rvw` and `--rpx`, with static token values as a fallback.
 
 Then create the app-side text component by mapping the `variant` prop to package CSS classes:
 
@@ -112,9 +131,9 @@ export function Text<TElement extends ElementType = 'p'>({
 - `dist/css/tokens.light.css` - light semantic color tokens.
 - `dist/css/tokens.dark.css` - dark semantic color tokens for `[data-theme="dark"]`.
 - `dist/css/tokens.tailwind.css` - CSS `@theme` variables for Tailwind CSS.
-- `dist/css/tokens.typography.mobile.css` - mobile typography token variables for `[data-type-scale="mobile"]`.
-- `dist/css/tokens.typography.tablet.css` - tablet typography token variables for `[data-type-scale="tablet"]`.
-- `dist/css/tokens.typography.desktop.css` - desktop typography token variables for `:root` and `[data-type-scale="desktop"]`.
+- `dist/css/tokens.typography.mobile.css` - mobile typography token variables for `[data-type-scale="mobile"]`, including numeric `*-n` values for responsive calculations.
+- `dist/css/tokens.typography.tablet.css` - tablet typography token variables for `[data-type-scale="tablet"]`, including numeric `*-n` values for responsive calculations.
+- `dist/css/tokens.typography.desktop.css` - desktop typography token variables for `:root` and `[data-type-scale="desktop"]`, including numeric `*-n` values for responsive calculations.
 - `dist/css/typography.css` - typography variables switched through app-defined Tailwind `tablet` and `desktop` custom variants, plus `.ds-text` utilities.
 - `dist/css/typography.tailwind.css` - same as `typography.css`, kept as an explicit Tailwind-oriented import path.
 - `dist/css/typography.utilities.css` - `.ds-text` and `.ds-text--{variant}` classes for an app-side text component.
