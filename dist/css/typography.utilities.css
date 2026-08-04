@@ -1,4 +1,6 @@
 .ds-text {
+  --ds-text-rpx: var(--rpx, 1px);
+  --ds-text-rvw: var(--rvw, var(--ds-text-rpx));
   margin: 0;
   font-family: var(--ds-text-font-family, var(--font-family-museo, "Museo Sans")), Arial, sans-serif;
 }
@@ -12,91 +14,159 @@
 }
 
 .ds-text--display {
+  --ds-text-size-n: var(--typo-display-size-n);
+  --ds-text-size-vw: calc(var(--ds-text-size-n) * var(--ds-text-rvw));
+  --ds-text-size-px: calc(var(--ds-text-size-n) * var(--ds-text-rpx));
   font-size: var(--typo-display-size);
+  font-size: min(var(--ds-text-size-vw), var(--ds-text-size-px));
   font-weight: var(--typo-display-weight);
+  --ds-text-line-height-n: var(--typo-display-line-height-n);
+  --ds-text-line-height-vw: calc(var(--ds-text-line-height-n) * var(--ds-text-rvw));
+  --ds-text-line-height-px: calc(var(--ds-text-line-height-n) * var(--ds-text-rpx));
   line-height: var(--typo-display-line-height, normal);
+  line-height: min(var(--ds-text-line-height-vw), var(--ds-text-line-height-px));
   letter-spacing: var(--typo-display-letter-spacing, 0);
 }
 
 .ds-text--h1 {
+  --ds-text-size-n: var(--typo-h1-size-n);
+  --ds-text-size-vw: calc(var(--ds-text-size-n) * var(--ds-text-rvw));
+  --ds-text-size-px: calc(var(--ds-text-size-n) * var(--ds-text-rpx));
   font-size: var(--typo-h1-size);
+  font-size: min(var(--ds-text-size-vw), var(--ds-text-size-px));
   font-weight: var(--typo-h1-weight);
   line-height: var(--typo-h1-line-height, normal);
   letter-spacing: var(--typo-h1-letter-spacing, 0);
 }
 
 .ds-text--h2 {
+  --ds-text-size-n: var(--typo-h2-size-n);
+  --ds-text-size-vw: calc(var(--ds-text-size-n) * var(--ds-text-rvw));
+  --ds-text-size-px: calc(var(--ds-text-size-n) * var(--ds-text-rpx));
   font-size: var(--typo-h2-size);
+  font-size: min(var(--ds-text-size-vw), var(--ds-text-size-px));
   font-weight: var(--typo-h2-weight);
   line-height: var(--typo-h2-line-height, normal);
   letter-spacing: var(--typo-h2-letter-spacing, 0);
 }
 
 .ds-text--h3 {
+  --ds-text-size-n: var(--typo-h3-size-n);
+  --ds-text-size-vw: calc(var(--ds-text-size-n) * var(--ds-text-rvw));
+  --ds-text-size-px: calc(var(--ds-text-size-n) * var(--ds-text-rpx));
   font-size: var(--typo-h3-size);
+  font-size: min(var(--ds-text-size-vw), var(--ds-text-size-px));
   font-weight: var(--typo-h3-weight);
   line-height: var(--typo-h3-line-height, normal);
   letter-spacing: var(--typo-h3-letter-spacing, 0);
 }
 
 .ds-text--lead {
+  --ds-text-size-n: var(--typo-lead-size-n);
+  --ds-text-size-vw: calc(var(--ds-text-size-n) * var(--ds-text-rvw));
+  --ds-text-size-px: calc(var(--ds-text-size-n) * var(--ds-text-rpx));
   font-size: var(--typo-lead-size);
+  font-size: min(var(--ds-text-size-vw), var(--ds-text-size-px));
   font-weight: var(--typo-lead-weight);
   line-height: var(--typo-lead-line-height, normal);
   letter-spacing: var(--typo-lead-letter-spacing, 0);
 }
 
 .ds-text--body {
+  --ds-text-size-n: var(--typo-body-size-n);
+  --ds-text-size-vw: calc(var(--ds-text-size-n) * var(--ds-text-rvw));
+  --ds-text-size-px: calc(var(--ds-text-size-n) * var(--ds-text-rpx));
   font-size: var(--typo-body-size);
+  font-size: min(var(--ds-text-size-vw), var(--ds-text-size-px));
   font-weight: var(--typo-body-weight);
+  --ds-text-line-height-n: var(--typo-body-line-height-n);
+  --ds-text-line-height-vw: calc(var(--ds-text-line-height-n) * var(--ds-text-rvw));
+  --ds-text-line-height-px: calc(var(--ds-text-line-height-n) * var(--ds-text-rpx));
   line-height: var(--typo-body-line-height, normal);
+  line-height: min(var(--ds-text-line-height-vw), var(--ds-text-line-height-px));
   letter-spacing: var(--typo-body-letter-spacing, 0);
 }
 
 .ds-text--body-sm {
+  --ds-text-size-n: var(--typo-body-sm-size-n);
+  --ds-text-size-vw: calc(var(--ds-text-size-n) * var(--ds-text-rvw));
+  --ds-text-size-px: calc(var(--ds-text-size-n) * var(--ds-text-rpx));
   font-size: var(--typo-body-sm-size);
+  font-size: min(var(--ds-text-size-vw), var(--ds-text-size-px));
   font-weight: var(--typo-body-sm-weight);
+  --ds-text-line-height-n: var(--typo-body-sm-line-height-n);
+  --ds-text-line-height-vw: calc(var(--ds-text-line-height-n) * var(--ds-text-rvw));
+  --ds-text-line-height-px: calc(var(--ds-text-line-height-n) * var(--ds-text-rpx));
   line-height: var(--typo-body-sm-line-height, normal);
+  line-height: min(var(--ds-text-line-height-vw), var(--ds-text-line-height-px));
   letter-spacing: var(--typo-body-sm-letter-spacing, 0);
 }
 
 .ds-text--label {
+  --ds-text-size-n: var(--typo-label-size-n);
+  --ds-text-size-vw: calc(var(--ds-text-size-n) * var(--ds-text-rvw));
+  --ds-text-size-px: calc(var(--ds-text-size-n) * var(--ds-text-rpx));
   font-size: var(--typo-label-size);
+  font-size: min(var(--ds-text-size-vw), var(--ds-text-size-px));
   font-weight: var(--typo-label-weight);
   line-height: var(--typo-label-line-height, normal);
   letter-spacing: var(--typo-label-letter-spacing, 0);
 }
 
 .ds-text--eyebrow {
+  --ds-text-size-n: var(--typo-eyebrow-size-n);
+  --ds-text-size-vw: calc(var(--ds-text-size-n) * var(--ds-text-rvw));
+  --ds-text-size-px: calc(var(--ds-text-size-n) * var(--ds-text-rpx));
   font-size: var(--typo-eyebrow-size);
+  font-size: min(var(--ds-text-size-vw), var(--ds-text-size-px));
   font-weight: var(--typo-eyebrow-weight);
   line-height: var(--typo-eyebrow-line-height, normal);
   letter-spacing: var(--typo-eyebrow-letter-spacing, 0);
 }
 
 .ds-text--caption {
+  --ds-text-size-n: var(--typo-caption-size-n);
+  --ds-text-size-vw: calc(var(--ds-text-size-n) * var(--ds-text-rvw));
+  --ds-text-size-px: calc(var(--ds-text-size-n) * var(--ds-text-rpx));
   font-size: var(--typo-caption-size);
+  font-size: min(var(--ds-text-size-vw), var(--ds-text-size-px));
   font-weight: var(--typo-caption-weight);
   line-height: var(--typo-caption-line-height, normal);
   letter-spacing: var(--typo-caption-letter-spacing, 0);
 }
 
 .ds-text--quote {
+  --ds-text-size-n: var(--typo-quote-size-n);
+  --ds-text-size-vw: calc(var(--ds-text-size-n) * var(--ds-text-rvw));
+  --ds-text-size-px: calc(var(--ds-text-size-n) * var(--ds-text-rpx));
   font-size: var(--typo-quote-size);
+  font-size: min(var(--ds-text-size-vw), var(--ds-text-size-px));
   font-weight: var(--typo-quote-weight);
+  --ds-text-line-height-n: var(--typo-quote-line-height-n);
+  --ds-text-line-height-vw: calc(var(--ds-text-line-height-n) * var(--ds-text-rvw));
+  --ds-text-line-height-px: calc(var(--ds-text-line-height-n) * var(--ds-text-rpx));
   line-height: var(--typo-quote-line-height, normal);
+  line-height: min(var(--ds-text-line-height-vw), var(--ds-text-line-height-px));
   letter-spacing: var(--typo-quote-letter-spacing, 0);
 }
 
 .ds-text--menu-item {
+  --ds-text-size-n: var(--typo-menu-item-size-n);
+  --ds-text-size-vw: calc(var(--ds-text-size-n) * var(--ds-text-rvw));
+  --ds-text-size-px: calc(var(--ds-text-size-n) * var(--ds-text-rpx));
   font-size: var(--typo-menu-item-size);
+  font-size: min(var(--ds-text-size-vw), var(--ds-text-size-px));
   font-weight: var(--typo-menu-item-weight);
   line-height: var(--typo-menu-item-line-height, normal);
   letter-spacing: var(--typo-menu-item-letter-spacing, 0);
 }
 
 .ds-text--price {
+  --ds-text-size-n: var(--typo-price-size-n);
+  --ds-text-size-vw: calc(var(--ds-text-size-n) * var(--ds-text-rvw));
+  --ds-text-size-px: calc(var(--ds-text-size-n) * var(--ds-text-rpx));
   font-size: var(--typo-price-size);
+  font-size: min(var(--ds-text-size-vw), var(--ds-text-size-px));
   font-weight: var(--typo-price-weight);
   line-height: var(--typo-price-line-height, normal);
   letter-spacing: var(--typo-price-letter-spacing, 0);

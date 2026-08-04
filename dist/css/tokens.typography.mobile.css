@@ -42,4 +42,21 @@
   --typo-price-weight: var(--font-weight-300);
   --typo-price-size: var(--font-size-15);
   --typo-price-letter-spacing: var(--letter-spacing-0);
+  --typo-display-size-n: 41;
+  --typo-display-line-height-n: 45;
+  --typo-h1-size-n: 30;
+  --typo-h2-size-n: 25;
+  --typo-h3-size-n: 15;
+  --typo-lead-size-n: 16;
+  --typo-body-size-n: 15;
+  --typo-body-line-height-n: 22;
+  --typo-body-sm-size-n: 13;
+  --typo-body-sm-line-height-n: 20;
+  --typo-label-size-n: 14;
+  --typo-eyebrow-size-n: 12;
+  --typo-caption-size-n: 11;
+  --typo-quote-size-n: 14;
+  --typo-quote-line-height-n: 22;
+  --typo-menu-item-size-n: 33;
+  --typo-price-size-n: 15;
 }
