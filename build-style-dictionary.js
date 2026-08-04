@@ -10,6 +10,10 @@ const TOKEN_SOURCES = {
   colorBase: 'tokens/Color/Core/Value.json',
   colorLight: 'tokens/Color/Semantic/Light.json',
   colorDark: 'tokens/Color/Semantic/Dark.json',
+  spaceBase: 'tokens/Space/Core-www/Value.json',
+  spaceDesktop: 'tokens/Space/Semantic-www/Desktop 1728.json',
+  spaceTablet: 'tokens/Space/Semantic-www/Tablet 768.json',
+  spaceMobile: 'tokens/Space/Semantic-www/Mobile 402.json',
   typeBase: 'tokens/Type/Core-www/Value.json',
   typeDesktop: 'tokens/Type/Semantic-www/Desktop 1728.json',
   typeTablet: 'tokens/Type/Semantic-www/Tablet 768.json',
@@ -78,6 +82,10 @@ function isColorToken(token) {
   return token.type === 'color' || token.original?.type === 'color';
 }
 
+function isSpaceToken(token) {
+  return tokenPath(token)[0] === 'space';
+}
+
 function tokenPath(token) {
   return token.path.map(toKebab).filter(Boolean);
 }
@@ -115,6 +123,7 @@ function needsPixelUnit(token) {
     joined.startsWith('font-size') ||
     joined.startsWith('line-height') ||
     joined.startsWith('letter-spacing') ||
+    joined.startsWith('space') ||
     last === 'size' ||
     last === 'line-height' ||
     last === 'letter-spacing'
@@ -205,6 +214,23 @@ function buildTailwindCss({ dictionary, options }) {
   const lines = uniqueLines(dictionary.allProperties, (token) => {
     const name = cssVariableName(token);
     return `${name}: var(${name});`;
+  });
+  const seen = new Set(lines.map(declarationName).filter(Boolean));
+
+  dictionary.allProperties.forEach((token) => {
+    if (!isSpaceToken(token)) {
+      return;
+    }
+
+    const name = cssVariableName(token);
+    const spacingName = `--spacing-${name.slice(2)}`;
+
+    if (seen.has(spacingName)) {
+      return;
+    }
+
+    seen.add(spacingName);
+    lines.push(`${spacingName}: var(${name});`);
   });
 
   return outputBlock(lines, options.selector || '@theme');
@@ -474,6 +500,100 @@ function addTypographyDerivedVariables(fileName, sourcePath) {
   writeDistCss(fileName, outputBlock(lines, selector));
 }
 
+function isDtcgTokenNode(node) {
+  return (
+    node &&
+    typeof node === 'object' &&
+    (Object.prototype.hasOwnProperty.call(node, '$value') || Object.prototype.hasOwnProperty.call(node, 'value'))
+  );
+}
+
+function flattenDtcgTokenEntries(node, prefix = []) {
+  if (isDtcgTokenNode(node)) {
+    return [
+      {
+        path: prefix.map(toKebab).filter(Boolean),
+        value: tokenValue(node),
+      },
+    ];
+  }
+
+  if (!node || typeof node !== 'object') {
+    return [];
+  }
+
+  return Object.entries(node).flatMap(([key, value]) => {
+    if (key.startsWith('$')) {
+      return [];
+    }
+
+    return flattenDtcgTokenEntries(value, [...prefix, key]);
+  });
+}
+
+function spaceCoreDynamicLines() {
+  const spaceBase = readJson(TOKEN_SOURCES.spaceBase);
+  const lines = [
+    '--ds-space-rpx: var(--rpx, 1px);',
+    '--ds-space-rvw: var(--rvw, var(--ds-space-rpx));',
+  ];
+
+  flattenDtcgTokenEntries(spaceBase).forEach((token) => {
+    const numberValue = toCssNumber(resolveDtcgValue(token.value, spaceBase));
+
+    if (numberValue === null) {
+      return;
+    }
+
+    const name = `--${token.path.join('-')}`;
+
+    lines.push(`${name}-n: ${numberValue};`);
+    lines.push(`${name}: ${numberValue}px;`);
+    lines.push(`${name}: min(calc(var(${name}-n) * var(--ds-space-rvw)), calc(var(${name}-n) * var(--ds-space-rpx)));`);
+  });
+
+  return lines;
+}
+
+function writeSpaceCoreDynamicCss() {
+  writeDistCss('tokens.space.core.css', outputBlock(spaceCoreDynamicLines(), ':root'));
+}
+
+function writeSpaceTailwindCss() {
+  const core = readCssDeclarationLines('tokens.space.core.css');
+  const mobile = readCssDeclarationLines('tokens.space.mobile.css');
+  const tablet = readCssDeclarationLines('tokens.space.tablet.css');
+  const desktop = readCssDeclarationLines('tokens.space.desktop.css');
+
+  writeDistCss(
+    'space.tailwind.css',
+    [
+      `:root {
+${indentLines(core, 2)}
+${indentLines(mobile, 2)}
+
+  @variant tablet {
+${indentLines(tablet, 4)}
+  }
+
+  @variant desktop {
+${indentLines(desktop, 4)}
+  }
+}`,
+      outputBlock(mobile, ':root[data-space-scale="mobile"]'),
+      outputBlock(tablet, ':root[data-space-scale="tablet"]'),
+      outputBlock(desktop, ':root[data-space-scale="desktop"]'),
+    ].join('\n\n')
+  );
+}
+
+function writeSpaceBundleCss() {
+  const spaceCss = readDistCss('space.tailwind.css');
+
+  writeDistCss('space.css', spaceCss);
+  writeDistCss('space.tailwind.css', spaceCss);
+}
+
 function typographyVariants() {
   const tokenSets = [
     readJson(TOKEN_SOURCES.typeMobile).typo || {},
@@ -629,6 +749,69 @@ function run() {
 
     bundleSemanticColorCss();
 
+    build({
+      source: [normalized.spaceBase],
+      platforms: {
+        css: {
+          transformGroup: 'css',
+          buildPath: 'dist/css/',
+          files: [
+            cssFile('tokens.space.core.css', 'flience/css-core-variables', {
+              selector: ':root',
+            }),
+          ],
+        },
+        scss: {
+          transformGroup: 'scss',
+          buildPath: 'dist/scss/',
+          files: [
+            {
+              destination: '_variables_space_core.scss',
+              format: 'flience/scss-variables',
+              options: {
+                sourceFiles: [normalized.spaceBase],
+              },
+            },
+          ],
+        },
+      },
+    });
+
+    writeSpaceCoreDynamicCss();
+
+    build(
+      getSemanticConfig({
+        name: 'space_desktop',
+        include: [normalized.spaceBase],
+        source: [normalized.spaceDesktop],
+        selector: ':root, :root[data-space-scale="desktop"]',
+        cssDestination: 'tokens.space.desktop.css',
+      })
+    );
+
+    build(
+      getSemanticConfig({
+        name: 'space_tablet',
+        include: [normalized.spaceBase],
+        source: [normalized.spaceTablet],
+        selector: ':root[data-space-scale="tablet"]',
+        cssDestination: 'tokens.space.tablet.css',
+      })
+    );
+
+    build(
+      getSemanticConfig({
+        name: 'space_mobile',
+        include: [normalized.spaceBase],
+        source: [normalized.spaceMobile],
+        selector: ':root[data-space-scale="mobile"]',
+        cssDestination: 'tokens.space.mobile.css',
+      })
+    );
+
+    writeSpaceTailwindCss();
+    writeSpaceBundleCss();
+
     build(
       getSemanticConfig({
         name: 'typography_desktop',
@@ -668,8 +851,8 @@ function run() {
     writeTypographyBundleCss();
 
     build({
-      include: [normalized.colorBase, normalized.typeBase],
-      source: [normalized.colorLight, normalized.typeDesktop],
+      include: [normalized.colorBase, normalized.typeBase, normalized.spaceBase],
+      source: [normalized.colorLight, normalized.typeDesktop, normalized.spaceDesktop],
       platforms: {
         css: {
           transformGroup: 'css',

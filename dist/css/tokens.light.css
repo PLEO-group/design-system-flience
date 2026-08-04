@@ -31,6 +31,7 @@
   --color-bg-pill-ghost-hover: var(--color-neutral-szary-100);
   --color-bg-pill-ghost-active: var(--color-pill-white-active);
   --color-bg-pill-disabled: var(--color-neutral-szary-100);
+  --color-bg-pill-language: var(--color-pomarancz-400);
   --color-text-primary: var(--color-neutral-grafit);
   --color-text-secondary: var(--color-neutral-szary-600);
   --color-text-inverse: var(--color-neutral-bialy);
