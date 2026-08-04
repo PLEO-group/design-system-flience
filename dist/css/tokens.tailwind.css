@@ -84,6 +84,16 @@
   --line-height-75: var(--line-height-75);
   --line-height-97: var(--line-height-97);
   --letter-spacing-0: var(--letter-spacing-0);
+  --space-8: var(--space-8);
+  --space-12: var(--space-12);
+  --space-16: var(--space-16);
+  --space-24: var(--space-24);
+  --space-38: var(--space-38);
+  --space-48: var(--space-48);
+  --space-button-height: var(--space-button-height);
+  --space-button-pad-x: var(--space-button-pad-x);
+  --space-button-pad-x-icon: var(--space-button-pad-x-icon);
+  --space-button-gap: var(--space-button-gap);
   --color-bg-page: var(--color-bg-page);
   --color-bg-surface: var(--color-bg-surface);
   --color-bg-surface-mieta: var(--color-bg-surface-mieta);
@@ -116,6 +126,7 @@
   --color-bg-pill-ghost-hover: var(--color-bg-pill-ghost-hover);
   --color-bg-pill-ghost-active: var(--color-bg-pill-ghost-active);
   --color-bg-pill-disabled: var(--color-bg-pill-disabled);
+  --color-bg-pill-language: var(--color-bg-pill-language);
   --color-text-primary: var(--color-text-primary);
   --color-text-secondary: var(--color-text-secondary);
   --color-text-inverse: var(--color-text-inverse);
@@ -240,4 +251,14 @@
   --typo-accent-title-family: var(--typo-accent-title-family);
   --typo-accent-title-size: var(--typo-accent-title-size);
   --typo-accent-title-letter-spacing: var(--typo-accent-title-letter-spacing);
+  --spacing-space-8: var(--space-8);
+  --spacing-space-12: var(--space-12);
+  --spacing-space-16: var(--space-16);
+  --spacing-space-24: var(--space-24);
+  --spacing-space-38: var(--space-38);
+  --spacing-space-48: var(--space-48);
+  --spacing-space-button-height: var(--space-button-height);
+  --spacing-space-button-pad-x: var(--space-button-pad-x);
+  --spacing-space-button-pad-x-icon: var(--space-button-pad-x-icon);
+  --spacing-space-button-gap: var(--space-button-gap);
 }

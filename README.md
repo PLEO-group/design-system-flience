@@ -65,6 +65,7 @@ Then import the app setup before the design system typography CSS:
 @import "./tailwind-variants.css";
 @import "./responsive-values.css";
 @import "@pleodigital/design-system-flience/css/tokens.css";
+@import "@pleodigital/design-system-flience/css/space.css";
 @import "@pleodigital/design-system-flience/css/tokens.tailwind.css";
 @import "@pleodigital/design-system-flience/css/typography.css";
 ```
@@ -92,6 +93,38 @@ Tailwind utilities are generated from the token name after `--color-`. For examp
 - `--color-border-subtle` -> `bg-border-subtle`, `text-border-subtle`, `border-border-subtle`
 
 The design system does not generate custom `.bg-*`, `.text-*`, or `.border-*` classes by hand. It only exposes color tokens through Tailwind's theme API.
+
+## Space Tokens
+
+`space.css` exposes core spacing tokens as dynamic values based on the app-provided `--rvw` and `--rpx` variables. Semantic space tokens switch through the same app-defined `tablet` and `desktop` Tailwind variants as typography.
+
+Core example:
+
+```css
+--space-16: min(calc(16 * var(--rvw)), calc(16 * var(--rpx)));
+```
+
+Semantic example:
+
+```css
+--space-button-height: var(--space-38);
+
+@variant tablet {
+  --space-button-height: var(--space-48);
+}
+```
+
+`tokens.tailwind.css` registers spacing tokens as Tailwind spacing theme variables, so the consuming app chooses the CSS property through the utility prefix:
+
+```tsx
+<button className="h-space-button-height px-space-button-pad-x gap-space-button-gap" />
+```
+
+The design system does not decide that `space-button-height` must always be `height`. It is a value token, so the app can also use it with any spacing-compatible utility:
+
+```tsx
+<div className="w-space-button-height p-space-button-pad-x mt-space-16" />
+```
 
 The design system CSS does not define `tablet` or `desktop` conditions. It only uses those custom variant names to switch typography token values.
 Typography classes use dynamic font-size and line-height values through `--rvw` and `--rpx`, with static token values as a fallback.
@@ -168,6 +201,12 @@ export function Text<TElement extends ElementType = 'p'>({
 - `dist/css/tokens.light.css` - light semantic color tokens.
 - `dist/css/tokens.dark.css` - dark semantic color tokens for `[data-theme="dark"]`.
 - `dist/css/tokens.tailwind.css` - CSS `@theme` variables for Tailwind CSS.
+- `dist/css/tokens.space.core.css` - dynamic core space token variables.
+- `dist/css/tokens.space.mobile.css` - mobile semantic space token variables for `[data-space-scale="mobile"]`.
+- `dist/css/tokens.space.tablet.css` - tablet semantic space token variables for `[data-space-scale="tablet"]`.
+- `dist/css/tokens.space.desktop.css` - desktop semantic space token variables for `:root` and `[data-space-scale="desktop"]`.
+- `dist/css/space.css` - dynamic core space variables plus semantic space variables switched through app-defined Tailwind `tablet` and `desktop` custom variants.
+- `dist/css/space.tailwind.css` - same as `space.css`, kept as an explicit Tailwind-oriented import path.
 - `dist/css/tokens.typography.mobile.css` - mobile typography token variables for `[data-type-scale="mobile"]`, including derived numeric size/line-height/weight values and font-style helpers.
 - `dist/css/tokens.typography.tablet.css` - tablet typography token variables for `[data-type-scale="tablet"]`, including derived numeric size/line-height/weight values and font-style helpers.
 - `dist/css/tokens.typography.desktop.css` - desktop typography token variables for `:root` and `[data-type-scale="desktop"]`, including derived numeric size/line-height/weight values and font-style helpers.

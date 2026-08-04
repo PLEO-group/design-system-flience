@@ -1,0 +1,6 @@
+:root[data-space-scale="mobile"] {
+  --space-button-height: var(--space-38);
+  --space-button-pad-x: var(--space-16);
+  --space-button-pad-x-icon: var(--space-12);
+  --space-button-gap: var(--space-8);
+}

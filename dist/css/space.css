@@ -1,0 +1,61 @@
+:root {
+  --ds-space-rpx: var(--rpx, 1px);
+  --ds-space-rvw: var(--rvw, var(--ds-space-rpx));
+  --space-8-n: 8;
+  --space-8: 8px;
+  --space-8: min(calc(var(--space-8-n) * var(--ds-space-rvw)), calc(var(--space-8-n) * var(--ds-space-rpx)));
+  --space-12-n: 12;
+  --space-12: 12px;
+  --space-12: min(calc(var(--space-12-n) * var(--ds-space-rvw)), calc(var(--space-12-n) * var(--ds-space-rpx)));
+  --space-16-n: 16;
+  --space-16: 16px;
+  --space-16: min(calc(var(--space-16-n) * var(--ds-space-rvw)), calc(var(--space-16-n) * var(--ds-space-rpx)));
+  --space-24-n: 24;
+  --space-24: 24px;
+  --space-24: min(calc(var(--space-24-n) * var(--ds-space-rvw)), calc(var(--space-24-n) * var(--ds-space-rpx)));
+  --space-38-n: 38;
+  --space-38: 38px;
+  --space-38: min(calc(var(--space-38-n) * var(--ds-space-rvw)), calc(var(--space-38-n) * var(--ds-space-rpx)));
+  --space-48-n: 48;
+  --space-48: 48px;
+  --space-48: min(calc(var(--space-48-n) * var(--ds-space-rvw)), calc(var(--space-48-n) * var(--ds-space-rpx)));
+  --space-button-height: var(--space-38);
+  --space-button-pad-x: var(--space-16);
+  --space-button-pad-x-icon: var(--space-12);
+  --space-button-gap: var(--space-8);
+
+  @variant tablet {
+    --space-button-height: var(--space-48);
+    --space-button-pad-x: var(--space-24);
+    --space-button-pad-x-icon: var(--space-16);
+    --space-button-gap: var(--space-8);
+  }
+
+  @variant desktop {
+    --space-button-height: var(--space-48);
+    --space-button-pad-x: var(--space-24);
+    --space-button-pad-x-icon: var(--space-16);
+    --space-button-gap: var(--space-8);
+  }
+}
+
+:root[data-space-scale="mobile"] {
+  --space-button-height: var(--space-38);
+  --space-button-pad-x: var(--space-16);
+  --space-button-pad-x-icon: var(--space-12);
+  --space-button-gap: var(--space-8);
+}
+
+:root[data-space-scale="tablet"] {
+  --space-button-height: var(--space-48);
+  --space-button-pad-x: var(--space-24);
+  --space-button-pad-x-icon: var(--space-16);
+  --space-button-gap: var(--space-8);
+}
+
+:root[data-space-scale="desktop"] {
+  --space-button-height: var(--space-48);
+  --space-button-pad-x: var(--space-24);
+  --space-button-pad-x-icon: var(--space-16);
+  --space-button-gap: var(--space-8);
+}
