@@ -118,7 +118,7 @@
         "com.figma.hiddenFromPublishing": false
       },
       "$type": "color",
-      "$value": "{neutral.bialy}"
+      "$value": "{kosmos.700}"
     },
     "pill-mint": {
       "$extensions": {
@@ -178,7 +178,7 @@
         "com.figma.hiddenFromPublishing": false
       },
       "$type": "color",
-      "$value": "{pill-white.hover}"
+      "$value": "{kosmos.800}"
     },
     "pill-white-active": {
       "$extensions": {
@@ -188,7 +188,7 @@
         "com.figma.hiddenFromPublishing": false
       },
       "$type": "color",
-      "$value": "{pill-white.active}"
+      "$value": "{kosmos.900}"
     },
     "pill-mint-hover": {
       "$extensions": {
@@ -319,6 +319,16 @@
       },
       "$type": "color",
       "$value": "{neutral.szary-100}"
+    },
+    "pill-language": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{pomarancz.300}"
     }
   },
   "text": {

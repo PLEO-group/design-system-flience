@@ -319,6 +319,16 @@
       },
       "$type": "color",
       "$value": "{neutral.szary-100}"
+    },
+    "pill-language": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{pomarancz.400}"
     }
   },
   "text": {
