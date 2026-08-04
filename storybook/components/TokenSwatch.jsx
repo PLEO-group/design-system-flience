@@ -29,7 +29,16 @@ const valueStyle = {
   wordBreak: 'break-word',
 };
 
-export const TokenSwatch = ({ token, color }) => {
+const metaStyle = {
+  margin: '6px 0 0',
+  color: '#1d2b4a',
+  fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace',
+  fontSize: 12,
+  lineHeight: '16px',
+  wordBreak: 'break-word',
+};
+
+export const TokenSwatch = ({ token, color, meta }) => {
   return (
     <div style={cardStyle} title={`${token.name}: ${token.value}`}>
       <div
@@ -40,6 +49,7 @@ export const TokenSwatch = ({ token, color }) => {
       />
       <p style={labelStyle}>{token.name}</p>
       <p style={valueStyle}>{String(token.value)}</p>
+      {meta ? <p style={metaStyle}>{meta}</p> : null}
     </div>
   );
 };

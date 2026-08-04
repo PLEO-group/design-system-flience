@@ -6,6 +6,10 @@
   "exports": {
     ".": "./dist/css/tokens.css",
     "./css/tokens.css": "./dist/css/tokens.css",
+    "./css/tokens.tailwind.css": "./dist/css/tokens.tailwind.css",
+    "./css/tokens.semantic.css": "./dist/css/tokens.semantic.css",
+    "./css/tokens.light.css": "./dist/css/tokens.light.css",
+    "./css/tokens.dark.css": "./dist/css/tokens.dark.css",
     "./css/typography.css": "./dist/css/typography.css",
     "./css/typography.tailwind.css": "./dist/css/typography.tailwind.css",
     "./css/typography.utilities.css": "./dist/css/typography.utilities.css",
