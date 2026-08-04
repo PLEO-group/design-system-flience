@@ -65,8 +65,33 @@ Then import the app setup before the design system typography CSS:
 @import "./tailwind-variants.css";
 @import "./responsive-values.css";
 @import "@pleodigital/design-system-flience/css/tokens.css";
+@import "@pleodigital/design-system-flience/css/tokens.tailwind.css";
 @import "@pleodigital/design-system-flience/css/typography.css";
 ```
+
+## Color Tokens + Dark Mode
+
+`tokens.css` provides core color values plus light and dark semantic variables. Light values are applied on `:root` and `:root[data-theme="light"]`; dark values are applied on `:root[data-theme="dark"]`.
+
+`tokens.tailwind.css` registers those variables in Tailwind's `@theme`, so semantic tokens can be used as utility classes:
+
+```tsx
+<div className="bg-bg-surface text-text-primary border-border-subtle" />
+```
+
+The app controls the active mode by setting `data-theme` on the document root:
+
+```tsx
+document.documentElement.setAttribute('data-theme', 'dark');
+```
+
+Tailwind utilities are generated from the token name after `--color-`. For example:
+
+- `--color-bg-surface` -> `bg-bg-surface`, `text-bg-surface`, `border-bg-surface`
+- `--color-text-primary` -> `bg-text-primary`, `text-text-primary`, `border-text-primary`
+- `--color-border-subtle` -> `bg-border-subtle`, `text-border-subtle`, `border-border-subtle`
+
+The design system does not generate custom `.bg-*`, `.text-*`, or `.border-*` classes by hand. It only exposes color tokens through Tailwind's theme API.
 
 The design system CSS does not define `tablet` or `desktop` conditions. It only uses those custom variant names to switch typography token values.
 Typography classes use dynamic font-size and line-height values through `--rvw` and `--rpx`, with static token values as a fallback.

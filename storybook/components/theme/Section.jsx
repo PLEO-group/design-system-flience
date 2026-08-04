@@ -29,22 +29,62 @@ const previewStyle = {
   color: 'var(--color-text-primary)',
 };
 
+function tailwindClassName(token, mode) {
+  const path = token.path.join('-');
+
+  if (mode === 'text') {
+    return `text-${path}`;
+  }
+
+  if (mode === 'border') {
+    return `border-${path}`;
+  }
+
+  return `bg-${path}`;
+}
+
 const ThemePreview = ({ token, mode }) => {
   const color = `var(${token.name})`;
+  const className = tailwindClassName(token, mode);
 
   if (mode === 'text') {
     return (
       <div style={previewStyle}>
         <p style={{ margin: 0, color, fontSize: 20, lineHeight: '28px' }}>Flience design tokens preview</p>
+        <p
+          style={{
+            margin: '12px 0 0',
+            color: 'var(--color-text-secondary)',
+            fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace',
+            fontSize: 12,
+            lineHeight: '16px',
+          }}
+        >
+          {className}
+        </p>
       </div>
     );
   }
 
   if (mode === 'border') {
-    return <div style={{ ...previewStyle, border: `4px solid ${color}` }} />;
+    return (
+      <div style={{ ...previewStyle, border: `4px solid ${color}` }}>
+        <p
+          style={{
+            margin: 0,
+            color: 'var(--color-text-secondary)',
+            fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace',
+            fontSize: 12,
+            lineHeight: '16px',
+          }}
+        >
+          {className}
+        </p>
+      </div>
+    );
   }
 
-  return <TokenSwatch token={token} color={color} />;
+  return <TokenSwatch token={token} color={color} meta={className} />;
 };
 
 export const Section = ({ title, tokens, mode = 'background' }) => {
