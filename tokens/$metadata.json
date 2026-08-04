@@ -6,6 +6,10 @@
     "Type/Core-www/Value",
     "Type/Semantic-www/Desktop 1728",
     "Type/Semantic-www/Tablet 768",
-    "Type/Semantic-www/Mobile 402"
+    "Type/Semantic-www/Mobile 402",
+    "Space/Core-www/Value",
+    "Space/Semantic-www/Desktop 1728",
+    "Space/Semantic-www/Tablet 768",
+    "Space/Semantic-www/Mobile 402"
   ]
 }

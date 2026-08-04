@@ -1,0 +1,46 @@
+{
+  "space": {
+    "button": {
+      "height": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ],
+          "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "number",
+        "$value": "{space.38}"
+      },
+      "pad-x": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ],
+          "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "number",
+        "$value": "{space.16}"
+      },
+      "pad-x-icon": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ],
+          "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "number",
+        "$value": "{space.12}"
+      },
+      "gap": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ],
+          "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "number",
+        "$value": "{space.8}"
+      }
+    }
+  }
+}

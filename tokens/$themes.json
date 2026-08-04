@@ -326,5 +326,75 @@
     },
     "$figmaModeId": "18:3",
     "$figmaCollectionId": "VariableCollectionId:18:52"
+  },
+  {
+    "id": "space/core-www-value",
+    "name": "Value",
+    "group": "Space/Core-www",
+    "selectedTokenSets": {
+      "Space/Core-www/Value": "enabled"
+    },
+    "$figmaStyleReferences": {},
+    "$figmaVariableReferences": {
+      "space.8": "94e63609d8b349ee66c0fb79362ec0412927af9d",
+      "space.12": "07d55a984c974441cc5445aa5f56acca8e187469",
+      "space.16": "1ee4d266a8426fda1bd30bcf49c4646d12599d7e",
+      "space.24": "0dfcc1f11c7687ab8d00083895076830aa2b6e22",
+      "space.38": "d061defb2a10d4e4f1b49b9e7c18878815b7dd77",
+      "space.48": "113a35337db493ed8bf49f362b12e3d979d7d599"
+    },
+    "$figmaModeId": "106:0",
+    "$figmaCollectionId": "VariableCollectionId:106:18"
+  },
+  {
+    "id": "space/semantic-www-desktop 1728",
+    "name": "Desktop 1728",
+    "group": "Space/Semantic-www",
+    "selectedTokenSets": {
+      "Space/Semantic-www/Desktop 1728": "enabled"
+    },
+    "$figmaStyleReferences": {},
+    "$figmaVariableReferences": {
+      "space.button.height": "a414fc7dbc94cdb3e47aee35348817d03ace4709",
+      "space.button.pad-x": "1223b8b15b630715b521c496a3117edab1e4fa44",
+      "space.button.pad-x-icon": "167280f5da0c0d4eb2aabfd12de9db94a319926c",
+      "space.button.gap": "8ed43c4e78c7209220d56b4ec4e309f26e498ac8"
+    },
+    "$figmaModeId": "106:1",
+    "$figmaCollectionId": "VariableCollectionId:106:25"
+  },
+  {
+    "id": "space/semantic-www-tablet 768",
+    "name": "Tablet 768",
+    "group": "Space/Semantic-www",
+    "selectedTokenSets": {
+      "Space/Semantic-www/Tablet 768": "enabled"
+    },
+    "$figmaStyleReferences": {},
+    "$figmaVariableReferences": {
+      "space.button.height": "a414fc7dbc94cdb3e47aee35348817d03ace4709",
+      "space.button.pad-x": "1223b8b15b630715b521c496a3117edab1e4fa44",
+      "space.button.pad-x-icon": "167280f5da0c0d4eb2aabfd12de9db94a319926c",
+      "space.button.gap": "8ed43c4e78c7209220d56b4ec4e309f26e498ac8"
+    },
+    "$figmaModeId": "106:2",
+    "$figmaCollectionId": "VariableCollectionId:106:25"
+  },
+  {
+    "id": "space/semantic-www-mobile 402",
+    "name": "Mobile 402",
+    "group": "Space/Semantic-www",
+    "selectedTokenSets": {
+      "Space/Semantic-www/Mobile 402": "enabled"
+    },
+    "$figmaStyleReferences": {},
+    "$figmaVariableReferences": {
+      "space.button.height": "a414fc7dbc94cdb3e47aee35348817d03ace4709",
+      "space.button.pad-x": "1223b8b15b630715b521c496a3117edab1e4fa44",
+      "space.button.pad-x-icon": "167280f5da0c0d4eb2aabfd12de9db94a319926c",
+      "space.button.gap": "8ed43c4e78c7209220d56b4ec4e309f26e498ac8"
+    },
+    "$figmaModeId": "106:3",
+    "$figmaCollectionId": "VariableCollectionId:106:25"
   }
 ]
