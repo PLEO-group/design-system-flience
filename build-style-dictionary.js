@@ -140,7 +140,11 @@ function formatCssValue(token, options = {}) {
     return `${value}px`;
   }
 
-  if (tokenPath(token).join('-').startsWith('font-family') && typeof value === 'string' && value.includes(' ')) {
+  if (
+    (tokenPath(token).join('-').startsWith('font-family') || tokenPath(token).at(-1) === 'family') &&
+    typeof value === 'string' &&
+    value.includes(' ')
+  ) {
     return `"${value.replace(/"/g, '\\"')}"`;
   }
 
@@ -388,7 +392,44 @@ function toCssNumber(value) {
   return /^-?\d+(\.\d+)?$/.test(normalized) ? normalized : null;
 }
 
-function typographyNumericLines(sourcePath) {
+function tokenValue(token) {
+  if (!token || typeof token !== 'object') {
+    return undefined;
+  }
+
+  return Object.prototype.hasOwnProperty.call(token, '$value') ? token.$value : token.value;
+}
+
+function toCssFontWeight(value) {
+  if (typeof value === 'number') {
+    return String(value);
+  }
+
+  if (typeof value !== 'string') {
+    return null;
+  }
+
+  const match = value.match(/\b(100|200|300|400|500|600|700|800|900)\b/);
+  return match ? match[1] : null;
+}
+
+function toCssFontStyle(value) {
+  if (typeof value !== 'string') {
+    return null;
+  }
+
+  if (/\bitalic\b/i.test(value)) {
+    return 'italic';
+  }
+
+  if (/\boblique\b/i.test(value)) {
+    return 'oblique';
+  }
+
+  return null;
+}
+
+function typographyDerivedLines(sourcePath) {
   const typeBase = readJson(TOKEN_SOURCES.typeBase);
   const typography = readJson(sourcePath).typo || {};
   const numericProperties = ['size', 'line-height'];
@@ -402,21 +443,33 @@ function typographyNumericLines(sourcePath) {
         return;
       }
 
-      const rawValue = Object.prototype.hasOwnProperty.call(token, '$value') ? token.$value : token.value;
+      const rawValue = tokenValue(token);
       const numberValue = toCssNumber(resolveDtcgValue(rawValue, typeBase));
 
       if (numberValue) {
         lines.push(`--typo-${toKebab(variant)}-${property}-n: ${numberValue};`);
       }
     });
+
+    const weightValue = resolveDtcgValue(tokenValue(properties?.weight), typeBase);
+    const fontWeight = toCssFontWeight(weightValue);
+    const fontStyle = toCssFontStyle(weightValue);
+
+    if (fontWeight) {
+      lines.push(`--typo-${toKebab(variant)}-weight-n: ${fontWeight};`);
+    }
+
+    if (fontStyle) {
+      lines.push(`--typo-${toKebab(variant)}-font-style: ${fontStyle};`);
+    }
   });
 
   return lines;
 }
 
-function addTypographyNumericVariables(fileName, sourcePath) {
+function addTypographyDerivedVariables(fileName, sourcePath) {
   const selector = readCssSelector(fileName);
-  const lines = appendUniqueDeclarationLines(readCssDeclarationLines(fileName), typographyNumericLines(sourcePath));
+  const lines = appendUniqueDeclarationLines(readCssDeclarationLines(fileName), typographyDerivedLines(sourcePath));
 
   writeDistCss(fileName, outputBlock(lines, selector));
 }
@@ -477,7 +530,9 @@ function writeTypographyUtilitiesCss() {
   --ds-text-size-px: calc(var(--ds-text-size-n) * var(--ds-text-rpx));
   font-size: var(--typo-${name}-size);
   font-size: min(var(--ds-text-size-vw), var(--ds-text-size-px));
-  font-weight: var(--typo-${name}-weight);
+  font-family: var(--ds-text-font-family, var(--typo-${name}-family, var(--font-family-museo, "Museo Sans"))), Arial, sans-serif;
+  font-weight: var(--typo-${name}-weight-n, var(--typo-${name}-weight));
+  font-style: var(--typo-${name}-font-style, normal);
 ${lineHeightLines}
   letter-spacing: var(--typo-${name}-letter-spacing, 0);
 }`;
@@ -492,13 +547,13 @@ ${lineHeightLines}
   margin: 0;
   font-family: var(--ds-text-font-family, var(--font-family-museo, "Museo Sans")), Arial, sans-serif;
 }`,
+      ...variantBlocks,
       `.ds-text--family-museo {
   --ds-text-font-family: var(--font-family-museo, "Museo Sans");
 }`,
       `.ds-text--family-accent {
   --ds-text-font-family: var(--font-family-accent, "Love Ya Like A Sister");
 }`,
-      ...variantBlocks,
     ].join('\n\n')
   );
 }
@@ -604,9 +659,9 @@ function run() {
       })
     );
 
-    addTypographyNumericVariables('tokens.typography.mobile.css', TOKEN_SOURCES.typeMobile);
-    addTypographyNumericVariables('tokens.typography.tablet.css', TOKEN_SOURCES.typeTablet);
-    addTypographyNumericVariables('tokens.typography.desktop.css', TOKEN_SOURCES.typeDesktop);
+    addTypographyDerivedVariables('tokens.typography.mobile.css', TOKEN_SOURCES.typeMobile);
+    addTypographyDerivedVariables('tokens.typography.tablet.css', TOKEN_SOURCES.typeTablet);
+    addTypographyDerivedVariables('tokens.typography.desktop.css', TOKEN_SOURCES.typeDesktop);
 
     writeTypographyTailwindCss();
     writeTypographyUtilitiesCss();

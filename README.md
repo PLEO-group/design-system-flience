@@ -70,6 +70,8 @@ Then import the app setup before the design system typography CSS:
 
 The design system CSS does not define `tablet` or `desktop` conditions. It only uses those custom variant names to switch typography token values.
 Typography classes use dynamic font-size and line-height values through `--rvw` and `--rpx`, with static token values as a fallback.
+Each typography variant also carries its own font-family token, so the app-side component only needs to choose the semantic variant.
+Font-style values exported from Figma as combined font styles, such as `700 Italic`, are normalized in the generated utilities to `font-weight: 700` and `font-style: italic`.
 
 Then create the app-side text component by mapping the `variant` prop to package CSS classes:
 
@@ -89,24 +91,34 @@ type TextVariant =
   | 'caption'
   | 'quote'
   | 'menu-item'
-  | 'price';
+  | 'price'
+  | 'menu-item-alt'
+  | 'submenu-item'
+  | 'submenu-item-sm'
+  | 'body-lg'
+  | 'news-title'
+  | 'field-label'
+  | 'email-display'
+  | 'card-title'
+  | 'promo-title'
+  | 'spec-label'
+  | 'principle-desc'
+  | 'accent-title';
 
 type TextProps<TElement extends ElementType = 'p'> = {
   as?: TElement;
   variant?: TextVariant;
-  family?: 'museo' | 'accent';
   className?: string;
 } & Omit<ComponentPropsWithoutRef<TElement>, 'as' | 'className'>;
 
 export function Text<TElement extends ElementType = 'p'>({
   as,
   variant = 'body',
-  family = 'museo',
   className,
   ...props
 }: TextProps<TElement>) {
   const Component = as || 'p';
-  const classes = ['ds-text', `ds-text--${variant}`, `ds-text--family-${family}`, className]
+  const classes = ['ds-text', `ds-text--${variant}`, className]
     .filter(Boolean)
     .join(' ');
 
@@ -131,9 +143,9 @@ export function Text<TElement extends ElementType = 'p'>({
 - `dist/css/tokens.light.css` - light semantic color tokens.
 - `dist/css/tokens.dark.css` - dark semantic color tokens for `[data-theme="dark"]`.
 - `dist/css/tokens.tailwind.css` - CSS `@theme` variables for Tailwind CSS.
-- `dist/css/tokens.typography.mobile.css` - mobile typography token variables for `[data-type-scale="mobile"]`, including numeric `*-n` values for responsive calculations.
-- `dist/css/tokens.typography.tablet.css` - tablet typography token variables for `[data-type-scale="tablet"]`, including numeric `*-n` values for responsive calculations.
-- `dist/css/tokens.typography.desktop.css` - desktop typography token variables for `:root` and `[data-type-scale="desktop"]`, including numeric `*-n` values for responsive calculations.
+- `dist/css/tokens.typography.mobile.css` - mobile typography token variables for `[data-type-scale="mobile"]`, including derived numeric size/line-height/weight values and font-style helpers.
+- `dist/css/tokens.typography.tablet.css` - tablet typography token variables for `[data-type-scale="tablet"]`, including derived numeric size/line-height/weight values and font-style helpers.
+- `dist/css/tokens.typography.desktop.css` - desktop typography token variables for `:root` and `[data-type-scale="desktop"]`, including derived numeric size/line-height/weight values and font-style helpers.
 - `dist/css/typography.css` - typography variables switched through app-defined Tailwind `tablet` and `desktop` custom variants, plus `.ds-text` utilities.
 - `dist/css/typography.tailwind.css` - same as `typography.css`, kept as an explicit Tailwind-oriented import path.
 - `dist/css/typography.utilities.css` - `.ds-text` and `.ds-text--{variant}` classes for an app-side text component.
