@@ -389,6 +389,16 @@
       },
       "$type": "color",
       "$value": "{niebo.100}"
+    },
+    "tag-limonka": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{limonka.100}"
     }
   },
   "text": {
