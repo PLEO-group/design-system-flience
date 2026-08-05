@@ -1,4 +1,4 @@
-# WERSJA 1.0.0
+# WERSJA 1.0.1
 
 # Instrukcje CLAUDE.md dla design-system-flience
 <INSTRUCTIONS>
@@ -6,6 +6,7 @@
 Skill to lokalny zestaw instrukcji zapisany w pliku `SKILL.md`.
 
 ### Dostępne skille
+- design-system-project-bootstrap: Bootstrap nowego projektu design systemu opartego na Style Dictionary 3, tokenach DTCG z Figma/Tokens Studio, Storybook 8 React/Vite, SVGR, eksportach CSS/Tailwind/SCSS i publikacji jako paczka npm. Używaj ZAWSZE gdy zakładasz takie repo od zera, migrujesz je na ten stos albo konfigurujesz jego kluczowe części: token pipeline, struktura `tokens/`, Storybook, asset pipeline, package exports, CI/publish, GitHub Actions secrets, npm/Vercel access tokens albo spięcie repo z Tokens Studio. Nie używaj do drobnych zmian tokenów, pojedynczych stories ani projektów pozostających przy innym generatorze tokenów, dokumentacji albo sposobie dystrybucji. (file: skills/design-system-project-bootstrap/SKILL.md)
 - pleo-library-project-instruction-sync: Operacyjnie synchronizuje lokalne pliki `AGENTS.md`, `CLAUDE.md` i `GEMINI.md` z centralną biblioteką po `projectSlug`. Używaj przy jawnej prośbie o check, pull albo publish instrukcji projektowych oraz przed merytoryczną edycją tych plików, żeby najpierw sprawdzić aktualność lokalnej bazy. (file: skills/pleo-library-project-instruction-sync/SKILL.md)
 - pleo-library-project-skill-bootstrap: Operacyjnie bootstrapuje repo pod pracę ze skillami bibliotecznymi. Używaj wyłącznie przy onboardingu repo, naprawie struktury `skills`, `.agent-library.yaml` albo sekcji skilli w `AGENTS.md`/`CLAUDE.md`/`GEMINI.md`; nie używaj jako pre-response. (file: skills/pleo-library-project-skill-bootstrap/SKILL.md)
 - pleo-library-prompt-model-triage: Pierwszy router promptu po target-only version preflight. Szybko klasyfikuj bieżący prompt pod najlepszy poziom modelu, reasoning, koszt i dobór skilli wykonawczych. Nie raportuj tego skilla w telemetryce, bo jego nazwa zaczyna się od `pleo-library-`. (file: skills/pleo-library-prompt-model-triage/SKILL.md)
