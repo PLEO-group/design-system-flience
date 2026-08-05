@@ -1,4 +1,0 @@
-interface:
-  display_name: "Bootstrap Design Systemu"
-  short_description: "Inicjalizacja paczki design systemu"
-  default_prompt: "Użyj $design-system-project-bootstrap, żeby zainicjalizować nowe repo design systemu w stacku Style Dictionary, Storybook React/Vite, SVGR i npm package exports."
