@@ -1,7 +1,9 @@
-<svg width="6" height="8" viewBox="0 0 6 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g id="icon_ui_arrow">
+<g id="icon_ui_arrow_2">
 <g id="color_stroke">
-<path id="Vector" d="M3.00045 8L1.66433e-07 -1.66443e-07L3.00045 1.89829L6 3.58094e-07L3.00045 8Z" fill="#FFFF00"></path>
+<path id="Vector" d="M20.7781 2.66675L14.4385 21.3332L11.6646 13.1998L3.22191 11.6215L20.7781 2.66675Z" fill="#3C3C3B"></path>
+</g>
 </g>
 </g>
 </svg>

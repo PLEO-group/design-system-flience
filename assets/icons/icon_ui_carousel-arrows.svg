@@ -1,0 +1,12 @@
+<svg width="51" height="11" viewBox="0 0 51 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="icon_ui_carousel-arrows">
+<g id="icon_ui_carousel-arrows_2">
+<g id="color_stroke">
+<path id="Arrow_head_Lewa" d="M0 5.50064L11 1.02997L8.38985 5.50064L11 9.96997L0 5.50064Z" fill="#3C3C3B"></path>
+<path id="Arrow_tail_Lewa" d="M16.5652 5.5L9 5.5" stroke="#3C3C3B" stroke-width="1.8"></path>
+<path id="Arrow_head_Prawa" d="M51 5.49936L40 9.97003L42.6101 5.49936L40 1.03003L51 5.49936Z" fill="#3C3C3B"></path>
+<path id="Arrow_tail_Prawa" d="M34.4348 5.5L42 5.5" stroke="#3C3C3B" stroke-width="1.8"></path>
+</g>
+</g>
+</g>
+</svg>
