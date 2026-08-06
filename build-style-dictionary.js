@@ -20,6 +20,7 @@ const TOKEN_SOURCES = {
   typeMobile: 'tokens/Type/Semantic-www/Mobile 402.json',
 };
 
+
 function readJson(relativePath) {
   return JSON.parse(fs.readFileSync(path.join(ROOT, relativePath), 'utf8'));
 }
