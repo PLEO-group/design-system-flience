@@ -637,7 +637,7 @@
           "com.figma.hiddenFromPublishing": false
         },
         "$type": "text",
-        "$value": "{font-weight.500}"
+        "$value": "{font-weight.900}"
       },
       "family": {
         "$extensions": {
@@ -657,7 +657,7 @@
           "com.figma.hiddenFromPublishing": false
         },
         "$type": "number",
-        "$value": "{font-size.16}"
+        "$value": "{font-size.55}"
       },
       "letter-spacing": {
         "$extensions": {
