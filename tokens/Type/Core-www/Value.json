@@ -71,6 +71,26 @@
       },
       "$type": "text",
       "$value": "700 Italic"
+    },
+    "500-italic": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "text",
+      "$value": "500 Italic"
+    },
+    "300-italic": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "FONT_STYLE"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "text",
+      "$value": "300 Italic"
     }
   },
   "font-size": {

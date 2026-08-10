@@ -399,6 +399,36 @@
       },
       "$type": "color",
       "$value": "{limonka.100}"
+    },
+    "card-principle": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{mieta.220}"
+    },
+    "decor-roz": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{roz.100}"
+    },
+    "decor-szalwia": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{szalwia.300}"
     }
   },
   "text": {
@@ -511,6 +541,36 @@
       },
       "$type": "color",
       "$value": "{neutral.szary-400}"
+    },
+    "on-inverse-lime": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{limonka.300}"
+    },
+    "accent-orange": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{pomarancz.700}"
+    },
+    "on-inverse-blue": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{blekit.400}"
     }
   },
   "accent": {
