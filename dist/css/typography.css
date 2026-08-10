@@ -103,6 +103,35 @@
   --typo-accent-title-family: var(--font-family-museo);
   --typo-accent-title-size: var(--font-size-30);
   --typo-accent-title-letter-spacing: var(--letter-spacing-0);
+  --typo-step-number-weight: var(--font-weight-900);
+  --typo-step-number-family: var(--font-family-museo);
+  --typo-step-number-size: var(--font-size-14);
+  --typo-step-number-letter-spacing: var(--letter-spacing-0);
+  --typo-body-italic-weight: var(--font-weight-500-italic);
+  --typo-body-italic-family: var(--font-family-museo);
+  --typo-body-italic-size: var(--font-size-15);
+  --typo-body-italic-letter-spacing: var(--letter-spacing-0);
+  --typo-body-italic-line-height: var(--line-height-22);
+  --typo-display-italic-weight: var(--font-weight-500-italic);
+  --typo-display-italic-family: var(--font-family-museo);
+  --typo-display-italic-size: var(--font-size-30);
+  --typo-display-italic-letter-spacing: var(--letter-spacing-0);
+  --typo-label-sm-weight: var(--font-weight-900);
+  --typo-label-sm-family: var(--font-family-museo);
+  --typo-label-sm-size: var(--font-size-14);
+  --typo-label-sm-letter-spacing: var(--letter-spacing-0);
+  --typo-lead-italic-weight: var(--font-weight-300-italic);
+  --typo-lead-italic-family: var(--font-family-museo);
+  --typo-lead-italic-size: var(--font-size-16);
+  --typo-lead-italic-letter-spacing: var(--letter-spacing-0);
+  --typo-fine-print-weight: var(--font-weight-500);
+  --typo-fine-print-family: var(--font-family-museo);
+  --typo-fine-print-size: var(--font-size-11);
+  --typo-fine-print-letter-spacing: var(--letter-spacing-0);
+  --typo-fine-print-strong-weight: var(--font-weight-900);
+  --typo-fine-print-strong-family: var(--font-family-museo);
+  --typo-fine-print-strong-size: var(--font-size-11);
+  --typo-fine-print-strong-letter-spacing: var(--letter-spacing-0);
   --typo-display-size-n: 41;
   --typo-display-line-height-n: 45;
   --typo-display-weight-n: 900;
@@ -158,6 +187,24 @@
   --typo-accent-title-size-n: 30;
   --typo-accent-title-weight-n: 700;
   --typo-accent-title-font-style: italic;
+  --typo-step-number-size-n: 14;
+  --typo-step-number-weight-n: 900;
+  --typo-body-italic-size-n: 15;
+  --typo-body-italic-line-height-n: 22;
+  --typo-body-italic-weight-n: 500;
+  --typo-body-italic-font-style: italic;
+  --typo-display-italic-size-n: 30;
+  --typo-display-italic-weight-n: 500;
+  --typo-display-italic-font-style: italic;
+  --typo-label-sm-size-n: 14;
+  --typo-label-sm-weight-n: 900;
+  --typo-lead-italic-size-n: 16;
+  --typo-lead-italic-weight-n: 300;
+  --typo-lead-italic-font-style: italic;
+  --typo-fine-print-size-n: 11;
+  --typo-fine-print-weight-n: 500;
+  --typo-fine-print-strong-size-n: 11;
+  --typo-fine-print-strong-weight-n: 900;
 
   @variant tablet {
     --typo-display-weight: var(--font-weight-900);
@@ -264,6 +311,35 @@
     --typo-accent-title-family: var(--font-family-museo);
     --typo-accent-title-size: var(--font-size-40);
     --typo-accent-title-letter-spacing: var(--letter-spacing-0);
+    --typo-step-number-weight: var(--font-weight-900);
+    --typo-step-number-family: var(--font-family-museo);
+    --typo-step-number-size: var(--font-size-14);
+    --typo-step-number-letter-spacing: var(--letter-spacing-0);
+    --typo-body-italic-weight: var(--font-weight-500-italic);
+    --typo-body-italic-family: var(--font-family-museo);
+    --typo-body-italic-size: var(--font-size-15);
+    --typo-body-italic-letter-spacing: var(--letter-spacing-0);
+    --typo-body-italic-line-height: var(--line-height-22);
+    --typo-display-italic-weight: var(--font-weight-500-italic);
+    --typo-display-italic-family: var(--font-family-museo);
+    --typo-display-italic-size: var(--font-size-40);
+    --typo-display-italic-letter-spacing: var(--letter-spacing-0);
+    --typo-label-sm-weight: var(--font-weight-900);
+    --typo-label-sm-family: var(--font-family-museo);
+    --typo-label-sm-size: var(--font-size-14);
+    --typo-label-sm-letter-spacing: var(--letter-spacing-0);
+    --typo-lead-italic-weight: var(--font-weight-300-italic);
+    --typo-lead-italic-family: var(--font-family-museo);
+    --typo-lead-italic-size: var(--font-size-17);
+    --typo-lead-italic-letter-spacing: var(--letter-spacing-0);
+    --typo-fine-print-weight: var(--font-weight-500);
+    --typo-fine-print-family: var(--font-family-museo);
+    --typo-fine-print-size: var(--font-size-12);
+    --typo-fine-print-letter-spacing: var(--letter-spacing-0);
+    --typo-fine-print-strong-weight: var(--font-weight-900);
+    --typo-fine-print-strong-family: var(--font-family-museo);
+    --typo-fine-print-strong-size: var(--font-size-12);
+    --typo-fine-print-strong-letter-spacing: var(--letter-spacing-0);
     --typo-display-size-n: 65;
     --typo-display-line-height-n: 75;
     --typo-display-weight-n: 900;
@@ -319,6 +395,24 @@
     --typo-accent-title-size-n: 40;
     --typo-accent-title-weight-n: 700;
     --typo-accent-title-font-style: italic;
+    --typo-step-number-size-n: 14;
+    --typo-step-number-weight-n: 900;
+    --typo-body-italic-size-n: 15;
+    --typo-body-italic-line-height-n: 22;
+    --typo-body-italic-weight-n: 500;
+    --typo-body-italic-font-style: italic;
+    --typo-display-italic-size-n: 40;
+    --typo-display-italic-weight-n: 500;
+    --typo-display-italic-font-style: italic;
+    --typo-label-sm-size-n: 14;
+    --typo-label-sm-weight-n: 900;
+    --typo-lead-italic-size-n: 17;
+    --typo-lead-italic-weight-n: 300;
+    --typo-lead-italic-font-style: italic;
+    --typo-fine-print-size-n: 12;
+    --typo-fine-print-weight-n: 500;
+    --typo-fine-print-strong-size-n: 12;
+    --typo-fine-print-strong-weight-n: 900;
   }
 
   @variant desktop {
@@ -382,9 +476,9 @@
     --typo-menu-item-alt-family: var(--font-family-museo);
     --typo-menu-item-alt-size: var(--font-size-16);
     --typo-menu-item-alt-letter-spacing: var(--letter-spacing-0);
-    --typo-submenu-item-weight: var(--font-weight-500);
+    --typo-submenu-item-weight: var(--font-weight-900);
     --typo-submenu-item-family: var(--font-family-museo);
-    --typo-submenu-item-size: var(--font-size-16);
+    --typo-submenu-item-size: var(--font-size-55);
     --typo-submenu-item-letter-spacing: var(--letter-spacing-0);
     --typo-submenu-item-sm-weight: var(--font-weight-500);
     --typo-submenu-item-sm-family: var(--font-family-museo);
@@ -426,6 +520,35 @@
     --typo-accent-title-family: var(--font-family-museo);
     --typo-accent-title-size: var(--font-size-50);
     --typo-accent-title-letter-spacing: var(--letter-spacing-0);
+    --typo-step-number-weight: var(--font-weight-900);
+    --typo-step-number-family: var(--font-family-museo);
+    --typo-step-number-size: var(--font-size-14);
+    --typo-step-number-letter-spacing: var(--letter-spacing-0);
+    --typo-body-italic-weight: var(--font-weight-500-italic);
+    --typo-body-italic-family: var(--font-family-museo);
+    --typo-body-italic-size: var(--font-size-16);
+    --typo-body-italic-letter-spacing: var(--letter-spacing-0);
+    --typo-body-italic-line-height: var(--line-height-24);
+    --typo-display-italic-weight: var(--font-weight-500-italic);
+    --typo-display-italic-family: var(--font-family-museo);
+    --typo-display-italic-size: var(--font-size-50);
+    --typo-display-italic-letter-spacing: var(--letter-spacing-0);
+    --typo-label-sm-weight: var(--font-weight-900);
+    --typo-label-sm-family: var(--font-family-museo);
+    --typo-label-sm-size: var(--font-size-14);
+    --typo-label-sm-letter-spacing: var(--letter-spacing-0);
+    --typo-lead-italic-weight: var(--font-weight-300-italic);
+    --typo-lead-italic-family: var(--font-family-museo);
+    --typo-lead-italic-size: var(--font-size-19);
+    --typo-lead-italic-letter-spacing: var(--letter-spacing-0);
+    --typo-fine-print-weight: var(--font-weight-500);
+    --typo-fine-print-family: var(--font-family-museo);
+    --typo-fine-print-size: var(--font-size-12);
+    --typo-fine-print-letter-spacing: var(--letter-spacing-0);
+    --typo-fine-print-strong-weight: var(--font-weight-900);
+    --typo-fine-print-strong-family: var(--font-family-museo);
+    --typo-fine-print-strong-size: var(--font-size-12);
+    --typo-fine-print-strong-letter-spacing: var(--letter-spacing-0);
     --typo-display-size-n: 96;
     --typo-display-line-height-n: 97;
     --typo-display-weight-n: 900;
@@ -458,8 +581,8 @@
     --typo-price-weight-n: 300;
     --typo-menu-item-alt-size-n: 16;
     --typo-menu-item-alt-weight-n: 500;
-    --typo-submenu-item-size-n: 16;
-    --typo-submenu-item-weight-n: 500;
+    --typo-submenu-item-size-n: 55;
+    --typo-submenu-item-weight-n: 900;
     --typo-submenu-item-sm-size-n: 14;
     --typo-submenu-item-sm-weight-n: 500;
     --typo-body-lg-size-n: 19;
@@ -481,6 +604,24 @@
     --typo-accent-title-size-n: 50;
     --typo-accent-title-weight-n: 700;
     --typo-accent-title-font-style: italic;
+    --typo-step-number-size-n: 14;
+    --typo-step-number-weight-n: 900;
+    --typo-body-italic-size-n: 16;
+    --typo-body-italic-line-height-n: 24;
+    --typo-body-italic-weight-n: 500;
+    --typo-body-italic-font-style: italic;
+    --typo-display-italic-size-n: 50;
+    --typo-display-italic-weight-n: 500;
+    --typo-display-italic-font-style: italic;
+    --typo-label-sm-size-n: 14;
+    --typo-label-sm-weight-n: 900;
+    --typo-lead-italic-size-n: 19;
+    --typo-lead-italic-weight-n: 300;
+    --typo-lead-italic-font-style: italic;
+    --typo-fine-print-size-n: 12;
+    --typo-fine-print-weight-n: 500;
+    --typo-fine-print-strong-size-n: 12;
+    --typo-fine-print-strong-weight-n: 900;
   }
 }
 
@@ -589,6 +730,35 @@
   --typo-accent-title-family: var(--font-family-museo);
   --typo-accent-title-size: var(--font-size-30);
   --typo-accent-title-letter-spacing: var(--letter-spacing-0);
+  --typo-step-number-weight: var(--font-weight-900);
+  --typo-step-number-family: var(--font-family-museo);
+  --typo-step-number-size: var(--font-size-14);
+  --typo-step-number-letter-spacing: var(--letter-spacing-0);
+  --typo-body-italic-weight: var(--font-weight-500-italic);
+  --typo-body-italic-family: var(--font-family-museo);
+  --typo-body-italic-size: var(--font-size-15);
+  --typo-body-italic-letter-spacing: var(--letter-spacing-0);
+  --typo-body-italic-line-height: var(--line-height-22);
+  --typo-display-italic-weight: var(--font-weight-500-italic);
+  --typo-display-italic-family: var(--font-family-museo);
+  --typo-display-italic-size: var(--font-size-30);
+  --typo-display-italic-letter-spacing: var(--letter-spacing-0);
+  --typo-label-sm-weight: var(--font-weight-900);
+  --typo-label-sm-family: var(--font-family-museo);
+  --typo-label-sm-size: var(--font-size-14);
+  --typo-label-sm-letter-spacing: var(--letter-spacing-0);
+  --typo-lead-italic-weight: var(--font-weight-300-italic);
+  --typo-lead-italic-family: var(--font-family-museo);
+  --typo-lead-italic-size: var(--font-size-16);
+  --typo-lead-italic-letter-spacing: var(--letter-spacing-0);
+  --typo-fine-print-weight: var(--font-weight-500);
+  --typo-fine-print-family: var(--font-family-museo);
+  --typo-fine-print-size: var(--font-size-11);
+  --typo-fine-print-letter-spacing: var(--letter-spacing-0);
+  --typo-fine-print-strong-weight: var(--font-weight-900);
+  --typo-fine-print-strong-family: var(--font-family-museo);
+  --typo-fine-print-strong-size: var(--font-size-11);
+  --typo-fine-print-strong-letter-spacing: var(--letter-spacing-0);
   --typo-display-size-n: 41;
   --typo-display-line-height-n: 45;
   --typo-display-weight-n: 900;
@@ -644,6 +814,24 @@
   --typo-accent-title-size-n: 30;
   --typo-accent-title-weight-n: 700;
   --typo-accent-title-font-style: italic;
+  --typo-step-number-size-n: 14;
+  --typo-step-number-weight-n: 900;
+  --typo-body-italic-size-n: 15;
+  --typo-body-italic-line-height-n: 22;
+  --typo-body-italic-weight-n: 500;
+  --typo-body-italic-font-style: italic;
+  --typo-display-italic-size-n: 30;
+  --typo-display-italic-weight-n: 500;
+  --typo-display-italic-font-style: italic;
+  --typo-label-sm-size-n: 14;
+  --typo-label-sm-weight-n: 900;
+  --typo-lead-italic-size-n: 16;
+  --typo-lead-italic-weight-n: 300;
+  --typo-lead-italic-font-style: italic;
+  --typo-fine-print-size-n: 11;
+  --typo-fine-print-weight-n: 500;
+  --typo-fine-print-strong-size-n: 11;
+  --typo-fine-print-strong-weight-n: 900;
 }
 
 :root[data-type-scale="tablet"] {
@@ -751,6 +939,35 @@
   --typo-accent-title-family: var(--font-family-museo);
   --typo-accent-title-size: var(--font-size-40);
   --typo-accent-title-letter-spacing: var(--letter-spacing-0);
+  --typo-step-number-weight: var(--font-weight-900);
+  --typo-step-number-family: var(--font-family-museo);
+  --typo-step-number-size: var(--font-size-14);
+  --typo-step-number-letter-spacing: var(--letter-spacing-0);
+  --typo-body-italic-weight: var(--font-weight-500-italic);
+  --typo-body-italic-family: var(--font-family-museo);
+  --typo-body-italic-size: var(--font-size-15);
+  --typo-body-italic-letter-spacing: var(--letter-spacing-0);
+  --typo-body-italic-line-height: var(--line-height-22);
+  --typo-display-italic-weight: var(--font-weight-500-italic);
+  --typo-display-italic-family: var(--font-family-museo);
+  --typo-display-italic-size: var(--font-size-40);
+  --typo-display-italic-letter-spacing: var(--letter-spacing-0);
+  --typo-label-sm-weight: var(--font-weight-900);
+  --typo-label-sm-family: var(--font-family-museo);
+  --typo-label-sm-size: var(--font-size-14);
+  --typo-label-sm-letter-spacing: var(--letter-spacing-0);
+  --typo-lead-italic-weight: var(--font-weight-300-italic);
+  --typo-lead-italic-family: var(--font-family-museo);
+  --typo-lead-italic-size: var(--font-size-17);
+  --typo-lead-italic-letter-spacing: var(--letter-spacing-0);
+  --typo-fine-print-weight: var(--font-weight-500);
+  --typo-fine-print-family: var(--font-family-museo);
+  --typo-fine-print-size: var(--font-size-12);
+  --typo-fine-print-letter-spacing: var(--letter-spacing-0);
+  --typo-fine-print-strong-weight: var(--font-weight-900);
+  --typo-fine-print-strong-family: var(--font-family-museo);
+  --typo-fine-print-strong-size: var(--font-size-12);
+  --typo-fine-print-strong-letter-spacing: var(--letter-spacing-0);
   --typo-display-size-n: 65;
   --typo-display-line-height-n: 75;
   --typo-display-weight-n: 900;
@@ -806,6 +1023,24 @@
   --typo-accent-title-size-n: 40;
   --typo-accent-title-weight-n: 700;
   --typo-accent-title-font-style: italic;
+  --typo-step-number-size-n: 14;
+  --typo-step-number-weight-n: 900;
+  --typo-body-italic-size-n: 15;
+  --typo-body-italic-line-height-n: 22;
+  --typo-body-italic-weight-n: 500;
+  --typo-body-italic-font-style: italic;
+  --typo-display-italic-size-n: 40;
+  --typo-display-italic-weight-n: 500;
+  --typo-display-italic-font-style: italic;
+  --typo-label-sm-size-n: 14;
+  --typo-label-sm-weight-n: 900;
+  --typo-lead-italic-size-n: 17;
+  --typo-lead-italic-weight-n: 300;
+  --typo-lead-italic-font-style: italic;
+  --typo-fine-print-size-n: 12;
+  --typo-fine-print-weight-n: 500;
+  --typo-fine-print-strong-size-n: 12;
+  --typo-fine-print-strong-weight-n: 900;
 }
 
 :root[data-type-scale="desktop"] {
@@ -869,9 +1104,9 @@
   --typo-menu-item-alt-family: var(--font-family-museo);
   --typo-menu-item-alt-size: var(--font-size-16);
   --typo-menu-item-alt-letter-spacing: var(--letter-spacing-0);
-  --typo-submenu-item-weight: var(--font-weight-500);
+  --typo-submenu-item-weight: var(--font-weight-900);
   --typo-submenu-item-family: var(--font-family-museo);
-  --typo-submenu-item-size: var(--font-size-16);
+  --typo-submenu-item-size: var(--font-size-55);
   --typo-submenu-item-letter-spacing: var(--letter-spacing-0);
   --typo-submenu-item-sm-weight: var(--font-weight-500);
   --typo-submenu-item-sm-family: var(--font-family-museo);
@@ -913,6 +1148,35 @@
   --typo-accent-title-family: var(--font-family-museo);
   --typo-accent-title-size: var(--font-size-50);
   --typo-accent-title-letter-spacing: var(--letter-spacing-0);
+  --typo-step-number-weight: var(--font-weight-900);
+  --typo-step-number-family: var(--font-family-museo);
+  --typo-step-number-size: var(--font-size-14);
+  --typo-step-number-letter-spacing: var(--letter-spacing-0);
+  --typo-body-italic-weight: var(--font-weight-500-italic);
+  --typo-body-italic-family: var(--font-family-museo);
+  --typo-body-italic-size: var(--font-size-16);
+  --typo-body-italic-letter-spacing: var(--letter-spacing-0);
+  --typo-body-italic-line-height: var(--line-height-24);
+  --typo-display-italic-weight: var(--font-weight-500-italic);
+  --typo-display-italic-family: var(--font-family-museo);
+  --typo-display-italic-size: var(--font-size-50);
+  --typo-display-italic-letter-spacing: var(--letter-spacing-0);
+  --typo-label-sm-weight: var(--font-weight-900);
+  --typo-label-sm-family: var(--font-family-museo);
+  --typo-label-sm-size: var(--font-size-14);
+  --typo-label-sm-letter-spacing: var(--letter-spacing-0);
+  --typo-lead-italic-weight: var(--font-weight-300-italic);
+  --typo-lead-italic-family: var(--font-family-museo);
+  --typo-lead-italic-size: var(--font-size-19);
+  --typo-lead-italic-letter-spacing: var(--letter-spacing-0);
+  --typo-fine-print-weight: var(--font-weight-500);
+  --typo-fine-print-family: var(--font-family-museo);
+  --typo-fine-print-size: var(--font-size-12);
+  --typo-fine-print-letter-spacing: var(--letter-spacing-0);
+  --typo-fine-print-strong-weight: var(--font-weight-900);
+  --typo-fine-print-strong-family: var(--font-family-museo);
+  --typo-fine-print-strong-size: var(--font-size-12);
+  --typo-fine-print-strong-letter-spacing: var(--letter-spacing-0);
   --typo-display-size-n: 96;
   --typo-display-line-height-n: 97;
   --typo-display-weight-n: 900;
@@ -945,8 +1209,8 @@
   --typo-price-weight-n: 300;
   --typo-menu-item-alt-size-n: 16;
   --typo-menu-item-alt-weight-n: 500;
-  --typo-submenu-item-size-n: 16;
-  --typo-submenu-item-weight-n: 500;
+  --typo-submenu-item-size-n: 55;
+  --typo-submenu-item-weight-n: 900;
   --typo-submenu-item-sm-size-n: 14;
   --typo-submenu-item-sm-weight-n: 500;
   --typo-body-lg-size-n: 19;
@@ -968,6 +1232,24 @@
   --typo-accent-title-size-n: 50;
   --typo-accent-title-weight-n: 700;
   --typo-accent-title-font-style: italic;
+  --typo-step-number-size-n: 14;
+  --typo-step-number-weight-n: 900;
+  --typo-body-italic-size-n: 16;
+  --typo-body-italic-line-height-n: 24;
+  --typo-body-italic-weight-n: 500;
+  --typo-body-italic-font-style: italic;
+  --typo-display-italic-size-n: 50;
+  --typo-display-italic-weight-n: 500;
+  --typo-display-italic-font-style: italic;
+  --typo-label-sm-size-n: 14;
+  --typo-label-sm-weight-n: 900;
+  --typo-lead-italic-size-n: 19;
+  --typo-lead-italic-weight-n: 300;
+  --typo-lead-italic-font-style: italic;
+  --typo-fine-print-size-n: 12;
+  --typo-fine-print-weight-n: 500;
+  --typo-fine-print-strong-size-n: 12;
+  --typo-fine-print-strong-weight-n: 900;
 }
 
 .ds-text {
@@ -1316,6 +1598,101 @@
   font-style: var(--typo-accent-title-font-style, normal);
   line-height: var(--typo-accent-title-line-height, normal);
   letter-spacing: var(--typo-accent-title-letter-spacing, 0);
+}
+
+.ds-text--step-number {
+  --ds-text-size-n: var(--typo-step-number-size-n);
+  --ds-text-size-vw: calc(var(--ds-text-size-n) * var(--ds-text-rvw));
+  --ds-text-size-px: calc(var(--ds-text-size-n) * var(--ds-text-rpx));
+  font-size: var(--typo-step-number-size);
+  font-size: min(var(--ds-text-size-vw), var(--ds-text-size-px));
+  font-family: var(--ds-text-font-family, var(--typo-step-number-family, var(--font-family-museo, "Museo Sans"))), Arial, sans-serif;
+  font-weight: var(--typo-step-number-weight-n, var(--typo-step-number-weight));
+  font-style: var(--typo-step-number-font-style, normal);
+  line-height: var(--typo-step-number-line-height, normal);
+  letter-spacing: var(--typo-step-number-letter-spacing, 0);
+}
+
+.ds-text--body-italic {
+  --ds-text-size-n: var(--typo-body-italic-size-n);
+  --ds-text-size-vw: calc(var(--ds-text-size-n) * var(--ds-text-rvw));
+  --ds-text-size-px: calc(var(--ds-text-size-n) * var(--ds-text-rpx));
+  font-size: var(--typo-body-italic-size);
+  font-size: min(var(--ds-text-size-vw), var(--ds-text-size-px));
+  font-family: var(--ds-text-font-family, var(--typo-body-italic-family, var(--font-family-museo, "Museo Sans"))), Arial, sans-serif;
+  font-weight: var(--typo-body-italic-weight-n, var(--typo-body-italic-weight));
+  font-style: var(--typo-body-italic-font-style, normal);
+  --ds-text-line-height-n: var(--typo-body-italic-line-height-n);
+  --ds-text-line-height-vw: calc(var(--ds-text-line-height-n) * var(--ds-text-rvw));
+  --ds-text-line-height-px: calc(var(--ds-text-line-height-n) * var(--ds-text-rpx));
+  line-height: var(--typo-body-italic-line-height, normal);
+  line-height: min(var(--ds-text-line-height-vw), var(--ds-text-line-height-px));
+  letter-spacing: var(--typo-body-italic-letter-spacing, 0);
+}
+
+.ds-text--display-italic {
+  --ds-text-size-n: var(--typo-display-italic-size-n);
+  --ds-text-size-vw: calc(var(--ds-text-size-n) * var(--ds-text-rvw));
+  --ds-text-size-px: calc(var(--ds-text-size-n) * var(--ds-text-rpx));
+  font-size: var(--typo-display-italic-size);
+  font-size: min(var(--ds-text-size-vw), var(--ds-text-size-px));
+  font-family: var(--ds-text-font-family, var(--typo-display-italic-family, var(--font-family-museo, "Museo Sans"))), Arial, sans-serif;
+  font-weight: var(--typo-display-italic-weight-n, var(--typo-display-italic-weight));
+  font-style: var(--typo-display-italic-font-style, normal);
+  line-height: var(--typo-display-italic-line-height, normal);
+  letter-spacing: var(--typo-display-italic-letter-spacing, 0);
+}
+
+.ds-text--label-sm {
+  --ds-text-size-n: var(--typo-label-sm-size-n);
+  --ds-text-size-vw: calc(var(--ds-text-size-n) * var(--ds-text-rvw));
+  --ds-text-size-px: calc(var(--ds-text-size-n) * var(--ds-text-rpx));
+  font-size: var(--typo-label-sm-size);
+  font-size: min(var(--ds-text-size-vw), var(--ds-text-size-px));
+  font-family: var(--ds-text-font-family, var(--typo-label-sm-family, var(--font-family-museo, "Museo Sans"))), Arial, sans-serif;
+  font-weight: var(--typo-label-sm-weight-n, var(--typo-label-sm-weight));
+  font-style: var(--typo-label-sm-font-style, normal);
+  line-height: var(--typo-label-sm-line-height, normal);
+  letter-spacing: var(--typo-label-sm-letter-spacing, 0);
+}
+
+.ds-text--lead-italic {
+  --ds-text-size-n: var(--typo-lead-italic-size-n);
+  --ds-text-size-vw: calc(var(--ds-text-size-n) * var(--ds-text-rvw));
+  --ds-text-size-px: calc(var(--ds-text-size-n) * var(--ds-text-rpx));
+  font-size: var(--typo-lead-italic-size);
+  font-size: min(var(--ds-text-size-vw), var(--ds-text-size-px));
+  font-family: var(--ds-text-font-family, var(--typo-lead-italic-family, var(--font-family-museo, "Museo Sans"))), Arial, sans-serif;
+  font-weight: var(--typo-lead-italic-weight-n, var(--typo-lead-italic-weight));
+  font-style: var(--typo-lead-italic-font-style, normal);
+  line-height: var(--typo-lead-italic-line-height, normal);
+  letter-spacing: var(--typo-lead-italic-letter-spacing, 0);
+}
+
+.ds-text--fine-print {
+  --ds-text-size-n: var(--typo-fine-print-size-n);
+  --ds-text-size-vw: calc(var(--ds-text-size-n) * var(--ds-text-rvw));
+  --ds-text-size-px: calc(var(--ds-text-size-n) * var(--ds-text-rpx));
+  font-size: var(--typo-fine-print-size);
+  font-size: min(var(--ds-text-size-vw), var(--ds-text-size-px));
+  font-family: var(--ds-text-font-family, var(--typo-fine-print-family, var(--font-family-museo, "Museo Sans"))), Arial, sans-serif;
+  font-weight: var(--typo-fine-print-weight-n, var(--typo-fine-print-weight));
+  font-style: var(--typo-fine-print-font-style, normal);
+  line-height: var(--typo-fine-print-line-height, normal);
+  letter-spacing: var(--typo-fine-print-letter-spacing, 0);
+}
+
+.ds-text--fine-print-strong {
+  --ds-text-size-n: var(--typo-fine-print-strong-size-n);
+  --ds-text-size-vw: calc(var(--ds-text-size-n) * var(--ds-text-rvw));
+  --ds-text-size-px: calc(var(--ds-text-size-n) * var(--ds-text-rpx));
+  font-size: var(--typo-fine-print-strong-size);
+  font-size: min(var(--ds-text-size-vw), var(--ds-text-size-px));
+  font-family: var(--ds-text-font-family, var(--typo-fine-print-strong-family, var(--font-family-museo, "Museo Sans"))), Arial, sans-serif;
+  font-weight: var(--typo-fine-print-strong-weight-n, var(--typo-fine-print-strong-weight));
+  font-style: var(--typo-fine-print-strong-font-style, normal);
+  line-height: var(--typo-fine-print-strong-line-height, normal);
+  letter-spacing: var(--typo-fine-print-strong-letter-spacing, 0);
 }
 
 .ds-text--family-museo {
