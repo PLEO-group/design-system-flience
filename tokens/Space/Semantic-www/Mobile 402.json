@@ -41,6 +41,19 @@
         "$type": "number",
         "$value": "{space.8}"
       }
+    },
+    "eyebrow": {
+      "gap": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "GAP"
+          ],
+          "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "number",
+        "$value": "{space.9}",
+        "$description": "Odstęp między kółkiem z gwiazdką a etykietą w komponencie Eyebrow (strona www)."
+      }
     }
   }
 }
