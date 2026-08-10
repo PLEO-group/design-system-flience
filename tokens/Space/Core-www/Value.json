@@ -10,6 +10,17 @@
       "$type": "number",
       "$value": 8
     },
+    "9": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "WIDTH_HEIGHT",
+          "GAP"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "number",
+      "$value": 9
+    },
     "12": {
       "$extensions": {
         "com.figma.scopes": [
@@ -19,6 +30,17 @@
       },
       "$type": "number",
       "$value": 12
+    },
+    "13": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "WIDTH_HEIGHT",
+          "GAP"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "number",
+      "$value": 13
     },
     "16": {
       "$extensions": {
