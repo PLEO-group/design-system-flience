@@ -1,1 +1,12 @@
+export { default as BrandingLogoFlience } from "./BrandingLogoFlience";
+export { default as IconUiActiveSpark } from "./IconUiActiveSpark";
 export { default as IconUiArrow } from "./IconUiArrow";
+export { default as IconUiArrowDown } from "./IconUiArrowDown";
+export { default as IconUiCarouselArrowsRight } from "./IconUiCarouselArrowsRight";
+export { default as IconUiCarouselArrows } from "./IconUiCarouselArrows";
+export { default as IconUiClose } from "./IconUiClose";
+export { default as IconUiFacebook } from "./IconUiFacebook";
+export { default as IconUiInstagram } from "./IconUiInstagram";
+export { default as IconUiMenu } from "./IconUiMenu";
+export { default as IconUiRefresh } from "./IconUiRefresh";
+export { default as IconUiSparkleBadge } from "./IconUiSparkleBadge";
