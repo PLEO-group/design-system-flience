@@ -429,6 +429,54 @@
       },
       "$type": "color",
       "$value": "{szalwia.300}"
+    },
+    "dot-active-on-dark": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "FRAME_FILL",
+          "SHAPE_FILL"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{neutral.bialy}",
+      "$description": "Kropka paginacji, stan aktywny, na ciemnym tle i nad zdjęciami."
+    },
+    "dot-inactive-on-dark": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "FRAME_FILL",
+          "SHAPE_FILL"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{neutral.szary-400}",
+      "$description": "Kropka paginacji, stan nieaktywny, na ciemnym tle. Kolor pełny, bez krycia."
+    },
+    "dot-active-on-light": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "FRAME_FILL",
+          "SHAPE_FILL"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{neutral.bialy}",
+      "$description": "Kropka paginacji, stan aktywny, na jasnych panelach. Biel, tak jak na ciemnym tle; stan odczytywany z rozmiaru."
+    },
+    "dot-inactive-on-light": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "FRAME_FILL",
+          "SHAPE_FILL"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{mieta.100}",
+      "$description": "Kropka paginacji, stan nieaktywny, na jasnych panelach. Kolor jaśniejszy od panelu, odpowiednik dawnej bieli z kryciem 30%. Bez krycia."
     }
   },
   "text": {
