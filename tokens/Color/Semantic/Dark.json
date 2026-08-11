@@ -716,5 +716,40 @@
       "$type": "color",
       "$value": "{kosmos.gwiazda}"
     }
+  },
+  "decor": {
+    "path-flown": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{neutral.bialy}",
+      "$description": "ślad przelotu, punkty trasy, kółko — biel w obu motywach (DEC-44, rola statyczna)"
+    },
+    "path-planned": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{mieta.400}",
+      "$description": "linia planowana (kreska przerywana) — mieta/400 w obu motywach (DEC-44, rola statyczna)"
+    },
+    "path-marker": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{neutral.szary-600}",
+      "$description": "znacznik pozycji Kiwiego — neutral/szary-600 w obu motywach (DEC-44, rola statyczna)"
+    }
   }
 }
