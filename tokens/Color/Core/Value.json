@@ -144,6 +144,16 @@
       "$type": "color",
       "$value": "#d0defb"
     },
+    "150": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "#d1deef"
+    },
     "200": {
       "$extensions": {
         "com.figma.scopes": [
@@ -153,6 +163,26 @@
       },
       "$type": "color",
       "$value": "#becfe6"
+    },
+    "250": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "#adc1dd"
+    },
+    "300": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "#a1b7d6"
     },
     "500": {
       "$extensions": {
