@@ -488,6 +488,26 @@
       "$type": "color",
       "$value": "{niebo.250}",
       "$description": "tło karty wyciszonej karuzeli na powierzchni bg/nav (DEC-45, rola statyczna)"
+    },
+    "dot-active-on-mieta": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{mieta.400}"
+    },
+    "dot-inactive-on-mieta": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{mieta.220}"
     }
   },
   "text": {
