@@ -661,6 +661,46 @@
       "$type": "color",
       "$value": "{niebo.150}",
       "$description": "tekst na karcie wyciszonej karuzeli (DEC-45, rola statyczna)"
+    },
+    "placeholder": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{mieta.400}"
+    },
+    "field-hint": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{niebo.300}"
+    },
+    "field-counter": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{neutral.szary-100}"
+    },
+    "on-chalk": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{neutral.bialy}"
     }
   },
   "accent": {
@@ -745,6 +785,26 @@
       },
       "$type": "color",
       "$value": "{blekit.400}"
+    },
+    "input": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{niebo.150}"
+    },
+    "on-mieta": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{neutral.bialy}"
     }
   },
   "icon": {
