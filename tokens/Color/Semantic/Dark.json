@@ -477,6 +477,37 @@
       "$type": "color",
       "$value": "{mieta.100}",
       "$description": "Kropka paginacji, stan nieaktywny, na jasnych panelach. Kolor jaśniejszy od panelu, odpowiednik dawnej bieli z kryciem 30%. Bez krycia."
+    },
+    "card-inactive-on-blue": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{niebo.250}",
+      "$description": "tło karty wyciszonej karuzeli na powierzchni bg/nav (DEC-45, rola statyczna)"
+    },
+    "dot-active-on-mieta": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{mieta.400}"
+    },
+    "dot-inactive-on-mieta": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{mieta.220}"
     }
   },
   "text": {
@@ -619,6 +650,17 @@
       },
       "$type": "color",
       "$value": "{blekit.400}"
+    },
+    "on-card-inactive": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{niebo.150}",
+      "$description": "tekst na karcie wyciszonej karuzeli (DEC-45, rola statyczna)"
     }
   },
   "accent": {
@@ -715,6 +757,52 @@
       },
       "$type": "color",
       "$value": "{kosmos.gwiazda}"
+    }
+  },
+  "decor": {
+    "path-flown": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{neutral.bialy}",
+      "$description": "ślad przelotu, punkty trasy, kółko — biel w obu motywach (DEC-44, rola statyczna)"
+    },
+    "path-planned": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{mieta.400}",
+      "$description": "linia planowana (kreska przerywana) — mieta/400 w obu motywach (DEC-44, rola statyczna)"
+    },
+    "path-marker": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{neutral.szary-600}",
+      "$description": "znacznik pozycji Kiwiego — neutral/szary-600 w obu motywach (DEC-44, rola statyczna)"
+    },
+    "path-planned-on-blue": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{niebo.300}",
+      "$description": "linia planowana ścieżki lotu na powierzchni bg/nav (DEC-45, rola statyczna)"
     }
   }
 }
