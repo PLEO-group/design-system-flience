@@ -91,6 +91,16 @@
       },
       "$type": "text",
       "$value": "300 Italic"
+    },
+    "regular": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "FONT_STYLE"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "text",
+      "$value": "Regular"
     }
   },
   "font-size": {
