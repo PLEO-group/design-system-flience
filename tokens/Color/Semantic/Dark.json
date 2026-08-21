@@ -701,6 +701,17 @@
       },
       "$type": "color",
       "$value": "{neutral.bialy}"
+    },
+    "on-inverse-zolty": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{zolty.500}",
+      "$description": "Tekst akcentowy w zoltej barwie na powierzchni odwroconej (bg/inverse). Statyczna w obu modach, alias do zolty/500."
     }
   },
   "accent": {
