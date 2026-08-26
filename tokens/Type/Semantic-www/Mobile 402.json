@@ -1549,6 +1549,174 @@
         "$type": "number",
         "$value": "{line-height.97}"
       }
+    },
+    "toc-item": {
+      "weight": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "FONT_STYLE"
+          ],
+          "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "text",
+        "$value": "{font-weight.700}"
+      },
+      "family": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "FONT_FAMILY"
+          ],
+          "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "text",
+        "$value": "{font-family.museo}"
+      },
+      "size": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "FONT_SIZE"
+          ],
+          "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "number",
+        "$value": "{font-size.14}"
+      },
+      "letter-spacing": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "LETTER_SPACING"
+          ],
+          "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "number",
+        "$value": "{letter-spacing.0}"
+      }
+    },
+    "toc-item-active": {
+      "weight": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "FONT_STYLE"
+          ],
+          "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "text",
+        "$value": "{font-weight.900}"
+      },
+      "family": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "FONT_FAMILY"
+          ],
+          "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "text",
+        "$value": "{font-family.museo}"
+      },
+      "size": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "FONT_SIZE"
+          ],
+          "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "number",
+        "$value": "{font-size.14}"
+      },
+      "letter-spacing": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "LETTER_SPACING"
+          ],
+          "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "number",
+        "$value": "{letter-spacing.0}"
+      }
+    },
+    "badge-counter": {
+      "weight": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "FONT_STYLE"
+          ],
+          "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "text",
+        "$value": "{font-weight.500}"
+      },
+      "family": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "FONT_FAMILY"
+          ],
+          "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "text",
+        "$value": "{font-family.museo}"
+      },
+      "size": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "FONT_SIZE"
+          ],
+          "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "number",
+        "$value": "{font-size.14}"
+      },
+      "letter-spacing": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "LETTER_SPACING"
+          ],
+          "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "number",
+        "$value": "{letter-spacing.0}"
+      }
+    },
+    "consent-body": {
+      "weight": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "FONT_STYLE"
+          ],
+          "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "text",
+        "$value": "{font-weight.500}"
+      },
+      "family": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "FONT_FAMILY"
+          ],
+          "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "text",
+        "$value": "{font-family.museo}"
+      },
+      "size": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "FONT_SIZE"
+          ],
+          "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "number",
+        "$value": "{font-size.14}"
+      },
+      "letter-spacing": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "LETTER_SPACING"
+          ],
+          "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "number",
+        "$value": "{letter-spacing.0}"
+      }
     }
   }
 }

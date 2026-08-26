@@ -131,6 +131,16 @@
       },
       "$type": "color",
       "$value": "#76b0b6"
+    },
+    "800": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "#3b767d"
     }
   },
   "niebo": {
