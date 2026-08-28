@@ -975,6 +975,17 @@
       "$type": "color",
       "$value": "{niebo.300}",
       "$description": "linia planowana ścieżki lotu na powierzchni bg/nav (DEC-45, rola statyczna)"
+    },
+    "watermark-on-inverse": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{neutral.bialy-a20}",
+      "$description": "Znak wodny i wyciszona dekoracja na ciemnym tle. Statyczna: ta sama wartosc w Light i Dark, bo alfa sama dostosowuje sie do podloza. Krycia na wezle nie dokladac."
     }
   }
 }
