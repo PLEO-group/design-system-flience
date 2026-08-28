@@ -59,6 +59,17 @@
       },
       "$type": "color",
       "$value": "#000000"
+    },
+    "bialy-a20": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "#ffffff33",
+      "$description": "Biel z alfa 0,2. Prymityw dla znakow wodnych i wyciszonych dekoracji. Alfa siedzi w tokenie, nie na wezle."
     }
   },
   "mieta": {
