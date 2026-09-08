@@ -508,6 +508,87 @@
       },
       "$type": "color",
       "$value": "{mieta.220}"
+    },
+    "inverse-elevated": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{neutral.szary-600}"
+    },
+    "inverse-sheet": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{neutral.szary-400}"
+    },
+    "sheet-handle": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "#d9d9d9"
+    },
+    "dot-inactive-on-grafit": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{mieta.220}"
+    },
+    "dot-active-on-grafit": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{neutral.bialy}"
+    },
+    "dot-inactive-on-light-strong": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{mieta.600}"
+    },
+    "dot-active-on-light-strong": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{mieta.800}"
+    },
+    "surface-kosmos": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{kosmos.900}",
+      "$description": "Ciemna powierzchnia kosmiczna dla banerow i sekcji produktow astronomicznych. Light kosmos/900, Dark kosmos/700 (unosi sie nad tlem strony, ktore w Dark jest kosmos/900). DEC do potwierdzenia numeru."
     }
   },
   "text": {
@@ -712,6 +793,16 @@
       "$type": "color",
       "$value": "{zolty.500}",
       "$description": "Tekst akcentowy w zoltej barwie na powierzchni odwroconej (bg/inverse). Statyczna w obu modach, alias do zolty/500."
+    },
+    "on-light-mieta": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{mieta.800}"
     }
   },
   "accent": {
@@ -816,6 +907,16 @@
       },
       "$type": "color",
       "$value": "{neutral.bialy}"
+    },
+    "on-inverse": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{neutral.szary-100}"
     }
   },
   "icon": {
@@ -874,6 +975,17 @@
       "$type": "color",
       "$value": "{niebo.300}",
       "$description": "linia planowana ścieżki lotu na powierzchni bg/nav (DEC-45, rola statyczna)"
+    },
+    "watermark-on-inverse": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{neutral.bialy-a20}",
+      "$description": "Znak wodny i wyciszona dekoracja na ciemnym tle. Statyczna: ta sama wartosc w Light i Dark, bo alfa sama dostosowuje sie do podloza. Krycia na wezle nie dokladac."
     }
   }
 }
