@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import coreTokens from '../../tokens/Space/Core-www/Value.json';
-import desktopTokens from '../../tokens/Space/Semantic-www/Desktop 1728.json';
-import tabletTokens from '../../tokens/Space/Semantic-www/Tablet 768.json';
-import mobileTokens from '../../tokens/Space/Semantic-www/Mobile 402.json';
+import desktopTokens from '../../tokens/Space/Semantic-www/Desktop.json';
+import tabletTokens from '../../tokens/Space/Semantic-www/Tablet.json';
+import mobileTokens from '../../tokens/Space/Semantic-www/Mobile.json';
 import '../../dist/css/tokens.css';
 import '../../dist/css/space.css';
 import { flattenTokens, sortTokens } from '../utils';

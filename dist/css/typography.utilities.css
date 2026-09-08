@@ -441,6 +441,109 @@
   letter-spacing: var(--typo-fine-print-strong-letter-spacing, 0);
 }
 
+.ds-text--slide-counter {
+  --ds-text-size-n: var(--typo-slide-counter-size-n);
+  --ds-text-size-vw: calc(var(--ds-text-size-n) * var(--ds-text-rvw));
+  --ds-text-size-px: calc(var(--ds-text-size-n) * var(--ds-text-rpx));
+  font-size: var(--typo-slide-counter-size);
+  font-size: min(var(--ds-text-size-vw), var(--ds-text-size-px));
+  font-family: var(--ds-text-font-family, var(--typo-slide-counter-family, var(--font-family-museo, "Museo Sans"))), Arial, sans-serif;
+  font-weight: var(--typo-slide-counter-weight-n, var(--typo-slide-counter-weight));
+  font-style: var(--typo-slide-counter-font-style, normal);
+  --ds-text-line-height-n: var(--typo-slide-counter-line-height-n);
+  --ds-text-line-height-vw: calc(var(--ds-text-line-height-n) * var(--ds-text-rvw));
+  --ds-text-line-height-px: calc(var(--ds-text-line-height-n) * var(--ds-text-rpx));
+  line-height: var(--typo-slide-counter-line-height, normal);
+  line-height: min(var(--ds-text-line-height-vw), var(--ds-text-line-height-px));
+  letter-spacing: var(--typo-slide-counter-letter-spacing, 0);
+}
+
+.ds-text--intro {
+  --ds-text-size-n: var(--typo-intro-size-n);
+  --ds-text-size-vw: calc(var(--ds-text-size-n) * var(--ds-text-rvw));
+  --ds-text-size-px: calc(var(--ds-text-size-n) * var(--ds-text-rpx));
+  font-size: var(--typo-intro-size);
+  font-size: min(var(--ds-text-size-vw), var(--ds-text-size-px));
+  font-family: var(--ds-text-font-family, var(--typo-intro-family, var(--font-family-museo, "Museo Sans"))), Arial, sans-serif;
+  font-weight: var(--typo-intro-weight-n, var(--typo-intro-weight));
+  font-style: var(--typo-intro-font-style, normal);
+  --ds-text-line-height-n: var(--typo-intro-line-height-n);
+  --ds-text-line-height-vw: calc(var(--ds-text-line-height-n) * var(--ds-text-rvw));
+  --ds-text-line-height-px: calc(var(--ds-text-line-height-n) * var(--ds-text-rpx));
+  line-height: var(--typo-intro-line-height, normal);
+  line-height: min(var(--ds-text-line-height-vw), var(--ds-text-line-height-px));
+  letter-spacing: var(--typo-intro-letter-spacing, 0);
+}
+
+.ds-text--chalk {
+  --ds-text-size-n: var(--typo-chalk-size-n);
+  --ds-text-size-vw: calc(var(--ds-text-size-n) * var(--ds-text-rvw));
+  --ds-text-size-px: calc(var(--ds-text-size-n) * var(--ds-text-rpx));
+  font-size: var(--typo-chalk-size);
+  font-size: min(var(--ds-text-size-vw), var(--ds-text-size-px));
+  font-family: var(--ds-text-font-family, var(--typo-chalk-family, var(--font-family-museo, "Museo Sans"))), Arial, sans-serif;
+  font-weight: var(--typo-chalk-weight-n, var(--typo-chalk-weight));
+  font-style: var(--typo-chalk-font-style, normal);
+  --ds-text-line-height-n: var(--typo-chalk-line-height-n);
+  --ds-text-line-height-vw: calc(var(--ds-text-line-height-n) * var(--ds-text-rvw));
+  --ds-text-line-height-px: calc(var(--ds-text-line-height-n) * var(--ds-text-rpx));
+  line-height: var(--typo-chalk-line-height, normal);
+  line-height: min(var(--ds-text-line-height-vw), var(--ds-text-line-height-px));
+  letter-spacing: var(--typo-chalk-letter-spacing, 0);
+}
+
+.ds-text--toc-item {
+  --ds-text-size-n: var(--typo-toc-item-size-n);
+  --ds-text-size-vw: calc(var(--ds-text-size-n) * var(--ds-text-rvw));
+  --ds-text-size-px: calc(var(--ds-text-size-n) * var(--ds-text-rpx));
+  font-size: var(--typo-toc-item-size);
+  font-size: min(var(--ds-text-size-vw), var(--ds-text-size-px));
+  font-family: var(--ds-text-font-family, var(--typo-toc-item-family, var(--font-family-museo, "Museo Sans"))), Arial, sans-serif;
+  font-weight: var(--typo-toc-item-weight-n, var(--typo-toc-item-weight));
+  font-style: var(--typo-toc-item-font-style, normal);
+  line-height: var(--typo-toc-item-line-height, normal);
+  letter-spacing: var(--typo-toc-item-letter-spacing, 0);
+}
+
+.ds-text--toc-item-active {
+  --ds-text-size-n: var(--typo-toc-item-active-size-n);
+  --ds-text-size-vw: calc(var(--ds-text-size-n) * var(--ds-text-rvw));
+  --ds-text-size-px: calc(var(--ds-text-size-n) * var(--ds-text-rpx));
+  font-size: var(--typo-toc-item-active-size);
+  font-size: min(var(--ds-text-size-vw), var(--ds-text-size-px));
+  font-family: var(--ds-text-font-family, var(--typo-toc-item-active-family, var(--font-family-museo, "Museo Sans"))), Arial, sans-serif;
+  font-weight: var(--typo-toc-item-active-weight-n, var(--typo-toc-item-active-weight));
+  font-style: var(--typo-toc-item-active-font-style, normal);
+  line-height: var(--typo-toc-item-active-line-height, normal);
+  letter-spacing: var(--typo-toc-item-active-letter-spacing, 0);
+}
+
+.ds-text--badge-counter {
+  --ds-text-size-n: var(--typo-badge-counter-size-n);
+  --ds-text-size-vw: calc(var(--ds-text-size-n) * var(--ds-text-rvw));
+  --ds-text-size-px: calc(var(--ds-text-size-n) * var(--ds-text-rpx));
+  font-size: var(--typo-badge-counter-size);
+  font-size: min(var(--ds-text-size-vw), var(--ds-text-size-px));
+  font-family: var(--ds-text-font-family, var(--typo-badge-counter-family, var(--font-family-museo, "Museo Sans"))), Arial, sans-serif;
+  font-weight: var(--typo-badge-counter-weight-n, var(--typo-badge-counter-weight));
+  font-style: var(--typo-badge-counter-font-style, normal);
+  line-height: var(--typo-badge-counter-line-height, normal);
+  letter-spacing: var(--typo-badge-counter-letter-spacing, 0);
+}
+
+.ds-text--consent-body {
+  --ds-text-size-n: var(--typo-consent-body-size-n);
+  --ds-text-size-vw: calc(var(--ds-text-size-n) * var(--ds-text-rvw));
+  --ds-text-size-px: calc(var(--ds-text-size-n) * var(--ds-text-rpx));
+  font-size: var(--typo-consent-body-size);
+  font-size: min(var(--ds-text-size-vw), var(--ds-text-size-px));
+  font-family: var(--ds-text-font-family, var(--typo-consent-body-family, var(--font-family-museo, "Museo Sans"))), Arial, sans-serif;
+  font-weight: var(--typo-consent-body-weight-n, var(--typo-consent-body-weight));
+  font-style: var(--typo-consent-body-font-style, normal);
+  line-height: var(--typo-consent-body-line-height, normal);
+  letter-spacing: var(--typo-consent-body-letter-spacing, 0);
+}
+
 .ds-text--family-museo {
   --ds-text-font-family: var(--font-family-museo, "Museo Sans");
 }

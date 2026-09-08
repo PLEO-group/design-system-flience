@@ -11,15 +11,14 @@ const TOKEN_SOURCES = {
   colorLight: 'tokens/Color/Semantic/Light.json',
   colorDark: 'tokens/Color/Semantic/Dark.json',
   spaceBase: 'tokens/Space/Core-www/Value.json',
-  spaceDesktop: 'tokens/Space/Semantic-www/Desktop 1728.json',
-  spaceTablet: 'tokens/Space/Semantic-www/Tablet 768.json',
-  spaceMobile: 'tokens/Space/Semantic-www/Mobile 402.json',
+  spaceDesktop: 'tokens/Space/Semantic-www/Desktop.json',
+  spaceTablet: 'tokens/Space/Semantic-www/Tablet.json',
+  spaceMobile: 'tokens/Space/Semantic-www/Mobile.json',
   typeBase: 'tokens/Type/Core-www/Value.json',
-  typeDesktop: 'tokens/Type/Semantic-www/Desktop 1728.json',
-  typeTablet: 'tokens/Type/Semantic-www/Tablet 768.json',
-  typeMobile: 'tokens/Type/Semantic-www/Mobile 402.json',
+  typeDesktop: 'tokens/Type/Semantic-www/Desktop.json',
+  typeTablet: 'tokens/Type/Semantic-www/Tablet.json',
+  typeMobile: 'tokens/Type/Semantic-www/Mobile.json',
 };
-
 
 function readJson(relativePath) {
   return JSON.parse(fs.readFileSync(path.join(ROOT, relativePath), 'utf8'));

@@ -5,6 +5,7 @@
   --color-neutral-szary-600: #575756;
   --color-neutral-grafit: #3c3c3b;
   --color-neutral-czarny: #000000;
+  --color-neutral-bialy-a20: #ffffff33;
   --color-mieta-100: #def4f6;
   --color-mieta-200: #c4e5e9;
   --color-mieta-220: #b6dbe0;
@@ -12,8 +13,12 @@
   --color-mieta-300: #98d0d0;
   --color-mieta-400: #92c6cc;
   --color-mieta-600: #76b0b6;
+  --color-mieta-800: #3b767d;
   --color-niebo-100: #d0defb;
+  --color-niebo-150: #d1deef;
   --color-niebo-200: #becfe6;
+  --color-niebo-250: #adc1dd;
+  --color-niebo-300: #a1b7d6;
   --color-niebo-500: #768fb0;
   --color-blekit-300: #a4c1e5;
   --color-blekit-400: #7bbdd5;
@@ -62,6 +67,7 @@
   --font-weight-700-italic: 700 Italic;
   --font-weight-500-italic: 500 Italic;
   --font-weight-300-italic: 300 Italic;
+  --font-weight-regular: Regular;
   --font-size-11: 11px;
   --font-size-12: 12px;
   --font-size-13: 13px;
@@ -143,6 +149,21 @@
   --color-bg-card-principle: var(--color-mieta-220);
   --color-bg-decor-roz: var(--color-roz-100);
   --color-bg-decor-szalwia: var(--color-szalwia-300);
+  --color-bg-dot-active-on-dark: var(--color-neutral-bialy);
+  --color-bg-dot-inactive-on-dark: var(--color-neutral-szary-400);
+  --color-bg-dot-active-on-light: var(--color-neutral-bialy);
+  --color-bg-dot-inactive-on-light: var(--color-mieta-100);
+  --color-bg-card-inactive-on-blue: var(--color-niebo-250);
+  --color-bg-dot-active-on-mieta: var(--color-mieta-400);
+  --color-bg-dot-inactive-on-mieta: var(--color-mieta-220);
+  --color-bg-inverse-elevated: var(--color-neutral-szary-600);
+  --color-bg-inverse-sheet: var(--color-neutral-szary-400);
+  --color-bg-sheet-handle: #d9d9d9;
+  --color-bg-dot-inactive-on-grafit: var(--color-mieta-220);
+  --color-bg-dot-active-on-grafit: var(--color-neutral-bialy);
+  --color-bg-dot-inactive-on-light-strong: var(--color-mieta-600);
+  --color-bg-dot-active-on-light-strong: var(--color-mieta-800);
+  --color-bg-surface-kosmos: var(--color-kosmos-900);
   --color-text-primary: var(--color-neutral-grafit);
   --color-text-secondary: var(--color-neutral-szary-600);
   --color-text-inverse: var(--color-neutral-bialy);
@@ -157,6 +178,13 @@
   --color-text-on-inverse-lime: var(--color-limonka-300);
   --color-text-accent-orange: var(--color-pomarancz-700);
   --color-text-on-inverse-blue: var(--color-blekit-400);
+  --color-text-on-card-inactive: var(--color-niebo-150);
+  --color-text-placeholder: var(--color-mieta-400);
+  --color-text-field-hint: var(--color-niebo-300);
+  --color-text-field-counter: var(--color-neutral-szary-100);
+  --color-text-on-chalk: var(--color-neutral-bialy);
+  --color-text-on-inverse-zolty: var(--color-zolty-500);
+  --color-text-on-light-mieta: var(--color-mieta-800);
   --color-accent-primary: var(--color-mieta-400);
   --color-accent-cta: var(--color-pomarancz-500);
   --color-accent-cta-hover: var(--color-pomarancz-600);
@@ -165,7 +193,15 @@
   --color-border-subtle: var(--color-neutral-szary-100);
   --color-border-strong: var(--color-neutral-szary-400);
   --color-border-focus: var(--color-blekit-400);
+  --color-border-input: var(--color-niebo-150);
+  --color-border-on-mieta: var(--color-neutral-bialy);
+  --color-border-on-inverse: var(--color-neutral-szary-100);
   --color-icon-primary: var(--color-neutral-grafit);
+  --color-decor-path-flown: var(--color-neutral-bialy);
+  --color-decor-path-planned: var(--color-mieta-400);
+  --color-decor-path-marker: var(--color-neutral-szary-600);
+  --color-decor-path-planned-on-blue: var(--color-niebo-300);
+  --color-decor-watermark-on-inverse: var(--color-neutral-bialy-a20);
 }
 
 :root[data-theme="dark"] {
@@ -212,6 +248,21 @@
   --color-bg-card-principle: var(--color-mieta-220);
   --color-bg-decor-roz: var(--color-roz-100);
   --color-bg-decor-szalwia: var(--color-szalwia-300);
+  --color-bg-dot-active-on-dark: var(--color-neutral-bialy);
+  --color-bg-dot-inactive-on-dark: var(--color-neutral-szary-400);
+  --color-bg-dot-active-on-light: var(--color-neutral-bialy);
+  --color-bg-dot-inactive-on-light: var(--color-mieta-100);
+  --color-bg-card-inactive-on-blue: var(--color-niebo-250);
+  --color-bg-dot-active-on-mieta: var(--color-mieta-400);
+  --color-bg-dot-inactive-on-mieta: var(--color-mieta-220);
+  --color-bg-inverse-elevated: var(--color-neutral-szary-600);
+  --color-bg-inverse-sheet: var(--color-neutral-szary-400);
+  --color-bg-sheet-handle: #d9d9d9;
+  --color-bg-dot-inactive-on-grafit: var(--color-mieta-220);
+  --color-bg-dot-active-on-grafit: var(--color-neutral-bialy);
+  --color-bg-dot-inactive-on-light-strong: var(--color-mieta-600);
+  --color-bg-dot-active-on-light-strong: var(--color-mieta-800);
+  --color-bg-surface-kosmos: var(--color-kosmos-700);
   --color-text-primary: var(--color-kosmos-gwiazda);
   --color-text-secondary: var(--color-kosmos-tekst-2);
   --color-text-inverse: var(--color-kosmos-900);
@@ -226,6 +277,13 @@
   --color-text-on-inverse-lime: var(--color-limonka-300);
   --color-text-accent-orange: var(--color-pomarancz-700);
   --color-text-on-inverse-blue: var(--color-blekit-400);
+  --color-text-on-card-inactive: var(--color-niebo-150);
+  --color-text-placeholder: var(--color-mieta-400);
+  --color-text-field-hint: var(--color-niebo-300);
+  --color-text-field-counter: var(--color-neutral-szary-100);
+  --color-text-on-chalk: var(--color-neutral-bialy);
+  --color-text-on-inverse-zolty: var(--color-zolty-500);
+  --color-text-on-light-mieta: var(--color-mieta-800);
   --color-accent-primary: var(--color-mieta-300);
   --color-accent-cta: var(--color-pomarancz-300);
   --color-accent-cta-hover: var(--color-pomarancz-400);
@@ -234,5 +292,13 @@
   --color-border-subtle: var(--color-kosmos-700);
   --color-border-strong: var(--color-kosmos-orbita);
   --color-border-focus: var(--color-blekit-400);
+  --color-border-input: var(--color-niebo-150);
+  --color-border-on-mieta: var(--color-neutral-bialy);
+  --color-border-on-inverse: var(--color-neutral-szary-100);
   --color-icon-primary: var(--color-kosmos-gwiazda);
+  --color-decor-path-flown: var(--color-neutral-bialy);
+  --color-decor-path-planned: var(--color-mieta-400);
+  --color-decor-path-marker: var(--color-neutral-szary-600);
+  --color-decor-path-planned-on-blue: var(--color-niebo-300);
+  --color-decor-watermark-on-inverse: var(--color-neutral-bialy-a20);
 }

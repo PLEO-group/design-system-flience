@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
-import desktopTokens from '../../tokens/Type/Semantic-www/Desktop 1728.json';
-import tabletTokens from '../../tokens/Type/Semantic-www/Tablet 768.json';
-import mobileTokens from '../../tokens/Type/Semantic-www/Mobile 402.json';
+import desktopTokens from '../../tokens/Type/Semantic-www/Desktop.json';
+import tabletTokens from '../../tokens/Type/Semantic-www/Tablet.json';
+import mobileTokens from '../../tokens/Type/Semantic-www/Mobile.json';
 import typeCoreTokens from '../../tokens/Type/Core-www/Value.json';
 import '../styles/font-faces.css';
 import '../../dist/css/tokens.css';
