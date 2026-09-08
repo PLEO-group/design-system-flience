@@ -11,15 +11,16 @@ const TOKEN_SOURCES = {
   colorLight: 'tokens/Color/Semantic/Light.json',
   colorDark: 'tokens/Color/Semantic/Dark.json',
   spaceBase: 'tokens/Space/Core-www/Value.json',
-  spaceDesktop: 'tokens/Space/Semantic-www/Desktop 1728.json',
-  spaceTablet: 'tokens/Space/Semantic-www/Tablet 768.json',
-  spaceMobile: 'tokens/Space/Semantic-www/Mobile 402.json',
+  spaceDesktop: 'tokens/Space/Semantic-www/Desktop.json',
+  spaceLaptop: 'tokens/Space/Semantic-www/Laptop.json',
+  spaceTablet: 'tokens/Space/Semantic-www/Tablet.json',
+  spaceMobile: 'tokens/Space/Semantic-www/Mobile.json',
   typeBase: 'tokens/Type/Core-www/Value.json',
-  typeDesktop: 'tokens/Type/Semantic-www/Desktop 1728.json',
-  typeTablet: 'tokens/Type/Semantic-www/Tablet 768.json',
-  typeMobile: 'tokens/Type/Semantic-www/Mobile 402.json',
+  typeDesktop: 'tokens/Type/Semantic-www/Desktop.json',
+  typeLaptop: 'tokens/Type/Semantic-www/Laptop.json',
+  typeTablet: 'tokens/Type/Semantic-www/Tablet.json',
+  typeMobile: 'tokens/Type/Semantic-www/Mobile.json',
 };
-
 
 function readJson(relativePath) {
   return JSON.parse(fs.readFileSync(path.join(ROOT, relativePath), 'utf8'));
@@ -560,14 +561,28 @@ function writeSpaceCoreDynamicCss() {
   writeDistCss('tokens.space.core.css', outputBlock(spaceCoreDynamicLines(), ':root'));
 }
 
-function writeSpaceTailwindCss() {
+function writeSpaceTailwindCss({ fileName = 'space.tailwind.css', includeLaptop = false } = {}) {
   const core = readCssDeclarationLines('tokens.space.core.css');
   const mobile = readCssDeclarationLines('tokens.space.mobile.css');
   const tablet = readCssDeclarationLines('tokens.space.tablet.css');
+  const laptop = includeLaptop ? readCssDeclarationLines('tokens.space.laptop.css') : null;
   const desktop = readCssDeclarationLines('tokens.space.desktop.css');
+  const laptopVariant = includeLaptop
+    ? `
+
+  @variant laptop {
+${indentLines(laptop, 4)}
+  }`
+    : '';
+  const scaleBlocks = [
+    outputBlock(mobile, ':root[data-space-scale="mobile"]'),
+    outputBlock(tablet, ':root[data-space-scale="tablet"]'),
+    ...(includeLaptop ? [outputBlock(laptop, ':root[data-space-scale="laptop"]')] : []),
+    outputBlock(desktop, ':root[data-space-scale="desktop"]'),
+  ];
 
   writeDistCss(
-    'space.tailwind.css',
+    fileName,
     [
       `:root {
 ${indentLines(core, 2)}
@@ -575,33 +590,32 @@ ${indentLines(mobile, 2)}
 
   @variant tablet {
 ${indentLines(tablet, 4)}
-  }
+  }${laptopVariant}
 
   @variant desktop {
 ${indentLines(desktop, 4)}
   }
 }`,
-      outputBlock(mobile, ':root[data-space-scale="mobile"]'),
-      outputBlock(tablet, ':root[data-space-scale="tablet"]'),
-      outputBlock(desktop, ':root[data-space-scale="desktop"]'),
+      ...scaleBlocks,
     ].join('\n\n')
   );
 }
 
-function writeSpaceBundleCss() {
-  const spaceCss = readDistCss('space.tailwind.css');
+function writeSpaceBundleCss({ fileName = 'space.css', tailwindFileName = 'space.tailwind.css' } = {}) {
+  const spaceCss = readDistCss(tailwindFileName);
 
-  writeDistCss('space.css', spaceCss);
-  writeDistCss('space.tailwind.css', spaceCss);
+  writeDistCss(fileName, spaceCss);
+  writeDistCss(tailwindFileName, spaceCss);
 }
 
-function typographyVariants() {
+function typographyVariants({ includeLaptop = false } = {}) {
   const tokenSets = [
     readJson(TOKEN_SOURCES.typeMobile).typo || {},
     readJson(TOKEN_SOURCES.typeTablet).typo || {},
+    ...(includeLaptop ? [readJson(TOKEN_SOURCES.typeLaptop).typo || {}] : []),
     readJson(TOKEN_SOURCES.typeDesktop).typo || {},
   ];
-  const desktop = tokenSets[2];
+  const desktop = tokenSets[tokenSets.length - 1];
 
   return Object.keys(desktop).map((variant) => ({
     name: toKebab(variant),
@@ -609,34 +623,46 @@ function typographyVariants() {
   }));
 }
 
-function writeTypographyTailwindCss() {
+function writeTypographyTailwindCss({ fileName = 'typography.tailwind.css', includeLaptop = false } = {}) {
   const mobile = readCssDeclarationLines('tokens.typography.mobile.css');
   const tablet = readCssDeclarationLines('tokens.typography.tablet.css');
+  const laptop = includeLaptop ? readCssDeclarationLines('tokens.typography.laptop.css') : null;
   const desktop = readCssDeclarationLines('tokens.typography.desktop.css');
+  const laptopVariant = includeLaptop
+    ? `
+
+  @variant laptop {
+${indentLines(laptop, 4)}
+  }`
+    : '';
+  const scaleBlocks = [
+    outputBlock(mobile, ':root[data-type-scale="mobile"]'),
+    outputBlock(tablet, ':root[data-type-scale="tablet"]'),
+    ...(includeLaptop ? [outputBlock(laptop, ':root[data-type-scale="laptop"]')] : []),
+    outputBlock(desktop, ':root[data-type-scale="desktop"]'),
+  ];
 
   writeDistCss(
-    'typography.tailwind.css',
+    fileName,
     [
       `:root {
 ${indentLines(mobile, 2)}
 
   @variant tablet {
 ${indentLines(tablet, 4)}
-  }
+  }${laptopVariant}
 
   @variant desktop {
 ${indentLines(desktop, 4)}
   }
 }`,
-      outputBlock(mobile, ':root[data-type-scale="mobile"]'),
-      outputBlock(tablet, ':root[data-type-scale="tablet"]'),
-      outputBlock(desktop, ':root[data-type-scale="desktop"]'),
+      ...scaleBlocks,
     ].join('\n\n')
   );
 }
 
-function writeTypographyUtilitiesCss() {
-  const variantBlocks = typographyVariants().map(({ name, hasLineHeight }) => {
+function writeTypographyUtilitiesCss({ fileName = 'typography.utilities.css', includeLaptop = false } = {}) {
+  const variantBlocks = typographyVariants({ includeLaptop }).map(({ name, hasLineHeight }) => {
     const lineHeightLines = hasLineHeight
       ? `  --ds-text-line-height-n: var(--typo-${name}-line-height-n);
   --ds-text-line-height-vw: calc(var(--ds-text-line-height-n) * var(--ds-text-rvw));
@@ -660,7 +686,7 @@ ${lineHeightLines}
   });
 
   writeDistCss(
-    'typography.utilities.css',
+    fileName,
     [
       `.ds-text {
   --ds-text-rpx: var(--rpx, 1px);
@@ -679,16 +705,20 @@ ${lineHeightLines}
   );
 }
 
-function writeTypographyBundleCss() {
-  const variantDrivenCss = `${readDistCss('typography.tailwind.css')}\n\n${readDistCss('typography.utilities.css')}`;
+function writeTypographyBundleCss({
+  fileName = 'typography.css',
+  tailwindFileName = 'typography.tailwind.css',
+  utilitiesFileName = 'typography.utilities.css',
+} = {}) {
+  const variantDrivenCss = `${readDistCss(tailwindFileName)}\n\n${readDistCss(utilitiesFileName)}`;
 
   writeDistCss(
-    'typography.css',
+    fileName,
     variantDrivenCss
   );
 
   writeDistCss(
-    'typography.tailwind.css',
+    tailwindFileName,
     variantDrivenCss
   );
 }
@@ -802,6 +832,16 @@ function run() {
 
     build(
       getSemanticConfig({
+        name: 'space_laptop',
+        include: [normalized.spaceBase],
+        source: [normalized.spaceLaptop],
+        selector: ':root[data-space-scale="laptop"]',
+        cssDestination: 'tokens.space.laptop.css',
+      })
+    );
+
+    build(
+      getSemanticConfig({
         name: 'space_mobile',
         include: [normalized.spaceBase],
         source: [normalized.spaceMobile],
@@ -812,6 +852,8 @@ function run() {
 
     writeSpaceTailwindCss();
     writeSpaceBundleCss();
+    writeSpaceTailwindCss({ fileName: 'space.with-laptop.tailwind.css', includeLaptop: true });
+    writeSpaceBundleCss({ fileName: 'space.with-laptop.css', tailwindFileName: 'space.with-laptop.tailwind.css' });
 
     build(
       getSemanticConfig({
@@ -835,6 +877,16 @@ function run() {
 
     build(
       getSemanticConfig({
+        name: 'typography_laptop',
+        include: [normalized.typeBase],
+        source: [normalized.typeLaptop],
+        selector: ':root[data-type-scale="laptop"]',
+        cssDestination: 'tokens.typography.laptop.css',
+      })
+    );
+
+    build(
+      getSemanticConfig({
         name: 'typography_mobile',
         include: [normalized.typeBase],
         source: [normalized.typeMobile],
@@ -845,11 +897,19 @@ function run() {
 
     addTypographyDerivedVariables('tokens.typography.mobile.css', TOKEN_SOURCES.typeMobile);
     addTypographyDerivedVariables('tokens.typography.tablet.css', TOKEN_SOURCES.typeTablet);
+    addTypographyDerivedVariables('tokens.typography.laptop.css', TOKEN_SOURCES.typeLaptop);
     addTypographyDerivedVariables('tokens.typography.desktop.css', TOKEN_SOURCES.typeDesktop);
 
     writeTypographyTailwindCss();
     writeTypographyUtilitiesCss();
     writeTypographyBundleCss();
+    writeTypographyTailwindCss({ fileName: 'typography.with-laptop.tailwind.css', includeLaptop: true });
+    writeTypographyUtilitiesCss({ fileName: 'typography.with-laptop.utilities.css', includeLaptop: true });
+    writeTypographyBundleCss({
+      fileName: 'typography.with-laptop.css',
+      tailwindFileName: 'typography.with-laptop.tailwind.css',
+      utilitiesFileName: 'typography.with-laptop.utilities.css',
+    });
 
     build({
       include: [normalized.colorBase, normalized.typeBase, normalized.spaceBase],

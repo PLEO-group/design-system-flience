@@ -4,9 +4,15 @@
   --space-8-n: 8;
   --space-8: 8px;
   --space-8: min(calc(var(--space-8-n) * var(--ds-space-rvw)), calc(var(--space-8-n) * var(--ds-space-rpx)));
+  --space-9-n: 9;
+  --space-9: 9px;
+  --space-9: min(calc(var(--space-9-n) * var(--ds-space-rvw)), calc(var(--space-9-n) * var(--ds-space-rpx)));
   --space-12-n: 12;
   --space-12: 12px;
   --space-12: min(calc(var(--space-12-n) * var(--ds-space-rvw)), calc(var(--space-12-n) * var(--ds-space-rpx)));
+  --space-13-n: 13;
+  --space-13: 13px;
+  --space-13: min(calc(var(--space-13-n) * var(--ds-space-rvw)), calc(var(--space-13-n) * var(--ds-space-rpx)));
   --space-16-n: 16;
   --space-16: 16px;
   --space-16: min(calc(var(--space-16-n) * var(--ds-space-rvw)), calc(var(--space-16-n) * var(--ds-space-rpx)));
@@ -23,12 +29,14 @@
   --space-button-pad-x: var(--space-16);
   --space-button-pad-x-icon: var(--space-12);
   --space-button-gap: var(--space-8);
+  --space-eyebrow-gap: var(--space-9);
 
   @variant tablet {
     --space-button-height: var(--space-48);
     --space-button-pad-x: var(--space-24);
     --space-button-pad-x-icon: var(--space-16);
     --space-button-gap: var(--space-8);
+    --space-eyebrow-gap: var(--space-13);
   }
 
   @variant desktop {
@@ -36,6 +44,7 @@
     --space-button-pad-x: var(--space-24);
     --space-button-pad-x-icon: var(--space-16);
     --space-button-gap: var(--space-8);
+    --space-eyebrow-gap: var(--space-13);
   }
 }
 
@@ -44,6 +53,7 @@
   --space-button-pad-x: var(--space-16);
   --space-button-pad-x-icon: var(--space-12);
   --space-button-gap: var(--space-8);
+  --space-eyebrow-gap: var(--space-9);
 }
 
 :root[data-space-scale="tablet"] {
@@ -51,6 +61,7 @@
   --space-button-pad-x: var(--space-24);
   --space-button-pad-x-icon: var(--space-16);
   --space-button-gap: var(--space-8);
+  --space-eyebrow-gap: var(--space-13);
 }
 
 :root[data-space-scale="desktop"] {
@@ -58,4 +69,5 @@
   --space-button-pad-x: var(--space-24);
   --space-button-pad-x-icon: var(--space-16);
   --space-button-gap: var(--space-8);
+  --space-eyebrow-gap: var(--space-13);
 }
