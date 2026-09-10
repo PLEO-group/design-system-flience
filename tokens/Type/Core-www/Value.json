@@ -457,6 +457,17 @@
       },
       "$type": "number",
       "$value": 0
+    },
+    "0-66": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "number",
+      "$value": 0.66,
+      "$description": "0,66 px = 6 % z 11 px (overline). Tokeny trackingu w Figmie są pikselowe."
     }
   }
 }
