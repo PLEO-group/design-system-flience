@@ -12,6 +12,8 @@
     "Space/Semantic-www/Desktop",
     "Space/Semantic-www/Tablet",
     "Space/Semantic-www/Mobile",
-    "Space/Semantic-www/Laptop"
+    "Space/Semantic-www/Laptop",
+    "Radius/Core/Value",
+    "Radius/Semantic/Value"
   ]
 }

@@ -194,6 +194,16 @@
       "$type": "number",
       "$value": 20
     },
+    "22": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "number",
+      "$value": 22
+    },
     "24": {
       "$extensions": {
         "com.figma.scopes": [

@@ -589,6 +589,68 @@
       "$type": "color",
       "$value": "{kosmos.700}",
       "$description": "Ciemna powierzchnia kosmiczna dla banerow i sekcji produktow astronomicznych. Light kosmos/900, Dark kosmos/700 (unosi sie nad tlem strony, ktore w Dark jest kosmos/900). DEC do potwierdzenia numeru."
+    },
+    "tag-neutralny": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{kosmos.orbita}"
+    },
+    "scrim": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "FRAME_FILL",
+          "SHAPE_FILL"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "#00000099",
+      "$description": "Przyciemnienie tła pod modalami i nakładkami. Alfa w zmiennej, nie w przezroczystości węzła."
+    },
+    "tag-roz": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{roz.100}"
+    },
+    "tag-pomarancz": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{pomarancz.300}"
+    },
+    "tag-blekit": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{blekit.300}"
+    },
+    "tag-szalwia": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{szalwia.300}"
     }
   },
   "text": {

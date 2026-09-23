@@ -957,5 +957,39 @@
     },
     "$figmaModeId": "686:1",
     "$figmaCollectionId": "VariableCollectionId:106:25"
+  },
+  {
+    "id": "radius/core-value",
+    "name": "Value",
+    "group": "Radius/Core",
+    "selectedTokenSets": {
+      "Radius/Core/Value": "enabled"
+    },
+    "$figmaStyleReferences": {},
+    "$figmaVariableReferences": {
+      "radius.8": "ca7063c0538161a0bf8fd2ca6d4032a4caaf252f",
+      "radius.16": "0948dfa367fb7c015a381cc19fd98ff815e8d96e",
+      "radius.24": "50db295c3992151aacbbc53061335fdf7b7f1228",
+      "radius.999": "331159913ada11602e1432c11c9b4bda3dcf117d"
+    },
+    "$figmaModeId": "1264:0",
+    "$figmaCollectionId": "VariableCollectionId:1264:30"
+  },
+  {
+    "id": "radius/semantic-value",
+    "name": "Value",
+    "group": "Radius/Semantic",
+    "selectedTokenSets": {
+      "Radius/Semantic/Value": "enabled"
+    },
+    "$figmaStyleReferences": {},
+    "$figmaVariableReferences": {
+      "radius.control": "9b3a5f05ffc981fe9ca580ca7ab87930cbe39796",
+      "radius.media": "043305b2a2df321d34b20a0f4b450dc0b61a0cca",
+      "radius.card": "8bd776975f220ff11d298498c7eccd080f0e4952",
+      "radius.pill": "ffd78e4f26a70666bba70d67e31eb655bb1b7261"
+    },
+    "$figmaModeId": "1264:1",
+    "$figmaCollectionId": "VariableCollectionId:1264:31"
   }
 ]

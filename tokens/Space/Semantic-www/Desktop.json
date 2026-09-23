@@ -54,6 +54,89 @@
         "$value": "{space.13}",
         "$description": "Odstęp między kółkiem z gwiazdką a etykietą w komponencie Eyebrow (strona www)."
       }
+    },
+    "page": {
+      "margin": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "GAP"
+          ],
+          "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "number",
+        "$value": "{space.228}"
+      }
+    },
+    "grid": {
+      "gutter": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "GAP"
+          ],
+          "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "number",
+        "$value": "{space.24}"
+      }
+    },
+    "card": {
+      "pad": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "GAP"
+          ],
+          "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "number",
+        "$value": "{space.24}"
+      },
+      "gap": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "GAP"
+          ],
+          "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "number",
+        "$value": "{space.16}"
+      }
+    },
+    "stack": {
+      "xs": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "GAP"
+          ],
+          "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "number",
+        "$value": "{space.4}"
+      }
+    },
+    "section": {
+      "gap": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "GAP"
+          ],
+          "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "number",
+        "$value": "{space.40}"
+      }
+    },
+    "modal": {
+      "max-height": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "WIDTH_HEIGHT"
+          ],
+          "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "number",
+        "$value": 1000,
+        "$description": "Maksymalna wysokość shella modala: wysokość ekranu minus margines 40 (arkusz: minus 40 od góry). Treść ponad limit przewija się w slocie, nagłówek i stopka stoją (DEC-135)."
+      }
     }
   }
 }
