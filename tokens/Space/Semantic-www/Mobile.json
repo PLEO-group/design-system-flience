@@ -54,6 +54,89 @@
         "$value": "{space.9}",
         "$description": "Odstęp między kółkiem z gwiazdką a etykietą w komponencie Eyebrow (strona www)."
       }
+    },
+    "page": {
+      "margin": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "GAP"
+          ],
+          "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "number",
+        "$value": "{space.20}"
+      }
+    },
+    "grid": {
+      "gutter": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "GAP"
+          ],
+          "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "number",
+        "$value": "{space.16}"
+      }
+    },
+    "card": {
+      "pad": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "GAP"
+          ],
+          "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "number",
+        "$value": "{space.20}"
+      },
+      "gap": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "GAP"
+          ],
+          "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "number",
+        "$value": "{space.12}"
+      }
+    },
+    "stack": {
+      "xs": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "GAP"
+          ],
+          "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "number",
+        "$value": "{space.4}"
+      }
+    },
+    "section": {
+      "gap": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "GAP"
+          ],
+          "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "number",
+        "$value": "{space.24}"
+      }
+    },
+    "modal": {
+      "max-height": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "WIDTH_HEIGHT"
+          ],
+          "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "number",
+        "$value": 772,
+        "$description": "Maksymalna wysokość shella modala: wysokość ekranu minus margines 40 (arkusz: minus 40 od góry). Treść ponad limit przewija się w slocie, nagłówek i stopka stoją (DEC-135)."
+      }
     }
   }
 }
