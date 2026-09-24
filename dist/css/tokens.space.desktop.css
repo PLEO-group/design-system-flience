@@ -4,4 +4,11 @@
   --space-button-pad-x-icon: var(--space-16);
   --space-button-gap: var(--space-8);
   --space-eyebrow-gap: var(--space-13);
+  --space-page-margin: var(--space-228);
+  --space-grid-gutter: var(--space-24);
+  --space-card-pad: var(--space-24);
+  --space-card-gap: var(--space-16);
+  --space-stack-xs: var(--space-4);
+  --space-section-gap: var(--space-40);
+  --space-modal-max-height: 1000px;
 }

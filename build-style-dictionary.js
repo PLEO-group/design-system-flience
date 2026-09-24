@@ -313,7 +313,7 @@ function getSemanticConfig({ name, include, source, selector, cssDestination, sc
 }
 
 function cleanOutput() {
-  ['css', 'scss', 'js', 'fonts', 'react'].forEach((directory) => {
+  ['css', 'scss', 'js', 'fonts', 'react', 'types'].forEach((directory) => {
     fs.rmSync(path.join(DIST_DIR, directory), { recursive: true, force: true });
   });
 }
@@ -531,6 +531,78 @@ function flattenDtcgTokenEntries(node, prefix = []) {
 
     return flattenDtcgTokenEntries(value, [...prefix, key]);
   });
+}
+
+function cssVariableNames(tokenRoot, { color = false } = {}) {
+  return flattenDtcgTokenEntries(tokenRoot).map(({ path: tokenPath }) => {
+    const parts = color && tokenPath[0] !== 'color' ? ['color', ...tokenPath] : tokenPath;
+    return `--${parts.join('-')}`;
+  });
+}
+
+function writeTokenTypes() {
+  const colorTokens = [
+    TOKEN_SOURCES.colorBase,
+    TOKEN_SOURCES.colorLight,
+    TOKEN_SOURCES.colorDark,
+  ].flatMap((source) => cssVariableNames(readJson(source), { color: true }));
+  const spaceTokens = [
+    TOKEN_SOURCES.spaceBase,
+    TOKEN_SOURCES.spaceDesktop,
+    TOKEN_SOURCES.spaceLaptop,
+    TOKEN_SOURCES.spaceTablet,
+    TOKEN_SOURCES.spaceMobile,
+  ].flatMap((source) => cssVariableNames(readJson(source)));
+  const typographyTokens = [
+    TOKEN_SOURCES.typeBase,
+    TOKEN_SOURCES.typeDesktop,
+    TOKEN_SOURCES.typeLaptop,
+    TOKEN_SOURCES.typeTablet,
+    TOKEN_SOURCES.typeMobile,
+  ].flatMap((source) => cssVariableNames(readJson(source)));
+  const tailwindColorNames = [TOKEN_SOURCES.colorBase, TOKEN_SOURCES.colorLight]
+    .flatMap((source) => cssVariableNames(readJson(source), { color: true }))
+    .filter((name) => name.startsWith('--color-'))
+    .map((name) => name.slice('--color-'.length));
+  const tailwindSpacingNames = [TOKEN_SOURCES.spaceBase, TOKEN_SOURCES.spaceDesktop]
+    .flatMap((source) => cssVariableNames(readJson(source)))
+    .filter((name) => name.startsWith('--space-'))
+    .map((name) => `space-${name.slice('--space-'.length)}`);
+  const typographyVariants = Object.keys(readJson(TOKEN_SOURCES.typeDesktop).typo || {})
+    .map(toKebab)
+    .sort();
+  const outputPath = path.join(DIST_DIR, 'types', 'tokens.d.ts');
+
+  fs.mkdirSync(path.dirname(outputPath), { recursive: true });
+
+  const unionType = (name, values) => {
+    const uniqueValues = [...new Set(values)].sort();
+    return `export type ${name} =\n${uniqueValues.map((value) => `  | ${JSON.stringify(value)}`).join('\n')};`;
+  };
+
+  fs.writeFileSync(
+    outputPath,
+    [
+      '// Generated from tokens/. Do not edit directly.',
+      unionType('ColorToken', colorTokens),
+      unionType('SpaceToken', spaceTokens),
+      unionType('TypographyToken', typographyTokens),
+      unionType('TypographyVariant', typographyVariants),
+      unionType('TailwindColorName', tailwindColorNames),
+      unionType('TailwindSpacingName', tailwindSpacingNames),
+      'export type TypographyClass = `ds-text--${TypographyVariant}`;',
+      'export type TokenName = ColorToken | SpaceToken | TypographyToken;',
+      "type TailwindColorUtility = 'accent' | 'bg' | 'border' | 'caret' | 'decoration' | 'divide' | 'fill' | 'outline' | 'ring' | 'stroke' | 'text';",
+      "type TailwindSpacingUtility = 'gap' | 'gap-x' | 'gap-y' | 'h' | 'max-h' | 'max-w' | 'min-h' | 'min-w' | 'm' | 'mb' | 'me' | 'ml' | 'mr' | 'ms' | 'mt' | 'mx' | 'my' | 'p' | 'pb' | 'pbe' | 'pbs' | 'pe' | 'pl' | 'pr' | 'ps' | 'pt' | 'px' | 'py' | 'size' | 'w';",
+      'export type TailwindBgClass = `bg-${TailwindColorName}`;',
+      'export type TailwindBorderClass = `border-${TailwindColorName}`;',
+      'export type TailwindTextClass = `text-${TailwindColorName}`;',
+      'export type TailwindColorClass = `${TailwindColorUtility}-${TailwindColorName}`;',
+      'export type TailwindSpacingClass = `${TailwindSpacingUtility}-${TailwindSpacingName}`;',
+      'export type TailwindTokenClass = TailwindColorClass | TailwindSpacingClass;',
+      '',
+    ].join('\n\n')
+  );
 }
 
 function spaceCoreDynamicLines() {
@@ -926,6 +998,8 @@ function run() {
         },
       },
     });
+
+    writeTokenTypes();
   } finally {
     fs.rmSync(TEMP_DIR, { recursive: true, force: true });
   }

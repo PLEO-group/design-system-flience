@@ -26,6 +26,9 @@
     "./css/typography.with-laptop.css": "./dist/css/typography.with-laptop.css",
     "./css/typography.with-laptop.tailwind.css": "./dist/css/typography.with-laptop.tailwind.css",
     "./css/typography.with-laptop.utilities.css": "./dist/css/typography.with-laptop.utilities.css",
+    "./types": {
+      "types": "./dist/types/tokens.d.ts"
+    },
     "./dist/*": "./dist/*",
     "./package.json": "./package.json"
   },

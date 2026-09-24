@@ -1,6 +1,9 @@
 :root {
   --ds-space-rpx: var(--rpx, 1px);
   --ds-space-rvw: var(--rvw, var(--ds-space-rpx));
+  --space-4-n: 4;
+  --space-4: 4px;
+  --space-4: min(calc(var(--space-4-n) * var(--ds-space-rvw)), calc(var(--space-4-n) * var(--ds-space-rpx)));
   --space-8-n: 8;
   --space-8: 8px;
   --space-8: min(calc(var(--space-8-n) * var(--ds-space-rvw)), calc(var(--space-8-n) * var(--ds-space-rpx)));
@@ -16,20 +19,42 @@
   --space-16-n: 16;
   --space-16: 16px;
   --space-16: min(calc(var(--space-16-n) * var(--ds-space-rvw)), calc(var(--space-16-n) * var(--ds-space-rpx)));
+  --space-20-n: 20;
+  --space-20: 20px;
+  --space-20: min(calc(var(--space-20-n) * var(--ds-space-rvw)), calc(var(--space-20-n) * var(--ds-space-rpx)));
   --space-24-n: 24;
   --space-24: 24px;
   --space-24: min(calc(var(--space-24-n) * var(--ds-space-rvw)), calc(var(--space-24-n) * var(--ds-space-rpx)));
+  --space-32-n: 32;
+  --space-32: 32px;
+  --space-32: min(calc(var(--space-32-n) * var(--ds-space-rvw)), calc(var(--space-32-n) * var(--ds-space-rpx)));
   --space-38-n: 38;
   --space-38: 38px;
   --space-38: min(calc(var(--space-38-n) * var(--ds-space-rvw)), calc(var(--space-38-n) * var(--ds-space-rpx)));
+  --space-40-n: 40;
+  --space-40: 40px;
+  --space-40: min(calc(var(--space-40-n) * var(--ds-space-rvw)), calc(var(--space-40-n) * var(--ds-space-rpx)));
   --space-48-n: 48;
   --space-48: 48px;
   --space-48: min(calc(var(--space-48-n) * var(--ds-space-rvw)), calc(var(--space-48-n) * var(--ds-space-rpx)));
+  --space-50-n: 50;
+  --space-50: 50px;
+  --space-50: min(calc(var(--space-50-n) * var(--ds-space-rvw)), calc(var(--space-50-n) * var(--ds-space-rpx)));
+  --space-228-n: 228;
+  --space-228: 228px;
+  --space-228: min(calc(var(--space-228-n) * var(--ds-space-rvw)), calc(var(--space-228-n) * var(--ds-space-rpx)));
   --space-button-height: var(--space-38);
   --space-button-pad-x: var(--space-16);
   --space-button-pad-x-icon: var(--space-12);
   --space-button-gap: var(--space-8);
   --space-eyebrow-gap: var(--space-9);
+  --space-page-margin: var(--space-20);
+  --space-grid-gutter: var(--space-16);
+  --space-card-pad: var(--space-20);
+  --space-card-gap: var(--space-12);
+  --space-stack-xs: var(--space-4);
+  --space-section-gap: var(--space-24);
+  --space-modal-max-height: 772px;
 
   @variant tablet {
     --space-button-height: var(--space-48);
@@ -37,6 +62,13 @@
     --space-button-pad-x-icon: var(--space-16);
     --space-button-gap: var(--space-8);
     --space-eyebrow-gap: var(--space-13);
+    --space-page-margin: var(--space-32);
+    --space-grid-gutter: var(--space-16);
+    --space-card-pad: var(--space-24);
+    --space-card-gap: var(--space-16);
+    --space-stack-xs: var(--space-4);
+    --space-section-gap: var(--space-32);
+    --space-modal-max-height: 944px;
   }
 
   @variant desktop {
@@ -45,6 +77,13 @@
     --space-button-pad-x-icon: var(--space-16);
     --space-button-gap: var(--space-8);
     --space-eyebrow-gap: var(--space-13);
+    --space-page-margin: var(--space-228);
+    --space-grid-gutter: var(--space-24);
+    --space-card-pad: var(--space-24);
+    --space-card-gap: var(--space-16);
+    --space-stack-xs: var(--space-4);
+    --space-section-gap: var(--space-40);
+    --space-modal-max-height: 1000px;
   }
 }
 
@@ -54,6 +93,13 @@
   --space-button-pad-x-icon: var(--space-12);
   --space-button-gap: var(--space-8);
   --space-eyebrow-gap: var(--space-9);
+  --space-page-margin: var(--space-20);
+  --space-grid-gutter: var(--space-16);
+  --space-card-pad: var(--space-20);
+  --space-card-gap: var(--space-12);
+  --space-stack-xs: var(--space-4);
+  --space-section-gap: var(--space-24);
+  --space-modal-max-height: 772px;
 }
 
 :root[data-space-scale="tablet"] {
@@ -62,6 +108,13 @@
   --space-button-pad-x-icon: var(--space-16);
   --space-button-gap: var(--space-8);
   --space-eyebrow-gap: var(--space-13);
+  --space-page-margin: var(--space-32);
+  --space-grid-gutter: var(--space-16);
+  --space-card-pad: var(--space-24);
+  --space-card-gap: var(--space-16);
+  --space-stack-xs: var(--space-4);
+  --space-section-gap: var(--space-32);
+  --space-modal-max-height: 944px;
 }
 
 :root[data-space-scale="desktop"] {
@@ -70,4 +123,11 @@
   --space-button-pad-x-icon: var(--space-16);
   --space-button-gap: var(--space-8);
   --space-eyebrow-gap: var(--space-13);
+  --space-page-margin: var(--space-228);
+  --space-grid-gutter: var(--space-24);
+  --space-card-pad: var(--space-24);
+  --space-card-gap: var(--space-16);
+  --space-stack-xs: var(--space-4);
+  --space-section-gap: var(--space-40);
+  --space-modal-max-height: 1000px;
 }

@@ -544,6 +544,84 @@
   letter-spacing: var(--typo-consent-body-letter-spacing, 0);
 }
 
+.ds-text--overline {
+  --ds-text-size-n: var(--typo-overline-size-n);
+  --ds-text-size-vw: calc(var(--ds-text-size-n) * var(--ds-text-rvw));
+  --ds-text-size-px: calc(var(--ds-text-size-n) * var(--ds-text-rpx));
+  font-size: var(--typo-overline-size);
+  font-size: min(var(--ds-text-size-vw), var(--ds-text-size-px));
+  font-family: var(--ds-text-font-family, var(--typo-overline-family, var(--font-family-museo, "Museo Sans"))), Arial, sans-serif;
+  font-weight: var(--typo-overline-weight-n, var(--typo-overline-weight));
+  font-style: var(--typo-overline-font-style, normal);
+  line-height: var(--typo-overline-line-height, normal);
+  letter-spacing: var(--typo-overline-letter-spacing, 0);
+}
+
+.ds-text--table-header {
+  --ds-text-size-n: var(--typo-table-header-size-n);
+  --ds-text-size-vw: calc(var(--ds-text-size-n) * var(--ds-text-rvw));
+  --ds-text-size-px: calc(var(--ds-text-size-n) * var(--ds-text-rpx));
+  font-size: var(--typo-table-header-size);
+  font-size: min(var(--ds-text-size-vw), var(--ds-text-size-px));
+  font-family: var(--ds-text-font-family, var(--typo-table-header-family, var(--font-family-museo, "Museo Sans"))), Arial, sans-serif;
+  font-weight: var(--typo-table-header-weight-n, var(--typo-table-header-weight));
+  font-style: var(--typo-table-header-font-style, normal);
+  line-height: var(--typo-table-header-line-height, normal);
+  letter-spacing: var(--typo-table-header-letter-spacing, 0);
+}
+
+.ds-text--table-body {
+  --ds-text-size-n: var(--typo-table-body-size-n);
+  --ds-text-size-vw: calc(var(--ds-text-size-n) * var(--ds-text-rvw));
+  --ds-text-size-px: calc(var(--ds-text-size-n) * var(--ds-text-rpx));
+  font-size: var(--typo-table-body-size);
+  font-size: min(var(--ds-text-size-vw), var(--ds-text-size-px));
+  font-family: var(--ds-text-font-family, var(--typo-table-body-family, var(--font-family-museo, "Museo Sans"))), Arial, sans-serif;
+  font-weight: var(--typo-table-body-weight-n, var(--typo-table-body-weight));
+  font-style: var(--typo-table-body-font-style, normal);
+  line-height: var(--typo-table-body-line-height, normal);
+  letter-spacing: var(--typo-table-body-letter-spacing, 0);
+}
+
+.ds-text--table-meta {
+  --ds-text-size-n: var(--typo-table-meta-size-n);
+  --ds-text-size-vw: calc(var(--ds-text-size-n) * var(--ds-text-rvw));
+  --ds-text-size-px: calc(var(--ds-text-size-n) * var(--ds-text-rpx));
+  font-size: var(--typo-table-meta-size);
+  font-size: min(var(--ds-text-size-vw), var(--ds-text-size-px));
+  font-family: var(--ds-text-font-family, var(--typo-table-meta-family, var(--font-family-museo, "Museo Sans"))), Arial, sans-serif;
+  font-weight: var(--typo-table-meta-weight-n, var(--typo-table-meta-weight));
+  font-style: var(--typo-table-meta-font-style, normal);
+  line-height: var(--typo-table-meta-line-height, normal);
+  letter-spacing: var(--typo-table-meta-letter-spacing, 0);
+}
+
+.ds-text--tile-title {
+  --ds-text-size-n: var(--typo-tile-title-size-n);
+  --ds-text-size-vw: calc(var(--ds-text-size-n) * var(--ds-text-rvw));
+  --ds-text-size-px: calc(var(--ds-text-size-n) * var(--ds-text-rpx));
+  font-size: var(--typo-tile-title-size);
+  font-size: min(var(--ds-text-size-vw), var(--ds-text-size-px));
+  font-family: var(--ds-text-font-family, var(--typo-tile-title-family, var(--font-family-museo, "Museo Sans"))), Arial, sans-serif;
+  font-weight: var(--typo-tile-title-weight-n, var(--typo-tile-title-weight));
+  font-style: var(--typo-tile-title-font-style, normal);
+  line-height: var(--typo-tile-title-line-height, normal);
+  letter-spacing: var(--typo-tile-title-letter-spacing, 0);
+}
+
+.ds-text--tile-desc {
+  --ds-text-size-n: var(--typo-tile-desc-size-n);
+  --ds-text-size-vw: calc(var(--ds-text-size-n) * var(--ds-text-rvw));
+  --ds-text-size-px: calc(var(--ds-text-size-n) * var(--ds-text-rpx));
+  font-size: var(--typo-tile-desc-size);
+  font-size: min(var(--ds-text-size-vw), var(--ds-text-size-px));
+  font-family: var(--ds-text-font-family, var(--typo-tile-desc-family, var(--font-family-museo, "Museo Sans"))), Arial, sans-serif;
+  font-weight: var(--typo-tile-desc-weight-n, var(--typo-tile-desc-weight));
+  font-style: var(--typo-tile-desc-font-style, normal);
+  line-height: var(--typo-tile-desc-line-height, normal);
+  letter-spacing: var(--typo-tile-desc-letter-spacing, 0);
+}
+
 .ds-text--family-museo {
   --ds-text-font-family: var(--font-family-museo, "Museo Sans");
 }
