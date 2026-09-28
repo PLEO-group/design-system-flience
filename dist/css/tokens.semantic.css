@@ -57,6 +57,12 @@
   --color-bg-dot-inactive-on-light-strong: var(--color-mieta-600);
   --color-bg-dot-active-on-light-strong: var(--color-mieta-800);
   --color-bg-surface-kosmos: var(--color-kosmos-900);
+  --color-bg-tag-neutralny: var(--color-neutral-szary-100);
+  --color-bg-scrim: #00000073;
+  --color-bg-tag-roz: var(--color-roz-100);
+  --color-bg-tag-pomarancz: var(--color-pomarancz-300);
+  --color-bg-tag-blekit: var(--color-blekit-300);
+  --color-bg-tag-szalwia: var(--color-szalwia-300);
   --color-text-primary: var(--color-neutral-grafit);
   --color-text-secondary: var(--color-neutral-szary-600);
   --color-text-inverse: var(--color-neutral-bialy);
@@ -156,6 +162,12 @@
   --color-bg-dot-inactive-on-light-strong: var(--color-mieta-600);
   --color-bg-dot-active-on-light-strong: var(--color-mieta-800);
   --color-bg-surface-kosmos: var(--color-kosmos-700);
+  --color-bg-tag-neutralny: var(--color-kosmos-orbita);
+  --color-bg-scrim: #00000099;
+  --color-bg-tag-roz: var(--color-roz-100);
+  --color-bg-tag-pomarancz: var(--color-pomarancz-300);
+  --color-bg-tag-blekit: var(--color-blekit-300);
+  --color-bg-tag-szalwia: var(--color-szalwia-300);
   --color-text-primary: var(--color-kosmos-gwiazda);
   --color-text-secondary: var(--color-kosmos-tekst-2);
   --color-text-inverse: var(--color-kosmos-900);
