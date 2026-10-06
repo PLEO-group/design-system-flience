@@ -320,6 +320,16 @@
       },
       "$type": "color",
       "$value": "#f08083"
+    },
+    "500": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "#c8474d"
     }
   },
   "roz": {

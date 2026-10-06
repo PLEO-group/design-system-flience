@@ -18,7 +18,8 @@
         "com.figma.hiddenFromPublishing": false
       },
       "$type": "number",
-      "$value": "{radius.16}"
+      "$value": "{radius.16}",
+      "$description": "Używana też przez Toast (DEC-214)."
     },
     "card": {
       "$extensions": {
