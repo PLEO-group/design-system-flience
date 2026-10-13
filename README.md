@@ -131,41 +131,29 @@ Typography classes use dynamic font-size and line-height values through `--rvw` 
 Each typography variant also carries its own font-family token, so the app-side component only needs to choose the semantic variant.
 Font-style values exported from Figma as combined font styles, such as `700 Italic`, are normalized in the generated utilities to `font-weight: 700` and `font-style: italic`.
 
+The package exports generated `ColorToken`, `SpaceToken`, `TypographyToken`, `TypographyVariant`, `TypographyClass`, `TokenName`, `TailwindColorName`, `TailwindSpacingName`, `TailwindBgClass`, `TailwindBorderClass`, `TailwindTextClass`, `TailwindColorClass`, `TailwindSpacingClass`, and `TailwindTokenClass` types from `@pleodigital/design-system-flience/types`. They update with the token sources whenever `build:tokens` runs.
+
+`TailwindTokenClass` types common base Tailwind utilities built from the exported color and spacing tokens:
+
+```tsx
+import type { TailwindTokenClass } from '@pleodigital/design-system-flience/types';
+
+const tokenClasses = [
+  'bg-bg-surface',
+  'text-text-primary',
+  'h-space-button-height',
+] satisfies TailwindTokenClass[];
+```
+
 Then create the app-side text component by mapping the `variant` prop to package CSS classes:
 
 ```tsx
 import type { ComponentPropsWithoutRef, ElementType } from 'react';
-
-type TextVariant =
-  | 'display'
-  | 'h1'
-  | 'h2'
-  | 'h3'
-  | 'lead'
-  | 'body'
-  | 'body-sm'
-  | 'label'
-  | 'eyebrow'
-  | 'caption'
-  | 'quote'
-  | 'menu-item'
-  | 'price'
-  | 'menu-item-alt'
-  | 'submenu-item'
-  | 'submenu-item-sm'
-  | 'body-lg'
-  | 'news-title'
-  | 'field-label'
-  | 'email-display'
-  | 'card-title'
-  | 'promo-title'
-  | 'spec-label'
-  | 'principle-desc'
-  | 'accent-title';
+import type { TypographyVariant } from '@pleodigital/design-system-flience/types';
 
 type TextProps<TElement extends ElementType = 'p'> = {
   as?: TElement;
-  variant?: TextVariant;
+  variant?: TypographyVariant;
   className?: string;
 } & Omit<ComponentPropsWithoutRef<TElement>, 'as' | 'className'>;
 

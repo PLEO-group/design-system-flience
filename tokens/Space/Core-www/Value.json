@@ -1,5 +1,15 @@
 {
   "space": {
+    "4": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "number",
+      "$value": 4
+    },
     "8": {
       "$extensions": {
         "com.figma.scopes": [
@@ -52,6 +62,16 @@
       "$type": "number",
       "$value": 16
     },
+    "20": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "number",
+      "$value": 20
+    },
     "24": {
       "$extensions": {
         "com.figma.scopes": [
@@ -61,6 +81,16 @@
       },
       "$type": "number",
       "$value": 24
+    },
+    "32": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "number",
+      "$value": 32
     },
     "38": {
       "$extensions": {
@@ -72,6 +102,16 @@
       "$type": "number",
       "$value": 38
     },
+    "40": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "number",
+      "$value": 40
+    },
     "48": {
       "$extensions": {
         "com.figma.scopes": [
@@ -81,6 +121,26 @@
       },
       "$type": "number",
       "$value": 48
+    },
+    "50": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "number",
+      "$value": 50
+    },
+    "228": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "number",
+      "$value": 228
     }
   }
 }

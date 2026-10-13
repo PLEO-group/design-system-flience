@@ -508,6 +508,159 @@
       },
       "$type": "color",
       "$value": "{mieta.220}"
+    },
+    "inverse-elevated": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{neutral.szary-600}"
+    },
+    "inverse-sheet": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{neutral.szary-400}"
+    },
+    "sheet-handle": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "#d9d9d9"
+    },
+    "dot-inactive-on-grafit": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{mieta.220}"
+    },
+    "dot-active-on-grafit": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{neutral.bialy}"
+    },
+    "dot-inactive-on-light-strong": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{mieta.600}"
+    },
+    "dot-active-on-light-strong": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{mieta.800}"
+    },
+    "surface-kosmos": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{kosmos.700}",
+      "$description": "Ciemna powierzchnia kosmiczna dla banerow i sekcji produktow astronomicznych. Light kosmos/900, Dark kosmos/700 (unosi sie nad tlem strony, ktore w Dark jest kosmos/900). DEC do potwierdzenia numeru."
+    },
+    "tag-neutralny": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{kosmos.orbita}"
+    },
+    "scrim": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "FRAME_FILL",
+          "SHAPE_FILL"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "#00000099",
+      "$description": "Przyciemnienie tła pod modalami i nakładkami. Alfa w zmiennej, nie w przezroczystości węzła."
+    },
+    "tag-roz": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{roz.100}"
+    },
+    "tag-pomarancz": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{pomarancz.300}"
+    },
+    "tag-blekit": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{blekit.300}"
+    },
+    "tag-szalwia": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{szalwia.300}"
+    },
+    "toast": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{kosmos.gwiazda}"
     }
   },
   "text": {
@@ -661,6 +814,110 @@
       "$type": "color",
       "$value": "{niebo.150}",
       "$description": "tekst na karcie wyciszonej karuzeli (DEC-45, rola statyczna)"
+    },
+    "placeholder": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{mieta.400}"
+    },
+    "field-hint": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{niebo.300}"
+    },
+    "field-counter": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{neutral.szary-100}"
+    },
+    "on-chalk": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{neutral.bialy}"
+    },
+    "on-inverse-zolty": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{zolty.500}",
+      "$description": "Tekst akcentowy w zoltej barwie na powierzchni odwroconej (bg/inverse). Statyczna w obu modach, alias do zolty/500."
+    },
+    "on-light-mieta": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{mieta.800}"
+    },
+    "on-inverse-koral": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{koral.300}",
+      "$description": "Tekst i ikona błędu na powierzchni odwróconej (bg/inverse), np. Toast typu Błąd. Statyczna w obu modach, alias do koral/300 (DEC-213)."
+    },
+    "link": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "TEXT_FILL"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{mieta.300}",
+      "$description": "Tekst akcji w formie linku (Zamień, Wgraj plik, Ustaw jako główny). DEC-243."
+    },
+    "on-toast": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{neutral.grafit}"
+    },
+    "error": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{koral.300}",
+      "$description": "Komunikat błędu pod polem formularza. Light koral/500 (4,7:1 na bieli), Dark koral/300 (5,4:1 na kosmos/700). DEC-293."
     }
   },
   "accent": {
@@ -745,6 +1002,46 @@
       },
       "$type": "color",
       "$value": "{blekit.400}"
+    },
+    "input": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{niebo.150}"
+    },
+    "on-mieta": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{neutral.bialy}"
+    },
+    "on-inverse": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{neutral.szary-100}"
+    },
+    "disabled": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{kosmos.orbita}"
     }
   },
   "icon": {
@@ -757,6 +1054,68 @@
       },
       "$type": "color",
       "$value": "{kosmos.gwiazda}"
+    },
+    "success": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "SHAPE_FILL",
+          "STROKE_COLOR"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{limonka.300}",
+      "$description": "Ikona potwierdzenia (plik wgrany, krok zakończony). DEC-243."
+    },
+    "on-toast-badge": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{neutral.grafit}"
+    },
+    "toast-sukces": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{mieta.300}"
+    },
+    "toast-informacja": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{neutral.szary-400}"
+    },
+    "toast-ostrzezenie": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{zolty.500}"
+    },
+    "toast-blad": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{koral.300}"
     }
   },
   "decor": {
@@ -803,6 +1162,17 @@
       "$type": "color",
       "$value": "{niebo.300}",
       "$description": "linia planowana ścieżki lotu na powierzchni bg/nav (DEC-45, rola statyczna)"
+    },
+    "watermark-on-inverse": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{neutral.bialy-a20}",
+      "$description": "Znak wodny i wyciszona dekoracja na ciemnym tle. Statyczna: ta sama wartosc w Light i Dark, bo alfa sama dostosowuje sie do podloza. Krycia na wezle nie dokladac."
     }
   }
 }
