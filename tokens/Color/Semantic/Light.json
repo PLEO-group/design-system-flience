@@ -661,6 +661,28 @@
       },
       "$type": "color",
       "$value": "{neutral.grafit}"
+    },
+    "action-bar": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{neutral.grafit}",
+      "$description": "Pasek akcji unoszący się nad treścią (Pasek wyboru, DEC-451). Light: grafit jak bg/inverse. Dark: kosmos/700, bo bg/inverse w trybie ciemnym równa się tłu strony i pasek znika."
+    },
+    "pill-current": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{neutral.grafit}",
+      "$description": "Tło przycisku w stanie bieżącym (Button Stan=Bieżący): Kreator druku podświetlony w widoku kreatora. Grafit w obu trybach. DEC-580, DEC-582."
     }
   },
   "text": {
@@ -1042,6 +1064,28 @@
       },
       "$type": "color",
       "$value": "{neutral.szary-100}"
+    },
+    "divider": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{neutral.szary-100}",
+      "$description": "Cienka linia oddzielająca części treści w karcie (kafel materiału, DEC-461). Light #ECECEC, Dark #444D5B; border/subtle w trybie ciemnym równa się tłu karty i linia by znikła."
+    },
+    "tryb-kreatora": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{zolty.500}",
+      "$description": "Ramka dookoła ekranu w widoku kreatora druku (komponent Ramka trybu). Kolor przycisku kreatora, żółty w obu trybach. DEC-580."
     }
   },
   "icon": {
@@ -1116,6 +1160,17 @@
       },
       "$type": "color",
       "$value": "{koral.300}"
+    },
+    "on-pill-current": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "{zolty.500}",
+      "$description": "Glif ikony na przycisku w stanie bieżącym (Icon / Print Kolor=Żółty). Żółty w obu trybach. DEC-582."
     }
   },
   "decor": {
