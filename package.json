@@ -1,6 +1,10 @@
 {
   "name": "@pleogroup/design-system-flience",
   "version": "1.0.52",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PLEO-group/design-system-flience"
+  },
   "description": "Centralny system tokenow projektowych Flience generowany przez Style Dictionary.",
   "style": "dist/css/tokens.css",
   "exports": {
